@@ -38,6 +38,7 @@
   padding: 0px 20px;
 }
 
+/* stories */
 .stories {
   display: flex;
   overflow-x: scroll;
@@ -50,9 +51,19 @@
 }
 
 .story {
-  /* padding: 4px; */
+  border: 2px solid transparent;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 219, 108, 1),
+    rgba(255, 196, 108, 1)
+  );
+  border-radius: 20px;
+  position: relative;
+}
+.story.checked {
   border-radius: 20px;
   border: 1px solid #999999;
+  background: none;
   position: relative;
 }
 .story__link {
@@ -87,6 +98,8 @@
   object-position: center;
   filter: brightness(70%);
 }
+
+/* Categories */
 .categories {
   position: sticky;
   padding: 20px 0 20px 20px;
@@ -121,4 +134,50 @@
 
 .categories__item.active {
   background-color: (0, 0, 0, 0.1);
+}
+
+.products {
+  width: 100%;
+}
+
+.product {
+  display: flex;
+  width: 100%;
+  padding: 21px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.product__image {
+  flex: 1 0 auto;
+  display: block;
+  width: 180px;
+  height: 136px;
+}
+.product__title {
+  font-family: "Cera Round Pro";
+  font-weight: 400;
+  font-size: 17px;
+  margin-bottom: 4px;
+  line-height: 118%;
+  letter-spacing: -0.01em;
+  color: black;
+}
+.product__description {
+  margin-bottom: 8px;
+  font-family: "Cera Pro";
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 123%;
+  letter-spacing: -0.01em;
+  color: #999999;
+}
+.product__price {
+  border-radius: 101px;
+  padding: 8px 16px;
+  background-color: #ffdb6c;
+  display: inline-block;
+  font-family: "Cera Round Pro";
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 118%;
+  letter-spacing: -0.01em;
 }
