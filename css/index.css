@@ -87,3 +87,38 @@
   object-position: center;
   filter: brightness(70%);
 }
+.categories {
+  position: sticky;
+  padding: 20px 0 20px 20px;
+}
+
+.categories__list {
+  overflow-x: scroll;
+  display: flex;
+  gap: 8px;
+  scrollbar-width: none;
+}
+.categories__list::-webkit-scrollbar {
+  display: none;
+}
+
+.categories__item {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  padding: 8px 16px;
+}
+
+.categories__link {
+  display: block;
+  font-family: "Cera Pro", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 133%;
+  letter-spacing: -0.01em;
+  color: black;
+  white-space: nowrap;
+}
+
+.categories__item.active {
+  background-color: (0, 0, 0, 0.1);
+}
