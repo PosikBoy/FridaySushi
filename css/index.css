@@ -115,10 +115,12 @@
 .side-bar.hidden {
   left: -100%;
   backdrop-filter: initial;
+  -webkit-backdrop-filter: initial;
 }
 .side-bar {
   left: 0;
   backdrop-filter: brightness(80%);
+  -webkit-backdrop-filter: brightness(80%);
 }
 .side-bar__logo {
   margin-bottom: 20px;
@@ -266,10 +268,12 @@
 .choose-city.hidden {
   left: -100%;
   backdrop-filter: initial;
+  -webkit-backdrop-filter: initial;
 }
 .choose-city.active {
   left: 0;
   backdrop-filter: brightness(80%);
+  -webkit-backdrop-filter: brightness(80%);
 }
 .choose-city__logo {
   margin-bottom: 20px;
@@ -280,6 +284,13 @@
   height: 100%;
   background-color: white;
   border-radius: 0 16px 16px 0;
+}
+
+.spicy::before {
+  content: "";
+  background-image: "somepath";
+  width: 30px;
+  height: 30px;
 }
 
 .choose-city__nav {
@@ -374,6 +385,7 @@
   display: flex;
   gap: 8px;
   position: sticky;
+  z-index: 2;
   top: 0;
   background-color: white;
   padding: 10px 0 10px 20px;
@@ -419,20 +431,65 @@
   width: 100%;
 }
 
+/* sushi and wok blocks */
+
 .product {
   display: flex;
-  gap: 20px;
+  position: relative;
   width: 100%;
   padding: 21px 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
-.product__image {
-  flex: 1 0 auto;
+
+.products__offer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 20px 0 80px;
+}
+.products__offer-title {
+  font-family: "Cera Pro", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 133%;
+  letter-spacing: -0.01em;
+  text-align: center;
+}
+.products__offer-phone {
+  font-family: "Cera Round Pro";
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 114%;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: #000000;
+}
+.sushi__image {
+  flex: 0 0 auto;
+  position: relative;
   display: block;
-  width: 180px;
+  width: 172px;
   height: 136px;
 }
-.product__title {
+.sushi__img {
+  position: absolute;
+  left: -19px;
+  top: -9px;
+  width: 100%;
+}
+.sushi__icon {
+  display: none;
+}
+
+.sushi__icon.active {
+  display: block;
+  position: absolute;
+  top: -2px;
+  left: 0px;
+}
+
+.sushi__title {
   font-family: "Cera Round Pro";
   font-weight: 400;
   font-size: 17px;
@@ -441,7 +498,7 @@
   letter-spacing: -0.01em;
   color: black;
 }
-.product__description {
+.sushi__description {
   margin-bottom: 8px;
   font-family: "Cera Pro";
   font-weight: 400;
@@ -450,9 +507,9 @@
   letter-spacing: -0.01em;
   color: #999999;
 }
-.product__price {
+.sushi__price {
   border-radius: 101px;
-  padding: 8px 16px;
+  padding: 6px 16px 10px 16px;
   background-color: #ffdb6c;
   display: inline-block;
   font-family: "Cera Round Pro";
@@ -460,4 +517,98 @@
   font-size: 17px;
   line-height: 118%;
   letter-spacing: -0.01em;
+}
+.wok__image {
+  flex: 0 0 auto;
+  position: relative;
+  display: block;
+  width: 172px;
+  height: 136px;
+}
+.wok__img {
+  position: absolute;
+  left: -20px;
+  width: 100%;
+}
+.wok__icon {
+  display: none;
+}
+
+.wok__icon.active {
+  display: block;
+  position: absolute;
+  top: -2px;
+  left: 0px;
+}
+
+.wok__title {
+  font-family: "Cera Round Pro";
+  font-weight: 400;
+  font-size: 17px;
+  margin-bottom: 4px;
+  line-height: 118%;
+  letter-spacing: -0.01em;
+  color: black;
+}
+.wok__description {
+  margin-bottom: 8px;
+  font-family: "Cera Pro";
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 123%;
+  letter-spacing: -0.01em;
+  color: #999999;
+}
+.wok__price {
+  border-radius: 101px;
+  padding: 6px 16px 10px 16px;
+  background-color: #ffdb6c;
+  display: inline-block;
+  font-family: "Cera Round Pro";
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 118%;
+  letter-spacing: -0.01em;
+}
+
+/* cart button */
+.cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: fixed;
+  z-index: 10;
+  bottom: 0;
+  height: 56px;
+  width: 100vw;
+  border-radius: 16px 16px 0 0;
+}
+.cart__text {
+  font-family: "Cera Round Pro";
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 114%;
+  letter-spacing: -0.02em;
+  text-align: right;
+  color: black;
+}
+.cart__value {
+  font-family: "Cera Round Pro";
+
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 114%;
+  letter-spacing: -0.02em;
+  text-align: right;
+  color: rgba(0, 0, 0, 0.4);
+}
+.cart.hidden {
+  display: none;
+}
+.cart.empty {
+  background-color: #f0f0f0;
+}
+.cart.filled {
+  background-color: #ffdb6c;
 }

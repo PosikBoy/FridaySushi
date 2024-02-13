@@ -55,8 +55,15 @@
                     </div>
                 </div>
             </nav>
-
         </header>
+        <!-- <a class="cart empty" href="./cart/cart.html">
+            <div class="cart__text">Корзина</div>
+            <div class="cart__value"></div>
+        </a> -->
+        <a class="cart filled" href="./cart/cart.html">
+            <div class="cart__text">Корзина</div>
+            <div class="cart__value">925 ₽</div>
+        </a>
         <div class="choose-city active">
             <div class="choose-city__body">
                 <a class="choose-city__logo logo" href="#">
@@ -128,97 +135,127 @@
         </section>
         <section class="products">
             <div class="container">
-                <ul class="products_sushi">
-                    <li class="products__product product">
-                        <div class="product__image">
-                            <img src="./img/products/product_1.png" alt="">
+                <ul class="products__sushi sushi">
+                    <li class="sushi__product product">
+                        <div class="sushi__image">
+                            <img src="./img/products/product_1.png" alt="Филадельфия с огурцом" class="sushi__img">
                         </div>
-                        <div class="product__info">
-                            <h3 class="product__title">
+                        <div class="sushi__info">
+                            <h3 class="sushi__title">
                                 Филадельфия с огурцом
                             </h3>
-                            <p class="product__description">Лосось, креветка, сливочный сыр, огурец. 320 гр.</p>
-                            <div class="product__price">
+                            <p class="sushi__description">Лосось, креветка, сливочный сыр, огурец. 320 гр.</p>
+                            <div class="sushi__price">
                                 299 ₽
                             </div>
                         </div>
                     </li>
-                    <li class="products__product product">
-                        <div class="product__image">
-                            <img src="./img/products/product_2.png" alt="">
+                    <li class="sushi__product product">
+                        <div class="sushi__image">
+                            <img src="./img/products/product_2.png  " alt="Темпурный с курицей терияки"
+                                class="sushi__img">
+                            <img src="./img/icons/fire.svg" alt="" class="sushi__icon active">
                         </div>
-                        <div class="product__info">
-                            <h3 class="product__title">
+                        <div class="sushi__info">
+                            <h3 class="sushi__title">
                                 Темпурный с курицей терияки </h3>
-                            <p class="product__description">Сливочный сыр, угорь, авокадо, креветка, кунжут, соус. 320
+                            <p class="sushi__description">Сливочный сыр, угорь, авокадо, креветка, кунжут, соус. 320
                                 гр.
                             </p>
-                            <div class="product__price">
+                            <div class="sushi__price">
                                 369 ₽
                             </div>
                         </div>
                     </li>
-                    <li class="products__product product">
-                        <div class="product__image">
-                            <img src="./img/products/product_3.png" alt="">
+                    <li class="sushi__product product">
+                        <div class="sushi__image">
+                            <img src="./img/products/product_3.png  " alt="Чизмаки с креветкой" class="sushi__img">
                         </div>
-                        <div class="product__info">
-                            <h3 class="product__title">
-                                Чизмаки с креветкой
-                            </h3>
-                            <p class="product__description">Лосось, креветка, сливочный сыр, огурец. 250 гр.</p>
-                            <div class="product__price">
-                                290 ₽
-                            </div>
-                        </div>
-                    </li>
-                    <li class="products__product product">
-                        <div class="product__image">
-                            <img src="./img/products/product_3.png" alt="">
-                        </div>
-                        <div class="product__info">
-                            <h3 class="product__title">
-                                Чизмаки с креветкой
-                            </h3>
-                            <p class="product__description">Лосось, креветка, сливочный сыр, огурец. 250 гр.</p>
-                            <div class="product__price">
-                                290 ₽
-                            </div>
-                        </div>
-                    </li>
-                    <li class="products__product product">
-                        <div class="product__image">
-                            <img src="./img/products/product_3.png" alt="">
-                        </div>
-                        <div class="product__info">
-                            <h3 class="product__title">
-                                Чизмаки с креветкой
-                            </h3>
-                            <p class="product__description">Лосось, креветка, сливочный сыр, огурец. 250 гр.</p>
-                            <div class="product__price">
-                                290 ₽
-                            </div>
-                        </div>
-                    </li>
-                    <li class="products__product product">
-                        <div class="product__image">
-                            <img src="./img/products/product_3.png" alt="">
-                        </div>
-                        <div class="product__info">
-                            <h3 class="product__title">
-                                Чизмаки с креветкой
-                            </h3>
-                            <p class="product__description">Лосось, креветка, сливочный сыр, огурец. 250 гр.</p>
-                            <div class="product__price">
+                        <div class="sushi__info">
+                            <h3 class="sushi__title">
+                                Чизмаки с креветкой </h3>
+                            <p class="sushi__description">Лосось, креветка, сливочный сыр, огурец. 250 гр
+                            </p>
+                            <div class="sushi__price">
                                 290 ₽
                             </div>
                         </div>
                     </li>
                 </ul>
+                <ul class="products__wok wok">
+                    <li class="wok__product product">
+                        <div class="wok__image">
+                            <img src="./img/products/product_4.png" alt="" class="wok__img">
+                        </div>
+                        <div class="wok__info">
+                            <h3 class="wok__title">
+                                Рисовая лапша с курицей соус Терияки
+                            </h3>
+                            <p class="wok__description">Соба, курица, морковь, лук репчатый, капуста белокочанная,
+                                перец, соус.</p>
+                            <div class="wok__price">
+                                399 ₽
+                            </div>
+                        </div>
+                    </li>
+                    <li class="wok__product product">
+                        <div class="wok__image">
+                            <img src="./img/products/product_5.png" alt="" class="wok__img">
+                            <img src="./img/icons/spicy.svg" alt="" class="wok__icon active">
 
+                        </div>
+                        <div class="wok__info">
+                            <h3 class="wok__title">
+                                Удон с говядиной соус Терияки </h3>
+                            <p class="wok__description">Рисовая лапша, креветки, капуста белокочанная, морковь, лук
+                                репчатый..
+                                гр.
+                            </p>
+                            <div class="wok__price">
+                                290 ₽
+                            </div>
+                        </div>
+                    </li>
+                    <li class="wok__product product">
+                        <div class="wok__image">
+                            <img src="./img/products/product_4.png" alt="" class="wok__img">
+                            <img src="./img/icons/calories.svg" alt="" class="wok__icon active">
 
-
-
+                        </div>
+                        <div class="wok__info">
+                            <h3 class="wok__title">
+                                Рисовая лапша с курицей соус Терияки
+                            </h3>
+                            <p class="wok__description">Соба, курица, морковь, лук репчатый, капуста белокочанная,
+                                перец, соус.</p>
+                            <div class="wok__price">
+                                399 ₽
+                            </div>
+                        </div>
+                    </li>
+                    <li class="wok__product product">
+                        <div class="wok__image">
+                            <img src="./img/products/product_5.png" alt="" class="wok__img">
+                        </div>
+                        <div class="wok__info">
+                            <h3 class="wok__title">
+                                Удон с говядиной соус Терияки </h3>
+                            <p class="wok__description">Рисовая лапша, креветки, капуста белокочанная, морковь, лук
+                                репчатый..
+                                гр.
+                            </p>
+                            <div class="wok__price">
+                                290 ₽
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="products__offer">
+                    <p class="products__offer-title">
+                        Не нашли что искали? Звоните:
+                    </p>
+                    <a href="telto:+73517298080" class="products__offer-phone">8 (351) 729-80-80</a>
+                </div>
             </div>
         </section>
     </div>
