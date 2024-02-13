@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1, user-scalable=no">
     <title>Суши пятница - каталог</title>
-    <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/reset.css">
 </head>
 
 <body class="inactive">
+    <div class="bright80 active"></div>
     <div class="wrapper">
         <header class="header">
             <div class="container">
@@ -18,7 +19,6 @@
                         <img src="./img/logo.png" alt="Логотип суши пятница">
                     </a>
                     <button class="header__menu-button menu-button">
-
                         <span class="menu-button__burger"></span>
                     </button>
                 </div>
@@ -257,8 +257,11 @@
                 </div>
             </div>
         </section>
-        <!-- <div class="product-card">
+        <div class="product-card hidden">
             <div class="product-card__body">
+                <div class="product-card__stick">
+                    <img src="./img/icons/stick.svg" alt="">
+                </div>
                 <div class="product-card__info">
                     <div class="product-card__image">
                         <img src="./img/product-cards/product_1.png" alt="">
@@ -266,11 +269,26 @@
                     <h3 class="product-card__name">Филадельфия</h3>
                     <div class="product-card__description"> Лосось и сливочный сыр, 180г. </div>
                 </div>
-                <div class="product__options">
-                        <input type="radio">
-                    </div> 
-    </div>
-    </div> -->
+                <div class="product__options options">
+                    <div class="options__option">
+                        <input type="radio" class="options__option-input" id="classic">
+                        <label for="classic">Классическая</label>
+                    </div>
+                    <div class="options__option">
+                        <input type="radio" class="options__option-input" id="cucumber">
+                        <label for="cucumber">Огурец</label>
+                    </div>
+                    <div class="options__option">
+                        <input type="radio" class="options__option-input" id="avocado">
+                        <label for="avocado">Авокадо</label>
+                    </div>
+
+                </div>
+                <button class="product-card__button">
+                    <span>В корзину за 299 ₽</span>
+                </button>
+            </div>
+        </div>
     </div>
     <div class="background-brightness hidden"></div>
     <script src="./js/index.js"></script>

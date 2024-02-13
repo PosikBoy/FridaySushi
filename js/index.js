@@ -2,6 +2,12 @@
 
 var categoryList = document.querySelector(".categories__list");
 var categoryMenuButton = document.querySelector(".categories__menu-button");
+var bright80 = document.querySelector(".bright80");
+
+const toggleBrightness = () => {
+  bright80.classList.toggle("active");
+};
+
 isMenuButtonShown = false;
 function addMenuButton() {
   categoryMenuButton.classList = "categories__menu-button menu-button";
@@ -34,6 +40,7 @@ chooseCityLink.forEach(function (chooseCityLink) {
     event.preventDefault();
     body.classList = "";
     chooseCity.classList = "choose-city hidden";
+    toggleBrightness();
   });
 });
 
@@ -48,6 +55,7 @@ headerMenuButton.addEventListener("click", function (event) {
   headerMenuButton.classList.toggle("open");
   menuBurger.classList.toggle("open");
   sideBar.classList.toggle("hidden");
+  toggleBrightness();
 });
 categoryMenuButton.addEventListener("click", function (event) {
   event.preventDefault();
@@ -55,4 +63,13 @@ categoryMenuButton.addEventListener("click", function (event) {
   headerMenuButton.classList.toggle("open");
   menuBurger.classList.toggle("open");
   sideBar.classList.toggle("hidden");
+  toggleBrightness();
+});
+
+const product = document.querySelector(".sushi__product");
+const productCard = document.querySelector(".product-card");
+
+product.addEventListener("click", (event) => {
+  toggleBrightness();
+  productCard.classList.toggle("hidden");
 });
