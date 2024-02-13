@@ -9,9 +9,77 @@
     <link rel="stylesheet" href="./css/index.css">
 </head>
 
-<body>
+<body class="inactive">
     <div class="wrapper">
-        <header class="header"></header>
+        <header class="header">
+            <div class="container">
+                <div class="header__body">
+                    <a class="header__logo logo" href="#">
+                        <img src="/img/logo.png" alt="Логотип суши пятница">
+                    </a>
+                    <button class="header__menu-button menu-button">
+
+                        <span class="menu-button__burger"></span>
+                    </button>
+                </div>
+            </div>
+            <nav class="side-bar hidden">
+                <div class="side-bar__body">
+                    <div class="side-bar__header">
+                        <a class="side-bar__logo logo" href="#">
+                            <img src="/img/logo.png" alt="Логотип суши пятница">
+                        </a>
+                        <a href="#" class="side-bar__login login">
+                            <img src="./img/icons/profile.svg" alt="">
+                            <div class="login__body">
+                                <div class="login__login">Войти</div>
+                                <div class="login__desc">Начислим бонусы за заказ и сохраним адрес доставки.</div>
+                            </div>
+
+                        </a>
+                        <a href="#" class="side-bar__chat chat">
+                            <img src="./img/icons/chat.svg" alt="">
+                            <p class="chat__text">Чат</p>
+                        </a>
+                    </div>
+                    <div class="side-bar__footer">
+                        <div class="side-bar__city">
+                            Челябинск
+                        </div>
+                        <div class="side-bar__address-info">
+                            <p class="side-bar__address">Пр. Победы, 254</p>
+                            <p class="side-bar__address-label">Доставка</p>
+                        </div>
+                        <div class="side-bar__contacts">
+                            <a href="#" class="side-bar__contacts-link">Контакты</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+        </header>
+        <div class="choose-city active">
+            <div class="choose-city__body">
+                <a class="choose-city__logo logo" href="#">
+                    <img src="/img/logo.png" alt="Логотип суши пятница">
+                </a>
+                <nav class="choose-city__nav">
+                    <p class="choose-city__title">Ваш город:</p>
+                    <ul class="choose-city__list">
+                        <li class="choose-city__item"><a href="#" class="choose-city__link">Челябинск</a></li>
+                        <li class="choose-city__item"><a href="#" class="choose-city__link">Копейск</a></li>
+                        <li class="choose-city__item"><a href="#" class="choose-city__link">Миасс</a></li>
+                        <li class="choose-city__item"><a href="#" class="choose-city__link">Кыштым</a></li>
+                        <li class="choose-city__item"><a href="#" class="choose-city__link">Озерск</a></li>
+                        <ul class="choose-city__list-moscow">
+                            <li class="choose-city__item"><a href="#" class="choose-city__link">Москва</a></li>
+                            <li class="choose-city__item"><a href="#" class="choose-city__link">Дубна</a></li>
+                        </ul>
+
+                    </ul>
+                </nav>
+            </div>
+        </div>
         <section class="stories">
             <div class="stories__story story checked">
                 <a href="" class="story__link">
@@ -48,187 +116,73 @@
 
             </div>
         </section>
-        <div class="categories">
+        <section class="categories">
+            <button class="categories__menu-button menu-bu tton closed">
+                <span class="menu-button__burger"></span>
+            </button>
             <ul class="categories__list">
-                <li class="categories__item active"><a href="#" class="categories__link">Роллы</a></li>
+
+                <li class="categories__item active "><a href="#" class="categories__link">Роллы</a></li>
                 <li class="categories__item"><a href="#" class="categories__link">Наборы</a></li>
                 <li class="categories__item"><a href="#" class="categories__link">WOK</a></li>
                 <li class="categories__item"><a href="#" class="categories__link">Закуски</a></li>
             </ul>
-        </div>
+        </section>
         <section class="products">
             <div class="container">
-                <div class="products__product product">
-                    <div class="product__image">
-                        <img src="./img/products/product_1.png" alt="">
+                <div class="products_sushi">
+                    <div class="products__product product">
+                        <div class="product__image">
+                            <img src="./img/products/product_1.png" alt="">
+                        </div>
+                        <div class="product__info">
+                            <h3 class="product__title">
+                                Филадельфия с огурцом
+                            </h3>
+                            <p class="product__description">Лосось, креветка, сливочный сыр, огурец. 320 гр.</p>
+                            <div class="product__price">
+                                299 ₽
+                            </div>
+                        </div>
                     </div>
-                    <div class="product__info">
-                        <h3 class="product__title">
-                            Филадельфия с огурцом
-                        </h3>
-                        <p class="product__description">Лосось, креветка, сливочный сыр, огурец. 320 гр.</p>
-                        <div class="product__price">
-                            299 ₽
+                    <div class="products__product product">
+                        <div class="product__image">
+                            <img src="./img/products/product_2.png" alt="">
+                        </div>
+                        <div class="product__info">
+                            <h3 class="product__title">
+                                Темпурный с курицей терияки </h3>
+                            <p class="product__description">Сливочный сыр, угорь, авокадо, креветка, кунжут, соус. 320
+                                гр.
+                            </p>
+                            <div class="product__price">
+                                369 ₽
+                            </div>
+                        </div>
+                    </div>
+                    <div class="products__product product">
+                        <div class="product__image">
+                            <img src="./img/products/product_3.png" alt="">
+                        </div>
+                        <div class="product__info">
+                            <h3 class="product__title">
+                                Чизмаки с креветкой
+                            </h3>
+                            <p class="product__description">Лосось, креветка, сливочный сыр, огурец. 250 гр.</p>
+                            <div class="product__price">
+                                290 ₽
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="products__product product">
-                    <div class="product__image">
-                        <img src="./img/products/product_1.png" alt="">
-                    </div>
-                    <div class="product__info">
-                        <h3 class="product__title">
-                            Филадельфия с огурцом
-                        </h3>
-                        <p class="product__description">Лосось, креветка, сливочный сыр, огурец. 320 гр.</p>
-                        <div class="product__price">
-                            299 ₽
-                        </div>
-                    </div>
-                </div>
-                <div class="products__product product">
-                    <div class="product__image">
-                        <img src="./img/products/product_1.png" alt="">
-                    </div>
-                    <div class="product__info">
-                        <h3 class="product__title">
-                            Филадельфия с огурцом
-                        </h3>
-                        <p class="product__description">Лосось, креветка, сливочный сыр, огурец. 320 гр.</p>
-                        <div class="product__price">
-                            299 ₽
-                        </div>
-                    </div>
-                </div>
-                <div class="products__product product">
-                    <div class="product__image">
-                        <img src="./img/products/product_1.png" alt="">
-                    </div>
-                    <div class="product__info">
-                        <h3 class="product__title">
-                            Филадельфия с огурцом
-                        </h3>
-                        <p class="product__description">Лосось, креветка, сливочный сыр, огурец. 320 гр.</p>
-                        <div class="product__price">
-                            299 ₽
-                        </div>
-                    </div>
-                </div>
-                <div class="products__product product">
-                    <div class="product__image">
-                        <img src="./img/products/product_1.png" alt="">
-                    </div>
-                    <div class="product__info">
-                        <h3 class="product__title">
-                            Филадельфия с огурцом
-                        </h3>
-                        <p class="product__description">Лосось, креветка, сливочный сыр, огурец. 320 гр.</p>
-                        <div class="product__price">
-                            299 ₽
-                        </div>
-                    </div>
-                </div>
-                <div class="products__product product">
-                    <div class="product__image">
-                        <img src="./img/products/product_1.png" alt="">
-                    </div>
-                    <div class="product__info">
-                        <h3 class="product__title">
-                            Филадельфия с огурцом
-                        </h3>
-                        <p class="product__description">Лосось, креветка, сливочный сыр, огурец. 320 гр.</p>
-                        <div class="product__price">
-                            299 ₽
-                        </div>
-                    </div>
-                </div>
-                <div class="products__product product">
-                    <div class="product__image">
-                        <img src="./img/products/product_1.png" alt="">
-                    </div>
-                    <div class="product__info">
-                        <h3 class="product__title">
-                            Филадельфия с огурцом
-                        </h3>
-                        <p class="product__description">Лосось, креветка, сливочный сыр, огурец. 320 гр.</p>
-                        <div class="product__price">
-                            299 ₽
-                        </div>
-                    </div>
-                </div>
-                <div class="products__product product">
-                    <div class="product__image">
-                        <img src="./img/products/product_1.png" alt="">
-                    </div>
-                    <div class="product__info">
-                        <h3 class="product__title">
-                            Филадельфия с огурцом
-                        </h3>
-                        <p class="product__description">Лосось, креветка, сливочный сыр, огурец. 320 гр.</p>
-                        <div class="product__price">
-                            299 ₽
-                        </div>
-                    </div>
-                </div>
-                <div class="products__product product">
-                    <div class="product__image">
-                        <img src="./img/products/product_1.png" alt="">
-                    </div>
-                    <div class="product__info">
-                        <h3 class="product__title">
-                            Филадельфия с огурцом
-                        </h3>
-                        <p class="product__description">Лосось, креветка, сливочный сыр, огурец. 320 гр.</p>
-                        <div class="product__price">
-                            299 ₽
-                        </div>
-                    </div>
-                </div>
-                <div class="products__product product">
-                    <div class="product__image">
-                        <img src="./img/products/product_1.png" alt="">
-                    </div>
-                    <div class="product__info">
-                        <h3 class="product__title">
-                            Филадельфия с огурцом
-                        </h3>
-                        <p class="product__description">Лосось, креветка, сливочный сыр, огурец. 320 гр.</p>
-                        <div class="product__price">
-                            299 ₽
-                        </div>
-                    </div>
-                </div>
-                <div class="products__product product">
-                    <div class="product__image">
-                        <img src="./img/products/product_1.png" alt="">
-                    </div>
-                    <div class="product__info">
-                        <h3 class="product__title">
-                            Филадельфия с огурцом
-                        </h3>
-                        <p class="product__description">Лосось, креветка, сливочный сыр, огурец. 320 гр.</p>
-                        <div class="product__price">
-                            299 ₽
-                        </div>
-                    </div>
-                </div>
-                <div class="products__product product">
-                    <div class="product__image">
-                        <img src="./img/products/product_1.png" alt="">
-                    </div>
-                    <div class="product__info">
-                        <h3 class="product__title">
-                            Филадельфия с огурцом
-                        </h3>
-                        <p class="product__description">Лосось, креветка, сливочный сыр, огурец. 320 гр.</p>
-                        <div class="product__price">
-                            299 ₽
-                        </div>
-                    </div>
-                </div>
+
+
+
+
             </div>
         </section>
     </div>
+    <script src="./js/index.js"></script>
 </body>
 
 </html>
