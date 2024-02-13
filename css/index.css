@@ -109,7 +109,7 @@
   height: 100vh;
   position: fixed;
   z-index: 10;
-  top: 0;
+  top: 0; 
 }
 
 .side-bar.hidden {
@@ -611,4 +611,21 @@
 }
 .cart.filled {
   background-color: #ffdb6c;
+}
+
+/* product-card */
+
+.product-card {
+  background-color: white;
+  position: absolute;
+  bottom: 0;
+  height: 100vh;
+  z-index: 100;
+}
+
+.product-card__body {
+  padding: 0 20px;
+  background-color: white;
+  width: 100vw;
+  border-radius: 16px 16px 0 0;
 }
