@@ -270,19 +270,53 @@
                     <div class="product-card__description"> Лосось и сливочный сыр, 180г. </div>
                 </div>
                 <div class="product__options options">
-                    <div class="options__option">
-                        <input type="radio" class="options__option-input" id="classic">
-                        <label for="classic">Классическая</label>
-                    </div>
-                    <div class="options__option">
-                        <input type="radio" class="options__option-input" id="cucumber">
-                        <label for="cucumber">Огурец</label>
-                    </div>
-                    <div class="options__option">
-                        <input type="radio" class="options__option-input" id="avocado">
-                        <label for="avocado">Авокадо</label>
-                    </div>
+                    <label class="options__option option selected">
+                        <input type="radio" class="options__option-input" name="option" id="classic" checked="checked">
+                        <span class="options__option-fake"></span>
+                        <span class="options__option-label">Классическая</span>
+                        <div class="option__info">
 
+                            <div class="info__body">
+                                <div class="info__title">На 100 г.:</div>
+                                <ul class="info__list">
+                                    <li class="info__info">
+                                        <p>Энерг. ценность</p>
+                                        <p>248,6 ккал</p>
+                                    </li>
+                                    <li class="info__info">
+                                        <p>Белки</p>
+                                        <p>10,5 г.</p>
+                                    </li>
+                                    <li class="info__info">
+                                        <p>Жиры</p>
+                                        <p>10,1 г.</p>
+                                    </li>
+                                    <li class="info__info">
+                                        <p>Углеводы</p>
+                                        <p>27,2 г.</p>
+                                    </li>
+                                </ul>
+
+                            </div>
+
+
+                            <img src="./img/icons/info.svg" alt="" class="option__icon">
+                        </div>
+                    </label>
+                    <label class="options__option option">
+                        <input type="radio" class="options__option-input" name="option">
+                        <span class="options__option-fake"></span>
+                        <span class="options__option-label">Огурец</span>
+                        <div class="option__info">
+                            <img src="./img/icons/info.svg" alt="" class="option__icon">
+                        </div>
+                    </label>
+                    <label class="options__option option">
+                        <input type="radio" class="options__option-input" name="option">
+                        <span class="options__option-fake"></span>
+                        <span class="options__option-label">Авокадо</span>
+
+                    </label>
                 </div>
                 <button class="product-card__button">
                     <span>В корзину за 299 ₽</span>

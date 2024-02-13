@@ -687,6 +687,118 @@
   line-height: 118%;
   letter-spacing: -0.01em;
 }
+
+.options {
+  border: 1px solid #f0f0f0;
+  border-radius: 16px;
+}
+.options__option-label {
+  display: flex;
+  font-family: "Cera Pro";
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 133%;
+  letter-spacing: -0.01em;
+}
+
+.option.selected {
+  background-color: #f0f0f0; /* Здесь указываете цвет серого фона */
+}
 .options__option-input {
   display: none;
+}
+.options__option {
+  border-radius: 16px;
+  display: flex;
+  position: relative;
+  padding: 12px 12px 12px 16px;
+  width: 100%;
+  height: 48px;
+}
+
+.options__option-fake {
+  position: relative;
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.options__option-input:checked + .options__option-fake::before {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  content: "";
+  background-color: #000000;
+}
+.options__option-input:checked + .options__option {
+  background-color: #ff0000;
+}
+
+.option.selected .option__info {
+  display: block;
+}
+
+.option__info.active .info__body {
+  display: block;
+}
+
+.option__info {
+  display: none;
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.info__body {
+  display: none;
+  position: absolute;
+  top: -60px;
+  left: -250px;
+  z-index: 1000;
+  padding: 10px 16px;
+  border-radius: 8px;
+  width: 240px;
+  height: 140px;
+  background-color: #000000;
+}
+
+.info__body::after {
+  position: absolute;
+  top: 50%;
+  left: 97%;
+  transform: rotate(225deg);
+  content: "";
+  width: 10px;
+  height: 8.5px;
+  background-image: url("../img/icons/arrow.svg");
+}
+
+.info__title {
+  font-family: "Cera Pro";
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 133%;
+  letter-spacing: -0.01em;
+  text-align: right;
+  color: #999999;
+}
+
+.info__info {
+  padding: 2px 0;
+  font-family: "Cera Pro";
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 133%;
+  letter-spacing: -0.01em;
+  text-align: right;
+  color: white;
+  display: flex;
+  justify-content: space-between;
 }

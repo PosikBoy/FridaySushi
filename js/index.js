@@ -66,10 +66,33 @@ categoryMenuButton.addEventListener("click", function (event) {
   toggleBrightness();
 });
 
+// product card
 const product = document.querySelector(".sushi__product");
 const productCard = document.querySelector(".product-card");
 
 product.addEventListener("click", (event) => {
   toggleBrightness();
   productCard.classList.toggle("hidden");
+  body.classList.add("inactive");
+});
+
+// options
+
+var options = document.querySelectorAll(".option");
+
+options.forEach(function (option) {
+  option.addEventListener("click", function () {
+    options.forEach(function (item) {
+      item.classList.remove("selected");
+    });
+    this.classList.add("selected");
+  });
+});
+
+var optionsInfo = document.querySelectorAll(".option__info");
+
+optionsInfo.forEach(function (option) {
+  option.addEventListener("click", function () {
+    option.classList.toggle("active");
+  });
 });
