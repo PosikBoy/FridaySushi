@@ -76,6 +76,68 @@ product.addEventListener("click", (event) => {
   body.classList.add("inactive");
 });
 
+var startY, startBottom, startHeight;
+var menuVisible = true;
+
+function updateMenu(newBottom) {
+  productCard.style.bottom = newBottom + "px";
+}
+
+function hideMenu() {
+  productCard.style = "";
+  productCard.style.transition = "bottom 0.3s ease";
+  productCard.classList.add("hidden");
+  menuVisible = false;
+  setTimeout(() => {
+    productCard.style = "";
+  }, 500);
+  toggleBrightness();
+}
+
+function showMenu() {
+  productCard.style.transition = "bottom 0.3s ease";
+  productCard.style.bottom = "0";
+  menuVisible = true;
+}
+
+productCard.addEventListener("touchstart", function (e) {
+  startY = e.touches[0].clientY;
+  productCard.style.transition = "none";
+
+  startBottom = parseInt(
+    window.getComputedStyle(productCard).getPropertyValue("bottom")
+  );
+  startHeight = productCard.offsetHeight;
+});
+
+productCard.addEventListener("touchmove", function (e) {
+  productCard.style.transition = "none";
+  var currentY = e.touches[0].clientY;
+  var diff = currentY - startY;
+  var newBottom = startBottom - diff;
+
+  if (newBottom >= -startHeight && newBottom <= 0) {
+    requestAnimationFrame(function () {
+      updateMenu(newBottom);
+    });
+  }
+});
+
+productCard.addEventListener("touchend", function (e) {
+  var touchEndY = e.changedTouches[0].clientY;
+  var diffY = touchEndY - startY;
+
+  if (diffY >= startHeight * 0.5) {
+    requestAnimationFrame(function () {
+      hideMenu();
+    });
+  } else {
+    requestAnimationFrame(function () {
+      showMenu();
+    });
+  }
+});
+
 // options
 
 var options = document.querySelectorAll(".option");

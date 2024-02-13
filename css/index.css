@@ -625,9 +625,6 @@
 }
 
 /* product-card */
-.wrapper {
-  position: relative;
-}
 .product-card {
   background-color: white;
   position: fixed;
@@ -643,7 +640,6 @@
 .product-card.hidden {
   bottom: -100%;
   transition: all 0.5s;
-  /* animation: slideIn 0.5s ease forwards; */
 }
 
 .product-card__name {
