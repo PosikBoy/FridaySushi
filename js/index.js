@@ -67,75 +67,89 @@ categoryMenuButton.addEventListener("click", function (event) {
 });
 
 // product card
-const product = document.querySelector(".sushi__product");
-const productCard = document.querySelector(".product-card");
+const sushi = document.querySelector("#sushi");
+const sushiCard = document.querySelector("#sushiCard");
 
-product.addEventListener("click", (event) => {
+sushi.addEventListener("click", (event) => {
   toggleBrightness();
-  productCard.classList.toggle("hidden");
+  sushiCard.classList.toggle("hidden");
   body.classList.add("inactive");
 });
 
-var startY, startBottom, startHeight;
-var menuVisible = true;
+const productCola = document.querySelector("#cola");
+const productCardCola = document.querySelector("#colaCard");
 
-function updateMenu(newBottom) {
-  productCard.style.bottom = newBottom + "px";
-}
-
-function hideMenu() {
-  productCard.style = "";
-  productCard.style.transition = "bottom 0.3s ease";
-  productCard.classList.add("hidden");
-  menuVisible = false;
-  setTimeout(() => {
-    productCard.style = "";
-  }, 500);
+productCola.addEventListener("click", (event) => {
   toggleBrightness();
-}
-
-function showMenu() {
-  productCard.style.transition = "bottom 0.3s ease";
-  productCard.style.bottom = "0";
-  menuVisible = true;
-}
-
-productCard.addEventListener("touchstart", function (e) {
-  startY = e.touches[0].clientY;
-  productCard.style.transition = "none";
-
-  startBottom = parseInt(
-    window.getComputedStyle(productCard).getPropertyValue("bottom")
-  );
-  startHeight = productCard.offsetHeight;
+  productCardCola.classList.toggle("hidden");
+  body.classList.add("inactive");
 });
 
-productCard.addEventListener("touchmove", function (e) {
-  productCard.style.transition = "none";
-  var currentY = e.touches[0].clientY;
-  var diff = currentY - startY;
-  var newBottom = startBottom - diff;
+const swipeElements = document.querySelectorAll(".swipe");
 
-  if (newBottom >= -startHeight && newBottom <= 0) {
-    requestAnimationFrame(function () {
-      updateMenu(newBottom);
-    });
+swipeElements.forEach((item) => {
+  // const toCartBtn = document.querySelector(".product-card__button");
+
+  // toCartBtn.addEventListener("click", () => {
+  //   hideMenu();
+  // });
+  var startY, startBottom, startHeight;
+
+  var menuVisible = true;
+  function updateMenu(newBottom) {
+    item.style.bottom = newBottom + "px";
   }
-});
+  function hideMenu() {
+    item.style = "";
+    item.style.transition = "bottom 0.5s ease";
+    item.classList.add("hidden");
+    body.classList.remove("inactive");
 
-productCard.addEventListener("touchend", function (e) {
-  var touchEndY = e.changedTouches[0].clientY;
-  var diffY = touchEndY - startY;
-
-  if (diffY >= startHeight * 0.5) {
-    requestAnimationFrame(function () {
-      hideMenu();
-    });
-  } else {
-    requestAnimationFrame(function () {
-      showMenu();
-    });
+    menuVisible = false;
+    setTimeout(() => {
+      item.style = "";
+    }, 500);
+    toggleBrightness();
   }
+  function showMenu() {
+    item.style.transition = "bottom 0.3s ease";
+    item.style.bottom = "0";
+    menuVisible = true;
+  }
+  item.addEventListener("touchstart", function (e) {
+    startY = e.touches[0].clientY;
+    item.style.transition = "none";
+
+    startBottom = parseInt(
+      window.getComputedStyle(item).getPropertyValue("bottom")
+    );
+    startHeight = item.offsetHeight;
+  });
+  item.addEventListener("touchmove", function (e) {
+    item.style.transition = "none";
+    var currentY = e.touches[0].clientY;
+    var diff = currentY - startY;
+    var newBottom = startBottom - diff;
+
+    if (newBottom >= -startHeight && newBottom <= 0) {
+      requestAnimationFrame(function () {
+        updateMenu(newBottom);
+      });
+    }
+  });
+  item.addEventListener("touchend", function (e) {
+    var touchEndY = e.changedTouches[0].clientY;
+    var diffY = touchEndY - startY;
+    if (diffY >= startHeight * 0.2) {
+      requestAnimationFrame(function () {
+        hideMenu();
+      });
+    } else {
+      requestAnimationFrame(function () {
+        showMenu();
+      });
+    }
+  });
 });
 
 // options

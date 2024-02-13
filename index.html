@@ -135,7 +135,7 @@
         <section class="products">
             <div class="container">
                 <ul class="products__sushi sushi">
-                    <li class="sushi__product product">
+                    <li class="sushi__product product" id="sushi">
                         <div class="sushi__image">
                             <img src="./img/products/product_1.png" alt="Филадельфия с огурцом" class="sushi__img">
                         </div>
@@ -149,7 +149,7 @@
                             </div>
                         </div>
                     </li>
-                    <li class="sushi__product product">
+                    <li class="sushi__product product" id="cola">
                         <div class="sushi__image">
                             <img src="./img/products/product_2.png  " alt="Темпурный с курицей терияки"
                                 class="sushi__img">
@@ -257,7 +257,7 @@
                 </div>
             </div>
         </section>
-        <div class="product-card hidden">
+        <div class="product-card hidden swipe" id="sushiCard">
             <div class="product-card__body">
                 <div class="product-card__stick">
                     <img src="./img/icons/stick.svg" alt="">
@@ -275,7 +275,6 @@
                         <span class="options__option-fake"></span>
                         <span class="options__option-label">Классическая</span>
                         <div class="option__info">
-
                             <div class="info__body">
                                 <div class="info__title">На 100 г.:</div>
                                 <ul class="info__list">
@@ -320,6 +319,26 @@
                 </div>
                 <button class="product-card__button">
                     <span>В корзину за 299 ₽</span>
+                </button>
+            </div>
+        </div>
+        <div class="product-card hidden swipe" id="colaCard">
+            <div class="product-card__body">
+                <div class="product-card__stick">
+                    <img src="./img/icons/stick.svg" alt="">
+                </div>
+                <div class="product-card__info">
+                    <div class="product-card__image">
+                        <img src="./img/product-cards/product_2.png" alt="">
+                    </div>
+                    <div class="product-card__info2">
+                        <h3 class="product-card__name">Добрый лимон-лайм</h3>
+                        <img src="./img/icons/info.svg" alt="" class="product-card__info-icon">
+                    </div>
+                    <div class="product-card__description"> Сильногазированный напиток, 500мл </div>
+                </div>
+                <button class="product-card__button">
+                    <span>В корзину за 74 ₽</span>
                 </button>
             </div>
         </div>

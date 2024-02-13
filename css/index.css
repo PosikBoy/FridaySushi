@@ -282,6 +282,7 @@
   top: 0;
 }
 .choose-city.hidden {
+  transition: all 0.5s;
   left: -100%;
 }
 .choose-city.active {
@@ -667,6 +668,9 @@
   color: #999999;
 }
 .product-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   padding: 20px;
   background-color: white;
   width: 100vw;
@@ -795,6 +799,13 @@
   letter-spacing: -0.01em;
   text-align: right;
   color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* cola card */
+.product-card__info2 {
+  padding: 5px 0;
   display: flex;
   justify-content: space-between;
 }
