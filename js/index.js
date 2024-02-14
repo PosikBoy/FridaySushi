@@ -189,11 +189,3 @@ addressMenuOptions.forEach(function (option) {
     this.classList.add("selected");
   });
 });
-
-var optionsInfo = document.querySelectorAll(".option__info");
-
-optionsInfo.forEach(function (option) {
-  option.addEventListener("click", function () {
-    option.classList.toggle("active");
-  });
-});
