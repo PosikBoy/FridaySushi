@@ -47,13 +47,11 @@ chooseCityLink.forEach(function (chooseCityLink) {
 //sidebar
 const sideBar = document.querySelector(".side-bar");
 const headerMenuButton = document.querySelector(".header__menu-button");
-const menuBurger = document.querySelector(".menu-button__burger");
 
 headerMenuButton.addEventListener("click", function (event) {
   event.preventDefault();
   body.classList.toggle("inactive");
   headerMenuButton.classList.toggle("open");
-  menuBurger.classList.toggle("open");
   sideBar.classList.toggle("hidden");
   toggleBrightness();
 });
@@ -61,7 +59,6 @@ categoryMenuButton.addEventListener("click", function (event) {
   event.preventDefault();
   body.classList.toggle("inactive");
   headerMenuButton.classList.toggle("open");
-  menuBurger.classList.toggle("open");
   sideBar.classList.toggle("hidden");
   toggleBrightness();
 });
@@ -119,7 +116,6 @@ swipeElements.forEach((item) => {
   item.addEventListener("touchstart", function (e) {
     startY = e.touches[0].clientY;
     item.style.transition = "none";
-
     startBottom = parseInt(
       window.getComputedStyle(item).getPropertyValue("bottom")
     );
@@ -159,6 +155,35 @@ var options = document.querySelectorAll(".option");
 options.forEach(function (option) {
   option.addEventListener("click", function () {
     options.forEach(function (item) {
+      item.classList.remove("selected");
+    });
+    this.classList.add("selected");
+  });
+});
+
+var optionsInfo = document.querySelectorAll(".option__info");
+
+optionsInfo.forEach(function (option) {
+  option.addEventListener("click", function () {
+    option.classList.toggle("active");
+  });
+});
+
+// address delivery
+var addressDelivery = document.querySelector(".side-bar__address-info");
+var addressDeliveryMenu = document.querySelector("#addressDeliveryMenu");
+addressDelivery.addEventListener("click", () => {
+  console.log("asjdcn");
+  addressDeliveryMenu.classList.toggle("hidden");
+  sideBar.classList.toggle("hidden");
+  headerMenuButton.classList.toggle("open");
+});
+
+var addressMenuOptions = document.querySelectorAll(".address-menu__option");
+
+addressMenuOptions.forEach(function (option) {
+  option.addEventListener("click", function () {
+    addressMenuOptions.forEach(function (item) {
       item.classList.remove("selected");
     });
     this.classList.add("selected");

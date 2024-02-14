@@ -2,349 +2,395 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1, user-scalable=no">
-    <title>Суши пятница - каталог</title>
-    <link rel="stylesheet" href="./css/index.css">
-    <link rel="stylesheet" href="./css/reset.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1, user-scalable=no" />
+  <title>Суши пятница - каталог</title>
+  <link rel="stylesheet" href="./css/index.css" />
+  <link rel="stylesheet" href="./css/reset.css" />
 </head>
 
 <body class="inactive">
-    <div class="bright80 active"></div>
-    <div class="wrapper">
-        <header class="header">
-            <div class="container">
-                <div class="header__body">
-                    <a class="header__logo logo" href="#">
-                        <img src="./img/logo.png" alt="Логотип суши пятница">
-                    </a>
-                    <button class="header__menu-button menu-button">
-                        <span class="menu-button__burger"></span>
-                    </button>
-                </div>
-            </div>
-            <nav class="side-bar hidden">
-                <div class="side-bar__body">
-                    <div class="side-bar__header">
-                        <a class="side-bar__logo logo" href="#">
-                            <img src="./img/logo.png" alt="Логотип суши пятница">
-                        </a>
-                        <a href="#" class="side-bar__login login">
-                            <img src="./img/icons/profile.svg" alt="">
-                            <div class="login__body">
-                                <div class="login__login">Войти</div>
-                                <div class="login__desc">Начислим бонусы за заказ и сохраним адрес доставки.</div>
-                            </div>
-                        </a>
-                        <a href="#" class="side-bar__chat chat">
-                            <img src="./img/icons/chat.svg" alt="">
-                            <p class="chat__text">Чат</p>
-                        </a>
-                    </div>
-                    <div class="side-bar__footer">
-                        <div class="side-bar__city">
-                            Челябинск
-                        </div>
-                        <div class="side-bar__address-info">
-                            <p class="side-bar__address">Пр. Победы, 254</p>
-                            <p class="side-bar__address-label">Доставка</p>
-                        </div>
-                        <div class="side-bar__contacts">
-                            <a href="#" class="side-bar__contacts-link">Контакты</a>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </header>
-        <a class="cart empty hidden" href="./cart/cart.html">
-            <div class="cart__text">Корзина</div>
-            <div class="cart__value"></div>
-        </a>
-        <a class="cart filled" href="./cart/cart.html">
-            <div class="cart__text">Корзина</div>
-            <div class="cart__value">925 ₽</div>
-        </a>
-        <div class="choose-city active">
-            <div class="choose-city__body">
-                <a class="choose-city__logo logo" href="#">
-                    <img src="./img/logo.png" alt="Логотип суши пятница">
-                </a>
-                <nav class="choose-city__nav">
-                    <p class="choose-city__title">Ваш город:</p>
-                    <ul class="choose-city__list">
-                        <li class="choose-city__item"><a href="#" class="choose-city__link">Челябинск</a></li>
-                        <li class="choose-city__item"><a href="#" class="choose-city__link">Копейск</a></li>
-                        <li class="choose-city__item"><a href="#" class="choose-city__link">Миасс</a></li>
-                        <li class="choose-city__item"><a href="#" class="choose-city__link">Кыштым</a></li>
-                        <li class="choose-city__item"><a href="#" class="choose-city__link">Озерск</a></li>
-                        <ul class="choose-city__list-moscow">
-                            <li class="choose-city__item"><a href="#" class="choose-city__link">Москва</a></li>
-                            <li class="choose-city__item"><a href="#" class="choose-city__link">Дубна</a></li>
-                        </ul>
-                    </ul>
-                </nav>
-            </div>
+  <div class="bright80 active"></div>
+  <div class="wrapper">
+    <header class="header">
+      <div class="container">
+        <div class="header__body">
+          <a class="header__logo logo" href="#">
+            <img src="./img/logo.png" alt="Логотип суши пятница" />
+          </a>
+          <button class="header__menu-button menu-button">
+            <span></span>
+          </button>
         </div>
-        <section class="stories">
-            <div class="stories__story story checked">
-                <a href="" class="story__link">
-                    <div class="story__image">
-                        <img src="./img/stories/story_1.png" alt="">
-                    </div>
-                    <p class="story__label">Новогоднее меню</p>
-                </a>
+      </div>
+      <nav class="side-bar hidden">
+        <div class="side-bar__body">
+          <div class="side-bar__header">
+            <a class="side-bar__logo logo" href="#">
+              <img src="./img/logo.png" alt="Логотип суши пятница" />
+            </a>
+            <a href="#" class="side-bar__login login">
+              <img src="./img/icons/profile.svg" alt="" />
+              <div class="login__body">
+                <div class="login__login">Войти</div>
+                <div class="login__desc">
+                  Начислим бонусы за закази сохраним адрес доставки.
+                </div>
+              </div>
+            </a>
+            <a href="#" class="side-bar__chat chat">
+              <img src="./img/icons/chat.svg" alt="" />
+              <p class="chat__text">Чат</p>
+            </a>
+          </div>
+          <div class="side-bar__footer">
+            <div class="side-bar__city">Челябинск</div>
+            <div class="side-bar__address-info">
+              <p class="side-bar__address">Пр. Победы, 254</p>
+              <p class="side-bar__address-label">Доставка</p>
             </div>
-            <div class="stories__story story">
-                <a href="" class="story__link">
-                    <div class="story__image">
-                        <img src="./img/stories/story_2.png" alt="">
-                    </div>
-                    <p class="story__label">Роллы по акции</p>
-
-                </a>
+            <div class="side-bar__contacts">
+              <a href="#" class="side-bar__contacts-link">Контакты</a>
             </div>
-            <div class="stories__story story">
-                <a href="" class="story__link">
-                    <div class="story__image">
-                        <img src="./img/stories/story_3.png" alt="">
-                    </div>
-                    <p class="story__label">Роллы на рождествои</p>
-                </a>
-            </div>
-            <div class="stories__story story">
-                <a href="" class="story__link">
-                    <div class="story__image">
-                        <img src="./img/stories/story_2.png" alt="">
-                    </div>
-                </a>
-                <p class="story__label">Новогоднее меню</p>
-
-            </div>
-        </section>
-        <section class="categories">
-            <button class="categories__menu-button menu-bu tton closed">
-                <span class="menu-button__burger"></span>
-            </button>
-            <ul class="categories__list">
-                <li class="categories__item active "><a href="#" class="categories__link">Роллы</a></li>
-                <li class="categories__item"><a href="#" class="categories__link">Наборы</a></li>
-                <li class="categories__item"><a href="#" class="categories__link">WOK</a></li>
-                <li class="categories__item"><a href="#" class="categories__link">Закуски</a></li>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <a class="cart empty hidden" href="./cart/cart.html">
+      <div class="cart__text">Корзина</div>
+      <div class="cart__value"></div>
+    </a>
+    <a class="cart filled" href="./cart/cart.html">
+      <div class="cart__text">Корзина</div>
+      <div class="cart__value">925 ₽</div>
+    </a>
+    <div class="choose-city active">
+      <div class="choose-city__body">
+        <a class="choose-city__logo logo" href="#">
+          <img src="./img/logo.png" alt="Логотип суши пятница" />
+        </a>
+        <nav class="choose-city__nav">
+          <p class="choose-city__title">Ваш город:</p>
+          <ul class="choose-city__list">
+            <li class="choose-city__item">
+              <a href="#" class="choose-city__link">Челябинск</a>
+            </li>
+            <li class="choose-city__item">
+              <a href="#" class="choose-city__link">Копейск</a>
+            </li>
+            <li class="choose-city__item">
+              <a href="#" class="choose-city__link">Миасс</a>
+            </li>
+            <li class="choose-city__item">
+              <a href="#" class="choose-city__link">Кыштым</a>
+            </li>
+            <li class="choose-city__item">
+              <a href="#" class="choose-city__link">Озерск</a>
+            </li>
+            <ul class="choose-city__list-moscow">
+              <li class="choose-city__item">
+                <a href="#" class="choose-city__link">Москва</a>
+              </li>
+              <li class="choose-city__item">
+                <a href="#" class="choose-city__link">Дубна</a>
+              </li>
             </ul>
-        </section>
-        <section class="products">
-            <div class="container">
-                <ul class="products__sushi sushi">
-                    <li class="sushi__product product" id="sushi">
-                        <div class="sushi__image">
-                            <img src="./img/products/product_1.png" alt="Филадельфия с огурцом" class="sushi__img">
-                        </div>
-                        <div class="sushi__info">
-                            <h3 class="sushi__title">
-                                Филадельфия с огурцом
-                            </h3>
-                            <p class="sushi__description">Лосось, креветка, сливочный сыр, огурец. 320 гр.</p>
-                            <div class="sushi__price">
-                                299 ₽
-                            </div>
-                        </div>
-                    </li>
-                    <li class="sushi__product product" id="cola">
-                        <div class="sushi__image">
-                            <img src="./img/products/product_2.png  " alt="Темпурный с курицей терияки"
-                                class="sushi__img">
-                            <img src="./img/icons/fire.svg" alt="" class="sushi__icon active">
-                        </div>
-                        <div class="sushi__info">
-                            <h3 class="sushi__title">
-                                Темпурный с курицей терияки </h3>
-                            <p class="sushi__description">Сливочный сыр, угорь, авокадо, креветка, кунжут, соус. 320
-                                гр.
-                            </p>
-                            <div class="sushi__price">
-                                369 ₽
-                            </div>
-                        </div>
-                    </li>
-                    <li class="sushi__product product">
-                        <div class="sushi__image">
-                            <img src="./img/products/product_3.png  " alt="Чизмаки с креветкой" class="sushi__img">
-                        </div>
-                        <div class="sushi__info">
-                            <h3 class="sushi__title">
-                                Чизмаки с креветкой </h3>
-                            <p class="sushi__description">Лосось, креветка, сливочный сыр, огурец. 250 гр
-                            </p>
-                            <div class="sushi__price">
-                                290 ₽
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-                <ul class="products__wok wok">
-                    <li class="wok__product product">
-                        <div class="wok__image">
-                            <img src="./img/products/product_4.png" alt="" class="wok__img">
-                        </div>
-                        <div class="wok__info">
-                            <h3 class="wok__title">
-                                Рисовая лапша с курицей соус Терияки
-                            </h3>
-                            <p class="wok__description">Соба, курица, морковь, лук репчатый, капуста белокочанная,
-                                перец, соус.</p>
-                            <div class="wok__price">
-                                399 ₽
-                            </div>
-                        </div>
-                    </li>
-                    <li class="wok__product product">
-                        <div class="wok__image">
-                            <img src="./img/products/product_5.png" alt="" class="wok__img">
-                            <img src="./img/icons/spicy.svg" alt="" class="wok__icon active">
-
-                        </div>
-                        <div class="wok__info">
-                            <h3 class="wok__title">
-                                Удон с говядиной соус Терияки </h3>
-                            <p class="wok__description">Рисовая лапша, креветки, капуста белокочанная, морковь, лук
-                                репчатый..
-                                гр.
-                            </p>
-                            <div class="wok__price">
-                                290 ₽
-                            </div>
-                        </div>
-                    </li>
-                    <li class="wok__product product">
-                        <div class="wok__image">
-                            <img src="./img/products/product_4.png" alt="" class="wok__img">
-                            <img src="./img/icons/calories.svg" alt="" class="wok__icon active">
-
-                        </div>
-                        <div class="wok__info">
-                            <h3 class="wok__title">
-                                Рисовая лапша с курицей соус Терияки
-                            </h3>
-                            <p class="wok__description">Соба, курица, морковь, лук репчатый, капуста белокочанная,
-                                перец, соус.</p>
-                            <div class="wok__price">
-                                399 ₽
-                            </div>
-                        </div>
-                    </li>
-                    <li class="wok__product product">
-                        <div class="wok__image">
-                            <img src="./img/products/product_5.png" alt="" class="wok__img">
-                        </div>
-                        <div class="wok__info">
-                            <h3 class="wok__title">
-                                Удон с говядиной соус Терияки </h3>
-                            <p class="wok__description">Рисовая лапша, креветки, капуста белокочанная, морковь, лук
-                                репчатый..
-                                гр.
-                            </p>
-                            <div class="wok__price">
-                                290 ₽
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-                <div class="products__offer">
-                    <p class="products__offer-title">
-                        Не нашли что искали? Звоните:
-                    </p>
-                    <a href="telto:+73517298080" class="products__offer-phone">8 (351) 729-80-80</a>
-                </div>
-            </div>
-        </section>
-        <div class="product-card hidden swipe" id="sushiCard">
-            <div class="product-card__body">
-                <div class="product-card__stick">
-                    <img src="./img/icons/stick.svg" alt="">
-                </div>
-                <div class="product-card__info">
-                    <div class="product-card__image">
-                        <img src="./img/product-cards/product_1.png" alt="">
-                    </div>
-                    <h3 class="product-card__name">Филадельфия</h3>
-                    <div class="product-card__description"> Лосось и сливочный сыр, 180г. </div>
-                </div>
-                <div class="product__options options">
-                    <label class="options__option option selected">
-                        <input type="radio" class="options__option-input" name="option" id="classic" checked="checked">
-                        <span class="options__option-fake"></span>
-                        <span class="options__option-label">Классическая</span>
-                        <div class="option__info">
-                            <div class="info__body">
-                                <div class="info__title">На 100 г.:</div>
-                                <ul class="info__list">
-                                    <li class="info__info">
-                                        <p>Энерг. ценность</p>
-                                        <p>248,6 ккал</p>
-                                    </li>
-                                    <li class="info__info">
-                                        <p>Белки</p>
-                                        <p>10,5 г.</p>
-                                    </li>
-                                    <li class="info__info">
-                                        <p>Жиры</p>
-                                        <p>10,1 г.</p>
-                                    </li>
-                                    <li class="info__info">
-                                        <p>Углеводы</p>
-                                        <p>27,2 г.</p>
-                                    </li>
-                                </ul>
-
-                            </div>
-
-
-                            <img src="./img/icons/info.svg" alt="" class="option__icon">
-                        </div>
-                    </label>
-                    <label class="options__option option">
-                        <input type="radio" class="options__option-input" name="option">
-                        <span class="options__option-fake"></span>
-                        <span class="options__option-label">Огурец</span>
-                        <div class="option__info">
-                            <img src="./img/icons/info.svg" alt="" class="option__icon">
-                        </div>
-                    </label>
-                    <label class="options__option option">
-                        <input type="radio" class="options__option-input" name="option">
-                        <span class="options__option-fake"></span>
-                        <span class="options__option-label">Авокадо</span>
-
-                    </label>
-                </div>
-                <button class="product-card__button">
-                    <span>В корзину за 299 ₽</span>
-                </button>
-            </div>
-        </div>
-        <div class="product-card hidden swipe" id="colaCard">
-            <div class="product-card__body">
-                <div class="product-card__stick">
-                    <img src="./img/icons/stick.svg" alt="">
-                </div>
-                <div class="product-card__info">
-                    <div class="product-card__image">
-                        <img src="./img/product-cards/product_2.png" alt="">
-                    </div>
-                    <div class="product-card__info2">
-                        <h3 class="product-card__name">Добрый лимон-лайм</h3>
-                        <img src="./img/icons/info.svg" alt="" class="product-card__info-icon">
-                    </div>
-                    <div class="product-card__description"> Сильногазированный напиток, 500мл </div>
-                </div>
-                <button class="product-card__button">
-                    <span>В корзину за 74 ₽</span>
-                </button>
-            </div>
-        </div>
+          </ul>
+        </nav>
+      </div>
     </div>
-    <div class="background-brightness hidden"></div>
-    <script src="./js/index.js"></script>
+    <section class="stories">
+      <div class="stories__story story checked">
+        <a href="" class="story__link">
+          <div class="story__image">
+            <img src="./img/stories/story_1.png" alt="" />
+          </div>
+          <p class="story__label">Новогоднее меню</p>
+        </a>
+      </div>
+      <div class="stories__story story">
+        <a href="" class="story__link">
+          <div class="story__image">
+            <img src="./img/stories/story_2.png" alt="" />
+          </div>
+          <p class="story__label">Роллы по акции</p>
+        </a>
+      </div>
+      <div class="stories__story story">
+        <a href="" class="story__link">
+          <div class="story__image">
+            <img src="./img/stories/story_3.png" alt="" />
+          </div>
+          <p class="story__label">Роллы на рождествои</p>
+        </a>
+      </div>
+      <div class="stories__story story">
+        <a href="" class="story__link">
+          <div class="story__image">
+            <img src="./img/stories/story_2.png" alt="" />
+          </div>
+        </a>
+        <p class="story__label">Новогоднее меню</p>
+      </div>
+    </section>
+    <section class="categories">
+      <button class="categories__menu-button menu-bu tton closed">
+        <span class="menu-button__burger"></span>
+      </button>
+      <ul class="categories__list">
+        <li class="categories__item active">
+          <a href="#" class="categories__link">Роллы</a>
+        </li>
+        <li class="categories__item">
+          <a href="#" class="categories__link">Наборы</a>
+        </li>
+        <li class="categories__item">
+          <a href="#" class="categories__link">WOK</a>
+        </li>
+        <li class="categories__item">
+          <a href="#" class="categories__link">Закуски</a>
+        </li>
+      </ul>
+    </section>
+    <section class="products">
+      <div class="container">
+        <ul class="products__sushi sushi">
+          <li class="sushi__product product" id="sushi">
+            <div class="sushi__image">
+              <img src="./img/products/product_1.png" alt="Филадельфия с огурцом" class="sushi__img" />
+            </div>
+            <div class="sushi__info">
+              <h3 class="sushi__title">Филадельфия с огурцом</h3>
+              <p class="sushi__description">
+                Лосось, креветка, сливочный сыр, огурец. 320 гр.
+              </p>
+              <div class="sushi__price">299 ₽</div>
+            </div>
+          </li>
+          <li class="sushi__product product" id="cola">
+            <div class="sushi__image">
+              <img src="./img/products/product_2.png  " alt="Темпурный с курицей терияки" class="sushi__img" />
+              <img src="./img/icons/fire.svg" alt="" class="sushi__icon active" />
+            </div>
+            <div class="sushi__info">
+              <h3 class="sushi__title">Темпурный с курицей терияки</h3>
+              <p class="sushi__description">
+                Сливочный сыр, угорь, авокадо, креветка, кунжут, соус. 320 гр.
+              </p>
+              <div class="sushi__price">369 ₽</div>
+            </div>
+          </li>
+          <li class="sushi__product product">
+            <div class="sushi__image">
+              <img src="./img/products/product_3.png  " alt="Чизмаки с креветкой" class="sushi__img" />
+            </div>
+            <div class="sushi__info">
+              <h3 class="sushi__title">Чизмаки с креветкой</h3>
+              <p class="sushi__description">
+                Лосось, креветка, сливочный сыр, огурец.250 гр
+              </p>
+              <div class="sushi__price">290 ₽</div>
+            </div>
+          </li>
+        </ul>
+        <ul class="products__wok wok">
+          <li class="wok__product product">
+            <div class="wok__image">
+              <img src="./img/products/product_4.png" alt="" class="wok__img" />
+            </div>
+            <div class="wok__info">
+              <h3 class="wok__title">Рисовая лапша с курицей соус Терияки</h3>
+              <p class="wok__description">
+                Соба, курица, морковь, лук репчатый, капуста белокочанная,
+                перец, соус.
+              </p>
+              <div class="wok__price">399 ₽</div>
+            </div>
+          </li>
+          <li class="wok__product product">
+            <div class="wok__image">
+              <img src="./img/products/product_5.png" alt="" class="wok__img" />
+              <img src="./img/icons/spicy.svg" alt="" class="wok__icon active" />
+            </div>
+            <div class="wok__info">
+              <h3 class="wok__title">Удон с говядиной соус Терияки</h3>
+              <p class="wok__description">
+                Рисовая лапша, креветки, капуста белокочанная, морковь, лук
+                репчатый.. гр.
+              </p>
+              <div class="wok__price">290 ₽</div>
+            </div>
+          </li>
+          <li class="wok__product product">
+            <div class="wok__image">
+              <img src="./img/products/product_4.png" alt="" class="wok__img" />
+              <img src="./img/icons/calories.svg" alt="" class="wok__icon active" />
+            </div>
+            <div class="wok__info">
+              <h3 class="wok__title">Рисовая лапша с курицей соус Терияки</h3>
+              <p class="wok__description">
+                Соба, курица, морковь, лук репчатый, капуста белокочанная,
+                перец, соус.
+              </p>
+              <div class="wok__price">399 ₽</div>
+            </div>
+          </li>
+          <li class="wok__product product">
+            <div class="wok__image">
+              <img src="./img/products/product_5.png" alt="" class="wok__img" />
+            </div>
+            <div class="wok__info">
+              <h3 class="wok__title">Удон с говядиной соус Терияки</h3>
+              <p class="wok__description">
+                Рисовая лапша, креветки, капуста белокочанная, морковь, лук
+                репчатый.. гр.
+              </p>
+              <div class="wok__price">290 ₽</div>
+            </div>
+          </li>
+        </ul>
+        <div class="products__offer">
+          <p class="products__offer-title">Не нашли что искали? Звоните:</p>
+          <a href="telto:+73517298080" class="products__offer-phone">8 (351) 729-80-80</a>
+        </div>
+      </div>
+    </section>
+    <div class="product-card hidden swipe" id="sushiCard">
+      <div class="product-card__body">
+        <div class="product-card__stick">
+          <img src="./img/icons/stick.svg" alt="" />
+        </div>
+        <div class="product-card__info">
+          <div class="product-card__image">
+            <img src="./img/product-cards/product_1.png" alt="" />
+          </div>
+          <h3 class="product-card__name">Филадельфия</h3>
+          <div class="product-card__description">
+            Лосось и сливочный сыр, 180г.
+          </div>
+        </div>
+        <div class="product__options options">
+          <label class="options__option option selected">
+            <input type="radio" class="options__option-input" name="option" id="classic" checked="checked" />
+            <span class="options__option-fake"></span>
+            <span class="options__option-label">Классическая</span>
+            <div class="option__info">
+              <div class="info__body">
+                <div class="info__title">На 100 г.:</div>
+                <ul class="info__list">
+                  <li class="info__info">
+                    <p>Энерг. ценность</p>
+                    <p>248,6 ккал</p>
+                  </li>
+                  <li class="info__info">
+                    <p>Белки</p>
+                    <p>10,5 г.</p>
+                  </li>
+                  <li class="info__info">
+                    <p>Жиры</p>
+                    <p>10,1 г.</p>
+                  </li>
+                  <li class="info__info">
+                    <p>Углеводы</p>
+                    <p>27,2 г.</p>
+                  </li>
+                </ul>
+              </div>
+              <img src="./img/icons/info.svg" alt="" class="option__icon" />
+            </div>
+          </label>
+          <label class="options__option option">
+            <input type="radio" class="options__option-input" name="option" />
+            <span class="options__option-fake"></span>
+            <span class="options__option-label">Огурец</span>
+            <div class="option__info">
+              <img src="./img/icons/info.svg" alt="" class="option__icon" />
+            </div>
+          </label>
+          <label class="options__option option">
+            <input type="radio" class="options__option-input" name="option" />
+            <span class="options__option-fake"></span>
+            <span class="options__option-label">Авокадо</span>
+          </label>
+        </div>
+        <button class="product-card__button">
+          <span>В корзину за 299 ₽</span>
+        </button>
+      </div>
+    </div>
+    <div class="product-card hidden swipe" id="colaCard">
+      <div class="product-card__body">
+        <div class="product-card__stick">
+          <img src="./img/icons/stick.svg" alt="" />
+        </div>
+        <div class="product-card__info">
+          <div class="product-card__image">
+            <img src="./img/product-cards/product_2.png" alt="" />
+          </div>
+          <div class="product-card__info2">
+            <h3 class="product-card__name">Добрый лимон-лайм</h3>
+            <img src="./img/icons/info.svg" alt="" class="product-card__info-icon" />
+          </div>
+          <div class="product-card__description">
+            Сильногазированный напиток, 500мл
+          </div>
+        </div>
+        <button class="product-card__button">
+          <span>В корзину за 74 ₽</span>
+        </button>
+      </div>
+    </div>
+    <div class="address-menu hidden swipe" id="addressDeliveryMenu">
+      <div class="address-menu__stick">
+        <img src="./img/icons/stick.svg" alt="" />
+      </div>
+      <div class="address-menu__body">
+
+        <div class="address-menu__info">
+          <h3 class="address-menu__name">Укажите адрес</h3>
+          <div class="address-menu__description">
+            Так мы определим наличие и рассчитаем время доставки.
+          </div>
+        </div>
+        <div class="address-menu__options">
+          <label class="address-menu__option option selected" id="#addressDelivery">
+            <div class="address-menu__option-radio">
+              <input type="radio" class="address-menu__option-input" name="addressOption" checked="checked" />
+              <span class="address-menu__option-icon"></span>
+              <span class="address-menu__option-label">Адрес доставки</span>
+            </div>
+            <div class="address-menu__address-input">
+              <input type="text" class="address-menu__street-inp" placeholder="Улица" />
+              <input type="text" class="address-menu__house-inp" placeholder="Дом" />
+            </div>
+            <div class="address-menu__address-selection">
+              <span class="address-menu__address">Пр. Победы, 254</span>
+              <span class="address-menu__address-additional">кв. 159, 4 подъезд, 5 этаж</span>
+            </div>
+          </label>
+          <label class="address-menu__option option column" id="#addressDelivery">
+            <div class="address-menu__option-radio">
+              <input type="radio" class="address-menu__option-input" name="addressOption" />
+              <span class="address-menu__option-icon"></span>
+              <span class="address-menu__option-label">Самовывоз</span>
+            </div>
+            <div class="address-menu__pickup-selection">
+              <span class="address-menu__pickup-text">Выберите ресторан</span>
+            </div>
+          </label>
+        </div>
+        <button class="address-menu__button">
+          <span>Выбрать</span>
+        </button>
+        <button class="address-menu__login">
+          <img class="address-menu__login-img" src="./img/icons/profile.svg" alt="">
+          <span class="address-menu__login-text">Войти в профиль</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="background-brightness hidden"></div>
+  <script src="./js/index.js"></script>
 </body>
 
 </html>
