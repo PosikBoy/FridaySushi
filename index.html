@@ -55,6 +55,46 @@
           </div>
         </div>
       </nav>
+      <nav class="side-bar hidden">
+        <div class="side-bar__body">
+          <div class="side-bar__header">
+            <a class="side-bar__logo logo" href="#">
+              <img src="/img/logo.png" alt="Логотип суши пятница">
+            </a>
+            <a href="#" class="side-bar__login login logged-in">
+              <img src="./img/icons/profile.svg" alt="">
+              <div class="login__body">
+                <div class="login__login">Денис</div>
+              </div>
+
+            </a>
+            <a href="#" class="side-bar__order">
+              <img src="./img/icons/history.svg" alt="">
+              <p class="side-bar__order-text">Заказы</p>
+            </a>
+            <a href="#" class="side-bar__my-addresses">
+              <img src="./img/icons/house.svg" alt="">
+              <p class="side-bar__my-addresses-text">Мои адреса</p>
+            </a>
+            <a href="#" class="side-bar__chat chat">
+              <img src="./img/icons/chat.svg" alt="">
+              <p class="chat__text">Чат</p>
+            </a>
+          </div>
+          <div class="side-bar__footer">
+            <div class="side-bar__city">
+              Челябинск
+            </div>
+            <div class="side-bar__address-info">
+              <p class="side-bar__address">Пр. Победы, 254</p>
+              <p class="side-bar__address-label">Доставка</p>
+            </div>
+            <div class="side-bar__contacts">
+              <a href="#" class="side-bar__contacts-link">Контакты</a>
+            </div>
+          </div>
+        </div>
+      </nav>
     </header>
     <a class="cart empty hidden" href="./cart/cart.html">
       <div class="cart__text">Корзина</div>
@@ -274,7 +314,7 @@
             <input type="radio" class="options__option-input" name="option" id="classic" checked="checked" />
             <span class="options__option-fake"></span>
             <span class="options__option-label">Классическая</span>
-            <div class="option__info">
+            <div class="option__info info">
               <div class="info__body">
                 <div class="info__title">На 100 г.:</div>
                 <ul class="info__list">
@@ -386,6 +426,59 @@
           <img class="address-menu__login-img" src="./img/icons/profile.svg" alt="">
           <span class="address-menu__login-text">Войти в профиль</span>
         </button>
+      </div>
+    </div>
+    <div class="order" id="activeOrder">
+      <div class="order__stick">
+        <img src="./img/icons/stick.svg" alt="" />
+      </div>
+      <div class="order__body">
+        <div class="order__info">
+          <div class="order__info-status">
+            <img src="./img/icons/orderStatus1.svg" alt="" class="order__info-icon">
+            <div class="order__info-text">
+              <div class="order__number">Заказ 81</div>
+              <div class="order__status-text">Готовится</div>
+            </div>
+          </div>
+          <div class="order__timer">
+            59:59
+          </div>
+        </div>
+        <div class="order__status">
+          <div class="order__status-block active">
+            <div class="order__status-icon">
+              <img src="./img/icons/orderStatus1.svg" alt="">
+            </div>
+            <div class="order__status-text">В очереди</div>
+          </div>
+          <div class="order__status-block">
+            <div class="order__status-icon">
+              <img src="./img/icons/orderStatus2.svg" alt="">
+            </div>
+            <div class="order__status-text">Готовится</div>
+          </div>
+          <div class="order__status-block">
+            <div class="order__status-icon">
+              <img src="./img/icons/orderStatus3.svg" alt="">
+            </div>
+            <div class="order__status-text">Едет к вам</div>
+          </div>
+          <div class="order__status-block">
+            <div class="order__status-icon">
+              <img src="./img/icons/orderStatus4.svg" alt="">
+            </div>
+            <div class="order__status-text">Доставлен</div>
+          </div>
+        </div>
+        <div class="order__buttons">
+          <a class="order__button" href="#">
+            <span>Задать вопрос</span>
+          </a>
+          <a class="order__button" href="#">
+            <span>Подробнее о заказе</span>
+          </a>
+        </div>
       </div>
     </div>
   </div>

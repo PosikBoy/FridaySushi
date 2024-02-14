@@ -590,7 +590,7 @@
   justify-content: center;
   gap: 10px;
   position: fixed;
-  z-index: 2;
+  z-index: 3;
   bottom: 0;
   height: 56px;
   width: 100vw;
@@ -833,7 +833,6 @@
   flex-direction: column;
   gap: 20px;
   padding: 12px 20px 20px 20px;
-  background-color: white;
   width: 100vw;
 }
 .address-menu__stick {
@@ -1040,4 +1039,123 @@
   letter-spacing: -0.01em;
   text-align: right;
   color: black;
+}
+
+/* order */
+
+.order {
+  padding-top: 8px;
+  padding-bottom: 56px;
+  background-color: #ffdb6c;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  bottom: 0;
+  z-index: 2;
+  overflow: hidden;
+  transition: all 0.5s;
+  border-radius: 16px 16px 0 0;
+}
+
+/* .order {
+  bottom: -100%;
+  transition: all 0.5s;
+  z-index: 10;
+} */
+.order__body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 12px 20px 20px 20px;
+  width: 100vw;
+}
+.order.hidden {
+  bottom: -206px;
+}
+.order__stick {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.order__info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.order__info-status {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.order__number,
+.order__status-text {
+  font-family: "Cera Pro";
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 133%;
+  letter-spacing: -0.01em;
+  color: black;
+}
+
+.order__timer {
+  font-family: "Cera Round Pro";
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 111%;
+  letter-spacing: -0.03em;
+  text-align: right;
+}
+
+.order__status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.order__status-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0.5;
+}
+.order__status-block img {
+  transform: scale(0.82);
+}
+
+.order__status-block.active img {
+  transform: scale(1);
+}
+.order__status-block.active {
+  opacity: 1;
+}
+
+.order__status-text {
+  font-family: "Cera Pro";
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 123%;
+  letter-spacing: -0.01em;
+  text-align: center;
+}
+
+.order__button {
+  border-top: solid 1px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 48px;
+}
+
+.order__button span {
+  font-family: "Cera Round Pro";
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 118%;
+  letter-spacing: -0.01em;
+  color: #000000;
 }

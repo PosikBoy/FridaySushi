@@ -4,6 +4,7 @@ var categoryList = document.querySelector(".categories__list");
 var categoryMenuButton = document.querySelector(".categories__menu-button");
 var bright80 = document.querySelector(".bright80");
 
+//Функция, чтобы затемнять все, что под выезжающими меню и тд.
 const toggleBrightness = () => {
   bright80.classList.toggle("active");
 };
@@ -187,5 +188,63 @@ addressMenuOptions.forEach(function (option) {
       item.classList.remove("selected");
     });
     this.classList.add("selected");
+  });
+});
+
+//order
+
+const orders = document.querySelectorAll(".order");
+
+orders.forEach((item) => {
+  var startY, startBottom, startHeight;
+  var menuVisible = true;
+  function updateMenu(newBottom) {
+    item.style.bottom = newBottom + "px";
+  }
+  function hideMenu() {
+    item.style = "";
+    item.style.transition = "bottom 0.5s ease";
+    item.classList.add("hidden");
+    menuVisible = false;
+    setTimeout(() => {
+      item.style = "";
+    }, 500);
+  }
+  function showMenu() {
+    item.style.transition = "bottom 0.3s ease";
+    item.style.bottom = "0";
+    menuVisible = true;
+  }
+  item.addEventListener("touchstart", function (e) {
+    startY = e.touches[0].clientY;
+    item.style.transition = "none";
+    startBottom = parseInt(
+      window.getComputedStyle(item).getPropertyValue("bottom")
+    );
+    startHeight = item.offsetHeight;
+  });
+  item.addEventListener("touchmove", function (e) {
+    item.style.transition = "none";
+    var currentY = e.touches[0].clientY;
+    var diff = currentY - startY;
+    var newBottom = startBottom - diff;
+    if (newBottom >= -startHeight && newBottom <= 0) {
+      requestAnimationFrame(function () {
+        updateMenu(newBottom);
+      });
+    }
+  });
+  item.addEventListener("touchend", function (e) {
+    var touchEndY = e.changedTouches[0].clientY;
+    var diffY = touchEndY - startY;
+    if (diffY >= startHeight * 0.2) {
+      requestAnimationFrame(function () {
+        hideMenu();
+      });
+    } else {
+      requestAnimationFrame(function () {
+        showMenu();
+      });
+    }
   });
 });
