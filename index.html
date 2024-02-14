@@ -96,11 +96,11 @@
         </div>
       </nav>
     </header>
-    <a class="cart empty hidden" href="./cart/cart.html">
+    <a class="cart empty " href="./cart/cart.html">
       <div class="cart__text">Корзина</div>
       <div class="cart__value"></div>
     </a>
-    <a class="cart filled" href="./cart/cart.html">
+    <a class="cart filled hidden" href="./cart/cart.html">
       <div class="cart__text">Корзина</div>
       <div class="cart__value">925 ₽</div>
     </a>
@@ -428,17 +428,17 @@
         </button>
       </div>
     </div>
-    <div class="order" id="activeOrder">
+    <div class="order hidden status3" id="activeOrder">
       <div class="order__stick">
         <img src="./img/icons/stick.svg" alt="" />
       </div>
       <div class="order__body">
         <div class="order__info">
           <div class="order__info-status">
-            <img src="./img/icons/orderStatus1.svg" alt="" class="order__info-icon">
+            <img src="./img/icons/orderStatus3.svg" alt="" class="order__info-icon">
             <div class="order__info-text">
               <div class="order__number">Заказ 81</div>
-              <div class="order__status-text">Готовится</div>
+              <div class="order__status-text">Едет к вам</div>
             </div>
           </div>
           <div class="order__timer">
@@ -446,7 +446,7 @@
           </div>
         </div>
         <div class="order__status">
-          <div class="order__status-block active">
+          <div class="order__status-block">
             <div class="order__status-icon">
               <img src="./img/icons/orderStatus1.svg" alt="">
             </div>
@@ -458,7 +458,7 @@
             </div>
             <div class="order__status-text">Готовится</div>
           </div>
-          <div class="order__status-block">
+          <div class="order__status-block active">
             <div class="order__status-icon">
               <img src="./img/icons/orderStatus3.svg" alt="">
             </div>
@@ -471,7 +471,21 @@
             <div class="order__status-text">Доставлен</div>
           </div>
         </div>
+        <!-- Блок если курьер едет к вам добавить класс hidden к order__map, чтобы скрыть-->
+        <div class="order__map">
+          <div style="position:relative;overflow:hidden;"><a
+              href="https://yandex.ru/maps/213/moscow/?utm_medium=mapframe&utm_source=maps"
+              style="color:#eee;font-size:12px;position:absolute;top:0px;">Москва</a><a
+              href="https://yandex.ru/maps/213/moscow/?ll=37.694805%2C55.767983&utm_medium=mapframe&utm_source=maps&z=13.95"
+              style="color:#eee;font-size:12px;position:absolute;top:14px;">Яндекс Карты</a><iframe
+              src="https://yandex.ru/map-widget/v1/?ll=37.694805%2C55.767983&z=13.95" width="100%" height="300"
+              allowfullscreen="true" style="position:relative;"></iframe></div>
+        </div>
         <div class="order__buttons">
+          <!-- Кнопка если курьер едет к вам добавить класс hidden к order__button, чтобы скрыть-->
+          <a class="order__button" href="#">
+            <span>Позвонить курьеру</span>
+          </a>
           <a class="order__button" href="#">
             <span>Задать вопрос</span>
           </a>

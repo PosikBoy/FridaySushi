@@ -34,6 +34,9 @@
   font-display: swap;
 }
 
+.wrapper {
+  position: relative;
+}
 .container {
   padding: 0px 20px;
 }
@@ -1057,21 +1060,18 @@
   transition: all 0.5s;
   border-radius: 16px 16px 0 0;
 }
-
-/* .order {
-  bottom: -100%;
-  transition: all 0.5s;
-  z-index: 10;
-} */
 .order__body {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  padding: 12px 20px 20px 20px;
+  padding: 12px 20px 0px 20px;
   width: 100vw;
 }
 .order.hidden {
-  bottom: -206px;
+  bottom: -190px;
+}
+.status3.hidden {
+  bottom: -552px;
+
 }
 .order__stick {
   width: 100%;
@@ -1089,9 +1089,20 @@
 .order__info-status {
   display: flex;
   align-items: center;
-  gap: 12px;
+  padding-bottom: 20px;
 }
-
+.order__info-icon {
+  width: 36px;
+  height: 36px;
+  margin-right: 12px;
+  transition: all 0.5s;
+}
+.order__info-icon.hidden {
+  margin-right: 0px;
+  width: 0;
+  height: 0;
+  transition: all 0.5s;
+}
 .order__number,
 .order__status-text {
   font-family: "Cera Pro";
@@ -1115,6 +1126,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 20px 0;
+  border-top: solid 1px rgba(0, 0, 0, 0.1);
 }
 .order__status-block {
   display: flex;
@@ -1133,6 +1146,10 @@
   opacity: 1;
 }
 
+.order__map img{
+  width: 100%;
+  im
+}
 .order__status-text {
   font-family: "Cera Pro";
   font-weight: 400;
@@ -1158,4 +1175,12 @@
   line-height: 118%;
   letter-spacing: -0.01em;
   color: #000000;
+}
+
+.order__map.hidden {
+  display: none;
+}
+
+.order__button.hidden {
+  display: none;
 }

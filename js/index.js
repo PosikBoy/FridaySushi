@@ -196,6 +196,8 @@ addressMenuOptions.forEach(function (option) {
 const orders = document.querySelectorAll(".order");
 
 orders.forEach((item) => {
+  const statusInfoIcon = document.querySelector(".order__info-icon");
+
   var startY, startBottom, startHeight;
   var menuVisible = true;
   function updateMenu(newBottom) {
@@ -205,6 +207,8 @@ orders.forEach((item) => {
     item.style = "";
     item.style.transition = "bottom 0.5s ease";
     item.classList.add("hidden");
+    statusInfoIcon.classList.remove("hidden");
+
     menuVisible = false;
     setTimeout(() => {
       item.style = "";
@@ -214,10 +218,12 @@ orders.forEach((item) => {
     item.style.transition = "bottom 0.3s ease";
     item.style.bottom = "0";
     menuVisible = true;
+    statusInfoIcon.classList.add("hidden");
   }
   item.addEventListener("touchstart", function (e) {
     startY = e.touches[0].clientY;
     item.style.transition = "none";
+    body.classList.add("inactive");
     startBottom = parseInt(
       window.getComputedStyle(item).getPropertyValue("bottom")
     );
@@ -237,6 +243,8 @@ orders.forEach((item) => {
   item.addEventListener("touchend", function (e) {
     var touchEndY = e.changedTouches[0].clientY;
     var diffY = touchEndY - startY;
+    body.classList.remove("inactive");
+
     if (diffY >= startHeight * 0.2) {
       requestAnimationFrame(function () {
         hideMenu();
