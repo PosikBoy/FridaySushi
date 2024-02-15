@@ -8,7 +8,7 @@ function disableScroll() {
   // Получаем текущую прокрутку страницы
   const scrollY = window.scrollY;
   // Задаем стили для блокировки прокрутки
-  // wrapper.style.overflow = "hidden";
+  wrapper.style.overflow = "hidden";
   wrapper.style.position = "fixed";
   wrapper.style.top = `-${scrollY}px`;
 }
@@ -338,6 +338,7 @@ orders.forEach((item, index) => {
     );
   });
   item.addEventListener("touchmove", function (e) {
+    e.stopPropagation();
     item.style.transition = "none";
     var currentY = e.touches[0].clientY;
     var diff = currentY - startY;

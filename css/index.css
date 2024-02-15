@@ -1084,6 +1084,7 @@ right: 0; */
   overflow: hidden;
   transition: all 0.5s;
   border-radius: 16px 16px 0 0;
+  touch-action: none;
 }
 .order__body {
   display: flex;
