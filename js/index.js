@@ -286,8 +286,8 @@ orders.forEach((item, index) => {
     var newBottom = startBottom - diff;
     console.log(
       newBottom,
-      newBottom >= -startHeight && newBottom <= initialHeight + initialBottom,
-      startHeight - initialBottom
+      newBottom >= -initialHeight && newBottom <= initialHeight + initialBottom,
+      initialHeight - initialBottom
     );
 
     if (
