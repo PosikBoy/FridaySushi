@@ -12,6 +12,7 @@ const showMenu = (menu) => {
 };
 
 const hideMenu = () => {
+  console.log("hidemenu");
   bright80.classList.remove("active");
   //скрываем все меню, при нажатии на крестик или область с пониженной яркостью
   menus.forEach((item) => {
@@ -22,6 +23,7 @@ const hideMenu = () => {
   bright80.removeEventListener("click", () => {
     hideMenu();
   });
+  body.classList.remove("inactive");
 };
 bright80.addEventListener("click", () => {
   hideMenu();
@@ -241,6 +243,12 @@ ordersWrapper.addEventListener("click", () => {
 
 let statusInfoIconArray = document.querySelectorAll(".order__info-icon");
 
+const preventDefault = (event) => {
+  event.preventDefault();
+};
+
+const productsBlock = document.querySelector(".products");
+productsBlock.style.paddingBottom = 80 * orders.length + "px";
 orders.forEach((item, index) => {
   let statusInfoIcon = statusInfoIconArray[index];
   let initialHeight = item.clientHeight;
@@ -288,13 +296,7 @@ orders.forEach((item, index) => {
     startBottom = parseInt(
       window.getComputedStyle(item).getPropertyValue("bottom")
     );
-    document.body.addEventListener(
-      "touchmove",
-      function (event) {
-        event.preventDefault();
-      },
-      { passive: false }
-    );
+    document.body.addEventListener("touchmove", preventDefault);
   });
   item.addEventListener("touchmove", function (e) {
     item.style.transition = "none";
@@ -322,6 +324,7 @@ orders.forEach((item, index) => {
         showMenu();
       });
     }
+    document.body.removeEventListener("touchmove", preventDefault);
     body.classList.remove("inactive");
   });
 });
