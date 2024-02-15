@@ -81,7 +81,6 @@
   border-radius: 50%;
   display: block;
   position: relative;
-  z-index: 12;
   width: 36px;
   height: 36px;
   flex-shrink: 0;
@@ -89,6 +88,7 @@
 .menu-button.open {
   background-color: rgba(192, 192, 192, 1);
   position: fixed;
+  z-index:12;
 }
 .menu-button.open {
   position: fixed;
