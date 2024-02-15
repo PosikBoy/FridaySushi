@@ -10,7 +10,7 @@
 </head>
 
 <body class="inactive">
-  <div class="bright80 active"></div>
+  <div class="bright80"></div>
   <div class="wrapper">
     <header class="header">
       <div class="container">
@@ -23,7 +23,7 @@
           </button>
         </div>
       </div>
-      <nav class="side-bar hidden">
+      <nav class="side-bar hidden menu">
         <div class="side-bar__body">
           <div class="side-bar__header">
             <a class="side-bar__logo logo" href="#">
@@ -104,7 +104,7 @@
       <div class="cart__text">Корзина</div>
       <div class="cart__value">925 ₽</div>
     </a>
-    <div class="choose-city active">
+    <div class="choose-city">
       <div class="choose-city__body">
         <a class="choose-city__logo logo" href="#">
           <img src="./img/logo.png" alt="Логотип суши пятница" />
@@ -174,7 +174,7 @@
       </div>
     </section>
     <section class="categories">
-      <button class="categories__menu-button menu-bu tton closed">
+      <button class="categories__menu-button menu-button">
         <span class="menu-button__burger"></span>
       </button>
       <ul class="categories__list">
@@ -295,7 +295,7 @@
         </div>
       </div>
     </section>
-    <div class="product-card hidden swipe" id="sushiCard">
+    <div class="product-card hidden swipe menu" id="sushiCard">
       <div class="product-card__body">
         <div class="product-card__stick">
           <img src="./img/icons/stick.svg" alt="" />
@@ -358,7 +358,7 @@
         </button>
       </div>
     </div>
-    <div class="product-card hidden swipe" id="colaCard">
+    <div class="product-card hidden swipe menu" id="colaCard">
       <div class="product-card__body">
         <div class="product-card__stick">
           <img src="./img/icons/stick.svg" alt="" />
@@ -380,7 +380,7 @@
         </button>
       </div>
     </div>
-    <div class="address-menu hidden swipe" id="addressDeliveryMenu">
+    <div class="address-menu hidden swipe menu" id="addressDeliveryMenu">
       <div class="address-menu__stick">
         <img src="./img/icons/stick.svg" alt="" />
       </div>
@@ -429,235 +429,239 @@
       </div>
     </div>
     <div class="orders">
-      <div class="order" id="activeOrder">
-        <div class="order__stick">
-          <img src="./img/icons/stick.svg" alt="" />
-        </div>
-        <div class="order__body">
-          <div class="order__info">
-            <div class="order__info-status">
-              <img src="./img/icons/orderStatus1.svg" alt="" class="order__info-icon">
-              <div class="order__info-text">
-                <div class="order__number">Заказ 1</div>
+      <div class="orders__wrapper"></div>
+      <div class="orders__body">
+        <div class="order" id="activeOrder">
+          <div class="order__stick">
+            <img src="./img/icons/stick.svg" alt="" />
+          </div>
+          <div class="order__body">
+            <div class="order__info">
+              <div class="order__info-status">
+                <img src="./img/icons/orderStatus1.svg" alt="" class="order__info-icon">
+                <div class="order__info-text">
+                  <div class="order__number">Заказ 1</div>
+                  <div class="order__status-text">В очереди</div>
+                </div>
+              </div>
+              <div class="order__timer">
+                59:59
+              </div>
+            </div>
+            <div class="order__status">
+              <div class="order__status-block active">
+                <div class="order__status-icon ">
+                  <img src="./img/icons/orderStatus1.svg" alt="">
+                </div>
                 <div class="order__status-text">В очереди</div>
               </div>
-            </div>
-            <div class="order__timer">
-              59:59
-            </div>
-          </div>
-          <div class="order__status">
-            <div class="order__status-block active">
-              <div class="order__status-icon ">
-                <img src="./img/icons/orderStatus1.svg" alt="">
-              </div>
-              <div class="order__status-text">В очереди</div>
-            </div>
-            <div class="order__status-block">
-              <div class="order__status-icon">
-                <img src="./img/icons/orderStatus2.svg" alt="">
-              </div>
-              <div class="order__status-text">Готовится</div>
-            </div>
-            <div class="order__status-block ">
-              <div class="order__status-icon">
-                <img src="./img/icons/orderStatus3.svg" alt="">
-              </div>
-              <div class="order__status-text">Едет к вам</div>
-            </div>
-            <div class="order__status-block">
-              <div class="order__status-icon">
-                <img src="./img/icons/orderStatus4.svg" alt="">
-              </div>
-              <div class="order__status-text">Доставлен</div>
-            </div>
-          </div>
-          <div class="order__buttons hidden">
-            <a class="order__button" href="#">
-              <span>Задать вопрос</span>
-            </a>
-            <a class="order__button" href="#">
-              <span>Подробнее о заказе</span>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="order" id="activeOrder">
-        <div class="order__stick">
-          <img src="./img/icons/stick.svg" alt="" />
-        </div>
-        <div class="order__body">
-          <div class="order__info">
-            <div class="order__info-status">
-              <img src="./img/icons/orderStatus2.svg" alt="" class="order__info-icon">
-              <div class="order__info-text">
-                <div class="order__number">Заказ 2</div>
+              <div class="order__status-block">
+                <div class="order__status-icon">
+                  <img src="./img/icons/orderStatus2.svg" alt="">
+                </div>
                 <div class="order__status-text">Готовится</div>
               </div>
-            </div>
-            <div class="order__timer">
-              45:23
-            </div>
-          </div>
-          <div class="order__status">
-            <div class="order__status-block">
-              <div class="order__status-icon">
-                <img src="./img/icons/orderStatus1.svg" alt="">
-              </div>
-              <div class="order__status-text">В очереди</div>
-            </div>
-            <div class="order__status-block active">
-              <div class="order__status-icon">
-                <img src="./img/icons/orderStatus2.svg" alt="">
-              </div>
-              <div class="order__status-text">Готовится</div>
-            </div>
-            <div class="order__status-block">
-              <div class="order__status-icon">
-                <img src="./img/icons/orderStatus3.svg" alt="">
-              </div>
-              <div class="order__status-text">Едет к вам</div>
-            </div>
-            <div class="order__status-block">
-              <div class="order__status-icon">
-                <img src="./img/icons/orderStatus4.svg" alt="">
-              </div>
-              <div class="order__status-text">Доставлен</div>
-            </div>
-          </div>
-          <!-- Блок если курьер едет к вам добавить класс hidden к order__map, чтобы скрыть-->
-          <div class="order__buttons">
-            <!-- Кнопка если курьер едет к вам добавить класс hidden к order__button, чтобы скрыть-->
-
-            <a class="order__button" href="#">
-              <span>Задать вопрос</span>
-            </a>
-            <a class="order__button" href="#">
-              <span>Подробнее о заказе</span>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="order" id="activeOrder">
-        <div class="order__stick">
-          <img src="./img/icons/stick.svg" alt="" />
-        </div>
-        <div class="order__body">
-          <div class="order__info">
-            <div class="order__info-status">
-              <img src="./img/icons/orderStatus3.svg" alt="" class="order__info-icon">
-              <div class="order__info-text">
-                <div class="order__number">Заказ 3</div>
+              <div class="order__status-block ">
+                <div class="order__status-icon">
+                  <img src="./img/icons/orderStatus3.svg" alt="">
+                </div>
                 <div class="order__status-text">Едет к вам</div>
               </div>
-            </div>
-            <div class="order__timer">
-              59:59
-            </div>
-          </div>
-          <div class="order__status">
-            <div class="order__status-block">
-              <div class="order__status-icon">
-                <img src="./img/icons/orderStatus1.svg" alt="">
-              </div>
-              <div class="order__status-text">В очереди</div>
-            </div>
-            <div class="order__status-block">
-              <div class="order__status-icon">
-                <img src="./img/icons/orderStatus2.svg" alt="">
-              </div>
-              <div class="order__status-text">Готовится</div>
-            </div>
-            <div class="order__status-block active">
-              <div class="order__status-icon">
-                <img src="./img/icons/orderStatus3.svg" alt="">
-              </div>
-              <div class="order__status-text">Едет к вам</div>
-            </div>
-            <div class="order__status-block">
-              <div class="order__status-icon">
-                <img src="./img/icons/orderStatus4.svg" alt="">
-              </div>
-              <div class="order__status-text">Доставлен</div>
-            </div>
-          </div>
-          <!-- Блок если курьер едет к вам добавить класс hidden к order__map, чтобы скрыть-->
-          <div class="order__map">
-            <div style="position:relative;overflow:hidden;"><a
-                href="https://yandex.ru/maps/213/moscow/?utm_medium=mapframe&utm_source=maps"
-                style="color:#eee;font-size:12px;position:absolute;top:0px;">Москва</a><a
-                href="https://yandex.ru/maps/213/moscow/?ll=37.694805%2C55.767983&utm_medium=mapframe&utm_source=maps&z=13.95"
-                style="color:#eee;font-size:12px;position:absolute;top:14px;">Яндекс Карты</a><iframe
-                src="https://yandex.ru/map-widget/v1/?ll=37.694805%2C55.767983&z=13.95" width="100%" height="200"
-                allowfullscreen="true" style="position:relative;"></iframe></div>
-          </div>
-          <div class="order__buttons">
-            <!-- Кнопка если курьер едет к вам добавить класс hidden к order__button, чтобы скрыть-->
-            <a class="order__button" href="#">
-              <span>Позвонить курьеру</span>
-            </a>
-            <a class="order__button" href="#">
-              <span>Задать вопрос</span>
-            </a>
-            <a class="order__button" href="#">
-              <span>Подробнее о заказе</span>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="order" id="activeOrder">
-        <div class="order__stick">
-          <img src="./img/icons/stick.svg" alt="" />
-        </div>
-        <div class="order__body">
-          <div class="order__info">
-            <div class="order__info-status">
-              <img src="./img/icons/orderStatus4.svg" alt="" class="order__info-icon">
-              <div class="order__info-text">
-                <div class="order__number">Заказ 4</div>
+              <div class="order__status-block">
+                <div class="order__status-icon">
+                  <img src="./img/icons/orderStatus4.svg" alt="">
+                </div>
                 <div class="order__status-text">Доставлен</div>
               </div>
             </div>
-            <div class="order__timer">
+            <div class="order__buttons hidden">
+              <a class="order__button" href="#">
+                <span>Задать вопрос</span>
+              </a>
+              <a class="order__button" href="#">
+                <span>Подробнее о заказе</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="order" id="activeOrder">
+          <div class="order__stick">
+            <img src="./img/icons/stick.svg" alt="" />
+          </div>
+          <div class="order__body">
+            <div class="order__info">
+              <div class="order__info-status">
+                <img src="./img/icons/orderStatus2.svg" alt="" class="order__info-icon">
+                <div class="order__info-text">
+                  <div class="order__number">Заказ 2</div>
+                  <div class="order__status-text">Готовится</div>
+                </div>
+              </div>
+              <div class="order__timer">
+                45:23
+              </div>
+            </div>
+            <div class="order__status">
+              <div class="order__status-block">
+                <div class="order__status-icon">
+                  <img src="./img/icons/orderStatus1.svg" alt="">
+                </div>
+                <div class="order__status-text">В очереди</div>
+              </div>
+              <div class="order__status-block active">
+                <div class="order__status-icon">
+                  <img src="./img/icons/orderStatus2.svg" alt="">
+                </div>
+                <div class="order__status-text">Готовится</div>
+              </div>
+              <div class="order__status-block">
+                <div class="order__status-icon">
+                  <img src="./img/icons/orderStatus3.svg" alt="">
+                </div>
+                <div class="order__status-text">Едет к вам</div>
+              </div>
+              <div class="order__status-block">
+                <div class="order__status-icon">
+                  <img src="./img/icons/orderStatus4.svg" alt="">
+                </div>
+                <div class="order__status-text">Доставлен</div>
+              </div>
+            </div>
+            <!-- Блок если курьер едет к вам добавить класс hidden к order__map, чтобы скрыть-->
+            <div class="order__buttons">
+              <!-- Кнопка если курьер едет к вам добавить класс hidden к order__button, чтобы скрыть-->
 
+              <a class="order__button" href="#">
+                <span>Задать вопрос</span>
+              </a>
+              <a class="order__button" href="#">
+                <span>Подробнее о заказе</span>
+              </a>
             </div>
           </div>
-          <div class="order__status">
-            <div class="order__status-block">
-              <div class="order__status-icon">
-                <img src="./img/icons/orderStatus1.svg" alt="">
+        </div>
+        <div class="order" id="activeOrder">
+          <div class="order__stick">
+            <img src="./img/icons/stick.svg" alt="" />
+          </div>
+          <div class="order__body">
+            <div class="order__info">
+              <div class="order__info-status">
+                <img src="./img/icons/orderStatus3.svg" alt="" class="order__info-icon">
+                <div class="order__info-text">
+                  <div class="order__number">Заказ 3</div>
+                  <div class="order__status-text">Едет к вам</div>
+                </div>
               </div>
-              <div class="order__status-text">В очереди</div>
+              <div class="order__timer">
+                59:59
+              </div>
             </div>
-            <div class="order__status-block">
-              <div class="order__status-icon">
-                <img src="./img/icons/orderStatus2.svg" alt="">
+            <div class="order__status">
+              <div class="order__status-block">
+                <div class="order__status-icon">
+                  <img src="./img/icons/orderStatus1.svg" alt="">
+                </div>
+                <div class="order__status-text">В очереди</div>
               </div>
-              <div class="order__status-text">Готовится</div>
+              <div class="order__status-block">
+                <div class="order__status-icon">
+                  <img src="./img/icons/orderStatus2.svg" alt="">
+                </div>
+                <div class="order__status-text">Готовится</div>
+              </div>
+              <div class="order__status-block active">
+                <div class="order__status-icon">
+                  <img src="./img/icons/orderStatus3.svg" alt="">
+                </div>
+                <div class="order__status-text">Едет к вам</div>
+              </div>
+              <div class="order__status-block">
+                <div class="order__status-icon">
+                  <img src="./img/icons/orderStatus4.svg" alt="">
+                </div>
+                <div class="order__status-text">Доставлен</div>
+              </div>
             </div>
-            <div class="order__status-block ">
-              <div class="order__status-icon">
-                <img src="./img/icons/orderStatus3.svg" alt="">
-              </div>
-              <div class="order__status-text">Едет к вам</div>
+            <!-- Блок если курьер едет к вам добавить класс hidden к order__map, чтобы скрыть-->
+            <div class="order__map">
+              <div style="position:relative;overflow:hidden;"><a
+                  href="https://yandex.ru/maps/213/moscow/?utm_medium=mapframe&utm_source=maps"
+                  style="color:#eee;font-size:12px;position:absolute;top:0px;">Москва</a><a
+                  href="https://yandex.ru/maps/213/moscow/?ll=37.694805%2C55.767983&utm_medium=mapframe&utm_source=maps&z=13.95"
+                  style="color:#eee;font-size:12px;position:absolute;top:14px;">Яндекс Карты</a><iframe
+                  src="https://yandex.ru/map-widget/v1/?ll=37.694805%2C55.767983&z=13.95" width="100%" height="200"
+                  allowfullscreen="true" style="position:relative;"></iframe></div>
             </div>
-            <div class="order__status-block active">
-              <div class="order__status-icon">
-                <img src="./img/icons/orderStatus4.svg" alt="">
-              </div>
-              <div class="order__status-text">Доставлен</div>
+            <div class="order__buttons">
+              <!-- Кнопка если курьер едет к вам добавить класс hidden к order__button, чтобы скрыть-->
+              <a class="order__button" href="#">
+                <span>Позвонить курьеру</span>
+              </a>
+              <a class="order__button" href="#">
+                <span>Задать вопрос</span>
+              </a>
+              <a class="order__button" href="#">
+                <span>Подробнее о заказе</span>
+              </a>
             </div>
           </div>
-          <div class="order__buttons hidden">
-            <a class="order__button" href="#">
-              <span>Задать вопрос</span>
-            </a>
-            <a class="order__button" href="#">
-              <span>Подробнее о заказе</span>
-            </a>
+        </div>
+        <div class="order" id="activeOrder">
+          <div class="order__stick">
+            <img src="./img/icons/stick.svg" alt="" />
+          </div>
+          <div class="order__body">
+            <div class="order__info">
+              <div class="order__info-status">
+                <img src="./img/icons/orderStatus4.svg" alt="" class="order__info-icon">
+                <div class="order__info-text">
+                  <div class="order__number">Заказ 4</div>
+                  <div class="order__status-text">Доставлен</div>
+                </div>
+              </div>
+              <div class="order__timer">
+
+              </div>
+            </div>
+            <div class="order__status">
+              <div class="order__status-block">
+                <div class="order__status-icon">
+                  <img src="./img/icons/orderStatus1.svg" alt="">
+                </div>
+                <div class="order__status-text">В очереди</div>
+              </div>
+              <div class="order__status-block">
+                <div class="order__status-icon">
+                  <img src="./img/icons/orderStatus2.svg" alt="">
+                </div>
+                <div class="order__status-text">Готовится</div>
+              </div>
+              <div class="order__status-block ">
+                <div class="order__status-icon">
+                  <img src="./img/icons/orderStatus3.svg" alt="">
+                </div>
+                <div class="order__status-text">Едет к вам</div>
+              </div>
+              <div class="order__status-block active">
+                <div class="order__status-icon">
+                  <img src="./img/icons/orderStatus4.svg" alt="">
+                </div>
+                <div class="order__status-text">Доставлен</div>
+              </div>
+            </div>
+            <div class="order__buttons hidden">
+              <a class="order__button" href="#">
+                <span>Задать вопрос</span>
+              </a>
+              <a class="order__button" href="#">
+                <span>Подробнее о заказе</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
+
     </div>
 
   </div>

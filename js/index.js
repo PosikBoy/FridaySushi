@@ -3,23 +3,45 @@
 var categoryList = document.querySelector(".categories__list");
 var categoryMenuButton = document.querySelector(".categories__menu-button");
 var bright80 = document.querySelector(".bright80");
+const menus = document.querySelectorAll(".menu");
+//Функции, чтобы затемнять все, что под выезжающими меню и тд.
+const showMenu = (menu) => {
+  bright80.classList.add("active");
+  menu?.classList.remove("hidden");
 
-//Функция, чтобы затемнять все, что под выезжающими меню и тд.
-const toggleBrightness = () => {
-  bright80.classList.toggle("active");
+  bright80.addEventListener("click", () => {
+    hideMenu();
+  });
 };
 
-isMenuButtonShown = false;
+const hideMenu = () => {
+  bright80.classList.remove("active");
+  //скрываем все меню, при нажатии на крестик или область с пониженной яркостью
+  menus.forEach((item) => {
+    item.classList.add("hidden");
+    item.style = "";
+  });
+  headerMenuButton.classList.remove("open");
+  bright80.removeEventListener("click", () => {
+    hideMenu();
+  });
+};
+bright80.addEventListener("click", () => {
+  hideMenu();
+});
+// Конец кода для понижения яркости экрана при
+
+// Начало кода для кнопки, которая повляется в категориях товаров.
+let isMenuButtonShown = false;
 function addMenuButton() {
-  categoryMenuButton.classList = "categories__menu-button menu-button";
+  categoryMenuButton.classList.add("active");
   isMenuButtonShown = true;
 }
 
 function removeMenuButton() {
-  categoryMenuButton.classList = "categories__menu-button menu-button closed";
+  categoryMenuButton.classList.remove("active");
   isMenuButtonShown = false;
 }
-
 window.addEventListener("scroll", function () {
   var rect = categoryList.getBoundingClientRect();
   if (rect.top <= 10) {
@@ -30,38 +52,55 @@ window.addEventListener("scroll", function () {
     }
   }
 });
+// Конец кода для кнопки, которая повялется в категориях товаров.
 
-//сhoose-city
+//Начало кода для выбора города
 const chooseCity = document.querySelector(".choose-city");
 const chooseCityLink = document.querySelectorAll(".choose-city__link");
 const body = document.querySelector("body");
 
+chooseCity.classList.add("active");
+showMenu();
+
 chooseCityLink.forEach(function (chooseCityLink) {
   chooseCityLink.addEventListener("click", function (event) {
     event.preventDefault();
-    body.classList = "";
-    chooseCity.classList = "choose-city hidden";
-    toggleBrightness();
+    body.classList.remove("inactive");
+    chooseCity.classList.remove("active");
+    chooseCity.classList.add("hidden");
+    hideMenu();
   });
 });
+//Конец кода для выбора города
 
-//sidebar
+//Начало кода для бокового меню
 const sideBar = document.querySelector(".side-bar");
-const headerMenuButton = document.querySelector(".header__menu-button");
+// Var потому что мы используем эту кнопку раньше, в функциях сокрытия и показа менюы
+var headerMenuButton = document.querySelector(".header__menu-button");
 
 headerMenuButton.addEventListener("click", function (event) {
   event.preventDefault();
   body.classList.toggle("inactive");
-  headerMenuButton.classList.toggle("open");
   sideBar.classList.toggle("hidden");
-  toggleBrightness();
+  if (headerMenuButton.classList.contains("open")) {
+    headerMenuButton.classList.remove("open");
+    hideMenu();
+  } else {
+    headerMenuButton.classList.add("open");
+    showMenu(sideBar);
+  }
 });
 categoryMenuButton.addEventListener("click", function (event) {
   event.preventDefault();
   body.classList.toggle("inactive");
-  headerMenuButton.classList.toggle("open");
   sideBar.classList.toggle("hidden");
-  toggleBrightness();
+  if (headerMenuButton.classList.contains("open")) {
+    headerMenuButton.classList.remove("open");
+    hideMenu();
+  } else {
+    headerMenuButton.classList.add("open");
+    showMenu(sideBar);
+  }
 });
 
 // product card
@@ -69,8 +108,7 @@ const sushi = document.querySelector("#sushi");
 const sushiCard = document.querySelector("#sushiCard");
 
 sushi.addEventListener("click", (event) => {
-  toggleBrightness();
-  sushiCard.classList.toggle("hidden");
+  showMenu(sushiCard);
   body.classList.add("inactive");
 });
 
@@ -78,38 +116,29 @@ const productCola = document.querySelector("#cola");
 const productCardCola = document.querySelector("#colaCard");
 
 productCola.addEventListener("click", (event) => {
-  toggleBrightness();
-  productCardCola.classList.toggle("hidden");
+  showMenu(productCardCola);
   body.classList.add("inactive");
 });
 
-const swipeElements = document.querySelectorAll(".swipe");
+const swipeMenus = document.querySelectorAll(".swipe");
 
-swipeElements.forEach((item) => {
-  // const toCartBtn = document.querySelector(".product-card__button");
-
-  // toCartBtn.addEventListener("click", () => {
-  //   hideMenu();
-  // });
+swipeMenus.forEach((item) => {
   var startY, startBottom, startHeight;
-
   var menuVisible = true;
-  function updateMenu(newBottom) {
+  function updateSwipeMenu(newBottom) {
     item.style.bottom = newBottom + "px";
   }
-  function hideMenu() {
+  function hideSwipeMenu() {
     item.style = "";
     item.style.transition = "bottom 0.5s ease";
-    item.classList.add("hidden");
+    hideMenu(item);
     body.classList.remove("inactive");
-
     menuVisible = false;
     setTimeout(() => {
       item.style = "";
     }, 500);
-    toggleBrightness();
   }
-  function showMenu() {
+  function showSwipeMenu() {
     item.style.transition = "bottom 0.3s ease";
     item.style.bottom = "0";
     menuVisible = true;
@@ -130,7 +159,7 @@ swipeElements.forEach((item) => {
 
     if (newBottom >= -startHeight && newBottom <= 0) {
       requestAnimationFrame(function () {
-        updateMenu(newBottom);
+        updateSwipeMenu(newBottom);
       });
     }
   });
@@ -139,11 +168,11 @@ swipeElements.forEach((item) => {
     var diffY = touchEndY - startY;
     if (diffY >= startHeight * 0.2) {
       requestAnimationFrame(function () {
-        hideMenu();
+        hideSwipeMenu();
       });
     } else {
       requestAnimationFrame(function () {
-        showMenu();
+        showSwipeMenu();
       });
     }
   });
@@ -174,10 +203,8 @@ optionsInfo.forEach(function (option) {
 var addressDelivery = document.querySelector(".side-bar__address-info");
 var addressDeliveryMenu = document.querySelector("#addressDeliveryMenu");
 addressDelivery.addEventListener("click", () => {
-  console.log("asjdcn");
   addressDeliveryMenu.classList.toggle("hidden");
-  sideBar.classList.toggle("hidden");
-  headerMenuButton.classList.toggle("open");
+  // toggleBrightness();
 });
 
 var addressMenuOptions = document.querySelectorAll(".address-menu__option");
@@ -194,23 +221,36 @@ addressMenuOptions.forEach(function (option) {
 //order
 
 const orders = document.querySelectorAll(".order");
-
+const ordersWrapper = document.querySelector(".orders__wrapper");
 let zIndexs = 6;
 orders.forEach((item) => {
   item.style.zIndex = zIndexs;
   zIndexs -= 1;
 });
 
+ordersWrapper.addEventListener("click", () => {
+  orders.forEach((item, index) => {
+    let statusInfoIcon = statusInfoIconArray[index];
+    let initialBottom = -(item.clientHeight - (index + 1) * 70 - 60);
+    item.style.transition = "bottom 0.5s ease";
+    statusInfoIcon.classList.remove("hidden");
+    item.style.bottom = initialBottom + "px";
+    setTimeout(() => {
+      item.style.transition = "";
+    }, 500);
+    ordersWrapper.classList.remove("active");
+  });
+});
+
 let statusInfoIconArray = document.querySelectorAll(".order__info-icon");
 
 orders.forEach((item, index) => {
-  console.log(index);
   let statusInfoIcon = statusInfoIconArray[index];
   let initialHeight = item.clientHeight;
   let initialBottom = -(initialHeight - (index + 1) * 70 - 60);
   item.style.bottom = initialBottom + "px";
   console.log(initialBottom, initialHeight);
-  var startY, startBottom, startHeight;
+  var startY, startBottom;
   var menuVisible = true;
   function updateMenu(newBottom) {
     item.style.bottom = newBottom + "px";
@@ -228,6 +268,7 @@ orders.forEach((item, index) => {
     item.style.transition = "bottom 0.3s ease";
     item.style.bottom = initialBottom + initialHeight - 100 + "px";
     menuVisible = true;
+    ordersWrapper.classList.add("active");
     statusInfoIcon.classList.add("hidden");
   }
   item.addEventListener("touchstart", function (e) {
@@ -237,7 +278,6 @@ orders.forEach((item, index) => {
     startBottom = parseInt(
       window.getComputedStyle(item).getPropertyValue("bottom")
     );
-    startHeight = item.offsetHeight;
   });
   item.addEventListener("touchmove", function (e) {
     item.style.transition = "none";
@@ -246,13 +286,13 @@ orders.forEach((item, index) => {
     var newBottom = startBottom - diff;
     console.log(
       newBottom,
-      newBottom >= -startHeight && newBottom <= startHeight + initialBottom,
+      newBottom >= -startHeight && newBottom <= initialHeight + initialBottom,
       startHeight - initialBottom
     );
 
     if (
-      newBottom >= -startHeight &&
-      newBottom <= startHeight + initialBottom - 100
+      newBottom >= -initialHeight &&
+      newBottom <= initialHeight + initialBottom - 100
     ) {
       requestAnimationFrame(function () {
         updateMenu(newBottom);
@@ -263,7 +303,7 @@ orders.forEach((item, index) => {
     var touchEndY = e.changedTouches[0].clientY;
     var diffY = touchEndY - startY;
 
-    if (diffY >= startHeight * 0.2) {
+    if (diffY >= initialHeight * 0.2) {
       requestAnimationFrame(function () {
         hideMenu();
       });
@@ -275,3 +315,13 @@ orders.forEach((item, index) => {
     body.classList.remove("inactive");
   });
 });
+
+// sideBar.addEventListener("click", (event) => {
+//   if (event.target.className != "side-bar__body") {
+//     event.preventDefault();
+//     body.classList.toggle("inactive");
+//     headerMenuButton.classList.toggle("open");
+//     sideBar.classList.toggle("hidden");
+//     toggleBrightness();
+//   }
+// });
