@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="./css/reset.css" />
 </head>
 
-<body class="inactive">
+<body>
   <div class="bright80"></div>
   <div class="wrapper">
     <header class="header">
@@ -23,78 +23,7 @@
           </button>
         </div>
       </div>
-      <nav class="side-bar hidden menu">
-        <div class="side-bar__body">
-          <div class="side-bar__header">
-            <a class="side-bar__logo logo" href="#">
-              <img src="./img/logo.png" alt="Логотип суши пятница" />
-            </a>
-            <a href="#" class="side-bar__login login">
-              <img src="./img/icons/profile.svg" alt="" />
-              <div class="login__body">
-                <div class="login__login">Войти</div>
-                <div class="login__desc">
-                  Начислим бонусы за закази сохраним адрес доставки.
-                </div>
-              </div>
-            </a>
-            <a href="#" class="side-bar__chat chat">
-              <img src="./img/icons/chat.svg" alt="" />
-              <p class="chat__text">Чат</p>
-            </a>
-          </div>
-          <div class="side-bar__footer">
-            <div class="side-bar__city">Челябинск</div>
-            <div class="side-bar__address-info">
-              <p class="side-bar__address">Пр. Победы, 254</p>
-              <p class="side-bar__address-label">Доставка</p>
-            </div>
-            <div class="side-bar__contacts">
-              <a href="#" class="side-bar__contacts-link">Контакты</a>
-            </div>
-          </div>
-        </div>
-      </nav>
-      <nav class="side-bar hidden">
-        <div class="side-bar__body">
-          <div class="side-bar__header">
-            <a class="side-bar__logo logo" href="#">
-              <img src="/img/logo.png" alt="Логотип суши пятница">
-            </a>
-            <a href="#" class="side-bar__login login logged-in">
-              <img src="./img/icons/profile.svg" alt="">
-              <div class="login__body">
-                <div class="login__login">Денис</div>
-              </div>
 
-            </a>
-            <a href="#" class="side-bar__order">
-              <img src="./img/icons/history.svg" alt="">
-              <p class="side-bar__order-text">Заказы</p>
-            </a>
-            <a href="#" class="side-bar__my-addresses">
-              <img src="./img/icons/house.svg" alt="">
-              <p class="side-bar__my-addresses-text">Мои адреса</p>
-            </a>
-            <a href="#" class="side-bar__chat chat">
-              <img src="./img/icons/chat.svg" alt="">
-              <p class="chat__text">Чат</p>
-            </a>
-          </div>
-          <div class="side-bar__footer">
-            <div class="side-bar__city">
-              Челябинск
-            </div>
-            <div class="side-bar__address-info">
-              <p class="side-bar__address">Пр. Победы, 254</p>
-              <p class="side-bar__address-label">Доставка</p>
-            </div>
-            <div class="side-bar__contacts">
-              <a href="#" class="side-bar__contacts-link">Контакты</a>
-            </div>
-          </div>
-        </div>
-      </nav>
     </header>
     <a class="cart empty " href="./cart/cart.html">
       <div class="cart__text">Корзина</div>
@@ -104,41 +33,7 @@
       <div class="cart__text">Корзина</div>
       <div class="cart__value">925 ₽</div>
     </a>
-    <div class="choose-city">
-      <div class="choose-city__body">
-        <a class="choose-city__logo logo" href="#">
-          <img src="./img/logo.png" alt="Логотип суши пятница" />
-        </a>
-        <nav class="choose-city__nav">
-          <p class="choose-city__title">Ваш город:</p>
-          <ul class="choose-city__list">
-            <li class="choose-city__item">
-              <a href="#" class="choose-city__link">Челябинск</a>
-            </li>
-            <li class="choose-city__item">
-              <a href="#" class="choose-city__link">Копейск</a>
-            </li>
-            <li class="choose-city__item">
-              <a href="#" class="choose-city__link">Миасс</a>
-            </li>
-            <li class="choose-city__item">
-              <a href="#" class="choose-city__link">Кыштым</a>
-            </li>
-            <li class="choose-city__item">
-              <a href="#" class="choose-city__link">Озерск</a>
-            </li>
-            <ul class="choose-city__list-moscow">
-              <li class="choose-city__item">
-                <a href="#" class="choose-city__link">Москва</a>
-              </li>
-              <li class="choose-city__item">
-                <a href="#" class="choose-city__link">Дубна</a>
-              </li>
-            </ul>
-          </ul>
-        </nav>
-      </div>
-    </div>
+
     <section class="stories">
       <div class="stories__story story checked">
         <a href="" class="story__link">
@@ -295,447 +190,552 @@
         </div>
       </div>
     </section>
-    <div class="product-card hidden swipe menu" id="sushiCard">
-      <div class="product-card__body">
-        <div class="product-card__stick">
-          <img src="./img/icons/stick.svg" alt="" />
-        </div>
-        <div class="product-card__info">
-          <div class="product-card__image">
-            <img src="./img/product-cards/product_1.png" alt="" />
-          </div>
-          <h3 class="product-card__name">Филадельфия</h3>
-          <div class="product-card__description">
-            Лосось и сливочный сыр, 180г.
-          </div>
-        </div>
-        <div class="product__options options">
-          <label class="options__option option selected">
-            <div class="option__input">
-              <input type="radio" class="options__option-input" name="option" id="classic" checked="checked" />
-              <span class="options__option-fake"></span>
-              <span class="options__option-label">Классическая</span>
-            </div>
-            <div class="option__info info">
-              <div class="info__body">
-                <div class="info__title">На 100 г.:</div>
-                <ul class="info__list">
-                  <li class="info__info">
-                    <p>Энерг. ценность</p>
-                    <p>248,6 ккал</p>
-                  </li>
-                  <li class="info__info">
-                    <p>Белки</p>
-                    <p>10,5 г.</p>
-                  </li>
-                  <li class="info__info">
-                    <p>Жиры</p>
-                    <p>10,1 г.</p>
-                  </li>
-                  <li class="info__info">
-                    <p>Углеводы</p>
-                    <p>27,2 г.</p>
-                  </li>
-                </ul>
-              </div>
-              <img src="./img/icons/info.svg" alt="" class="option__icon" />
-            </div>
-          </label>
-          <label class="options__option option">
-            <div class="option__input">
-              <input type="radio" class="options__option-input" name="option" />
-              <span class="options__option-fake"></span>
-              <span class="options__option-label">Огурец</span>
-            </div>
-            <div class="option__info info">
-              <div class="info__body">
-                <div class="info__title">На 100 г.:</div>
-                <ul class="info__list">
-                  <li class="info__info">
-                    <p>Энерг. ценность</p>
-                    <p>248,6 ккал</p>
-                  </li>
-                  <li class="info__info">
-                    <p>Белки</p>
-                    <p>10,5 г.</p>
-                  </li>
-                  <li class="info__info">
-                    <p>Жиры</p>
-                    <p>10,1 г.</p>
-                  </li>
-                  <li class="info__info">
-                    <p>Углеводы</p>
-                    <p>27,2 г.</p>
-                  </li>
-                </ul>
-              </div>
-              <img src="./img/icons/info.svg" alt="" class="option__icon" />
-            </div>
-          </label>
-          <label class="options__option option">
-            <div class="option__input">
-              <input type="radio" class="options__option-input" name="option" />
-              <span class="options__option-fake"></span>
-              <span class="options__option-label">Авокадо</span>
-            </div>
-            <div class="option__info info">
-              <div class="info__body">
-                <div class="info__title">На 100 г.:</div>
-                <ul class="info__list">
-                  <li class="info__info">
-                    <p>Энерг. ценность</p>
-                    <p>248,6 ккал</p>
-                  </li>
-                  <li class="info__info">
-                    <p>Белки</p>
-                    <p>10,5 г.</p>
-                  </li>
-                  <li class="info__info">
-                    <p>Жиры</p>
-                    <p>10,1 г.</p>
-                  </li>
-                  <li class="info__info">
-                    <p>Углеводы</p>
-                    <p>27,2 г.</p>
-                  </li>
-                </ul>
-              </div>
-              <img src="./img/icons/info.svg" alt="" class="option__icon" />
-            </div>
-          </label>
-        </div>
-        <button class="product-card__button">
-          <span>В корзину за 299 ₽</span>
-        </button>
-      </div>
+  </div>
+  <div class="choose-city">
+    <div class="choose-city__body">
+      <a class="choose-city__logo logo" href="#">
+        <img src="./img/logo.png" alt="Логотип суши пятница" />
+      </a>
+      <nav class="choose-city__nav">
+        <p class="choose-city__title">Ваш город:</p>
+        <ul class="choose-city__list">
+          <li class="choose-city__item">
+            <a href="#" class="choose-city__link">Челябинск</a>
+          </li>
+          <li class="choose-city__item">
+            <a href="#" class="choose-city__link">Копейск</a>
+          </li>
+          <li class="choose-city__item">
+            <a href="#" class="choose-city__link">Миасс</a>
+          </li>
+          <li class="choose-city__item">
+            <a href="#" class="choose-city__link">Кыштым</a>
+          </li>
+          <li class="choose-city__item">
+            <a href="#" class="choose-city__link">Озерск</a>
+          </li>
+          <ul class="choose-city__list-moscow">
+            <li class="choose-city__item">
+              <a href="#" class="choose-city__link">Москва</a>
+            </li>
+            <li class="choose-city__item">
+              <a href="#" class="choose-city__link">Дубна</a>
+            </li>
+          </ul>
+        </ul>
+      </nav>
     </div>
-    <div class="product-card hidden swipe menu" id="colaCard">
-      <div class="product-card__body">
-        <div class="product-card__stick">
-          <img src="./img/icons/stick.svg" alt="" />
-        </div>
-        <div class="product-card__info">
-          <div class="product-card__image">
-            <img src="./img/product-cards/product_2.png" alt="" />
-          </div>
-          <div class="product-card__info2">
-            <h3 class="product-card__name">Добрый лимон-лайм</h3>
-            <div class="product-card__info info">
-              <div class="info__body">
-                <div class="info__title">На 100 г.:</div>
-                <ul class="info__list">
-                  <li class="info__info">
-                    <p>Энерг. ценность</p>
-                    <p>248,6 ккал</p>
-                  </li>
-                  <li class="info__info">
-                    <p>Белки</p>
-                    <p>10,5 г.</p>
-                  </li>
-                  <li class="info__info">
-                    <p>Жиры</p>
-                    <p>10,1 г.</p>
-                  </li>
-                  <li class="info__info">
-                    <p>Углеводы</p>
-                    <p>27,2 г.</p>
-                  </li>
-                </ul>
-              </div>
-              <img src="./img/icons/info.svg" alt="" class="option__icon" />
-            </div>
-          </div>
-          <div class="product-card__description">
-            Сильногазированный напиток, 500мл
-          </div>
-        </div>
-        <button class="product-card__button">
-          <span>В корзину за 74 ₽</span>
-        </button>
-      </div>
-    </div>
-    <div class="address-menu hidden swipe menu" id="addressDeliveryMenu">
-      <div class="address-menu__stick">
+  </div>
+  <div class="product-card hidden swipe menu" id="sushiCard">
+    <div class="product-card__body">
+      <div class="product-card__stick">
         <img src="./img/icons/stick.svg" alt="" />
       </div>
-      <div class="address-menu__body">
-
-        <div class="address-menu__info">
-          <h3 class="address-menu__name">Укажите адрес</h3>
-          <div class="address-menu__description">
-            Так мы определим наличие и рассчитаем время доставки.
+      <div class="product-card__info">
+        <div class="product-card__image">
+          <img src="./img/product-cards/product_1.png" alt="" />
+        </div>
+        <h3 class="product-card__name">Филадельфия</h3>
+        <div class="product-card__description">
+          Лосось и сливочный сыр, 180г.
+        </div>
+      </div>
+      <div class="product__options options">
+        <label class="options__option option selected">
+          <div class="option__input">
+            <input type="radio" class="options__option-input" name="option" id="classic" checked="checked" />
+            <span class="options__option-fake"></span>
+            <span class="options__option-label">Классическая</span>
+          </div>
+          <div class="option__info info">
+            <div class="info__body">
+              <div class="info__title">На 100 г.:</div>
+              <ul class="info__list">
+                <li class="info__info">
+                  <p>Энерг. ценность</p>
+                  <p>248,6 ккал</p>
+                </li>
+                <li class="info__info">
+                  <p>Белки</p>
+                  <p>10,5 г.</p>
+                </li>
+                <li class="info__info">
+                  <p>Жиры</p>
+                  <p>10,1 г.</p>
+                </li>
+                <li class="info__info">
+                  <p>Углеводы</p>
+                  <p>27,2 г.</p>
+                </li>
+              </ul>
+            </div>
+            <img src="./img/icons/info.svg" alt="" class="option__icon" />
+          </div>
+        </label>
+        <label class="options__option option">
+          <div class="option__input">
+            <input type="radio" class="options__option-input" name="option" />
+            <span class="options__option-fake"></span>
+            <span class="options__option-label">Огурец</span>
+          </div>
+          <div class="option__info info">
+            <div class="info__body">
+              <div class="info__title">На 100 г.:</div>
+              <ul class="info__list">
+                <li class="info__info">
+                  <p>Энерг. ценность</p>
+                  <p>248,6 ккал</p>
+                </li>
+                <li class="info__info">
+                  <p>Белки</p>
+                  <p>10,5 г.</p>
+                </li>
+                <li class="info__info">
+                  <p>Жиры</p>
+                  <p>10,1 г.</p>
+                </li>
+                <li class="info__info">
+                  <p>Углеводы</p>
+                  <p>27,2 г.</p>
+                </li>
+              </ul>
+            </div>
+            <img src="./img/icons/info.svg" alt="" class="option__icon" />
+          </div>
+        </label>
+        <label class="options__option option">
+          <div class="option__input">
+            <input type="radio" class="options__option-input" name="option" />
+            <span class="options__option-fake"></span>
+            <span class="options__option-label">Авокадо</span>
+          </div>
+          <div class="option__info info">
+            <div class="info__body">
+              <div class="info__title">На 100 г.:</div>
+              <ul class="info__list">
+                <li class="info__info">
+                  <p>Энерг. ценность</p>
+                  <p>248,6 ккал</p>
+                </li>
+                <li class="info__info">
+                  <p>Белки</p>
+                  <p>10,5 г.</p>
+                </li>
+                <li class="info__info">
+                  <p>Жиры</p>
+                  <p>10,1 г.</p>
+                </li>
+                <li class="info__info">
+                  <p>Углеводы</p>
+                  <p>27,2 г.</p>
+                </li>
+              </ul>
+            </div>
+            <img src="./img/icons/info.svg" alt="" class="option__icon" />
+          </div>
+        </label>
+      </div>
+      <button class="product-card__button">
+        <span>В корзину за 299 ₽</span>
+      </button>
+    </div>
+  </div>
+  <div class="product-card hidden swipe menu" id="colaCard">
+    <div class="product-card__body">
+      <div class="product-card__stick">
+        <img src="./img/icons/stick.svg" alt="" />
+      </div>
+      <div class="product-card__info">
+        <div class="product-card__image">
+          <img src="./img/product-cards/product_2.png" alt="" />
+        </div>
+        <div class="product-card__info2">
+          <h3 class="product-card__name">Добрый лимон-лайм</h3>
+          <div class="product-card__info info">
+            <div class="info__body">
+              <div class="info__title">На 100 г.:</div>
+              <ul class="info__list">
+                <li class="info__info">
+                  <p>Энерг. ценность</p>
+                  <p>248,6 ккал</p>
+                </li>
+                <li class="info__info">
+                  <p>Белки</p>
+                  <p>10,5 г.</p>
+                </li>
+                <li class="info__info">
+                  <p>Жиры</p>
+                  <p>10,1 г.</p>
+                </li>
+                <li class="info__info">
+                  <p>Углеводы</p>
+                  <p>27,2 г.</p>
+                </li>
+              </ul>
+            </div>
+            <img src="./img/icons/info.svg" alt="" class="option__icon" />
           </div>
         </div>
-        <div class="address-menu__options">
-          <label class="address-menu__option option selected" id="#addressDelivery">
-            <div class="address-menu__option-radio">
-              <input type="radio" class="address-menu__option-input" name="addressOption" checked="checked" />
-              <span class="address-menu__option-icon"></span>
-              <span class="address-menu__option-label">Адрес доставки</span>
-            </div>
-            <div class="address-menu__address-input">
-              <input type="text" class="address-menu__street-inp" placeholder="Улица" />
-              <input type="text" class="address-menu__house-inp" placeholder="Дом" />
-            </div>
-            <div class="address-menu__address-selection">
-              <span class="address-menu__address">Пр. Победы, 254</span>
-              <span class="address-menu__address-additional">кв. 159, 4 подъезд, 5 этаж</span>
-            </div>
-          </label>
-          <label class="address-menu__option option column" id="#addressDelivery">
-            <div class="address-menu__option-radio">
-              <input type="radio" class="address-menu__option-input" name="addressOption" />
-              <span class="address-menu__option-icon"></span>
-              <span class="address-menu__option-label">Самовывоз</span>
-            </div>
-            <div class="address-menu__pickup-selection">
-              <span class="address-menu__pickup-text">Выберите ресторан</span>
-            </div>
-          </label>
+        <div class="product-card__description">
+          Сильногазированный напиток, 500мл
         </div>
-        <button class="address-menu__button">
-          <span>Выбрать</span>
-        </button>
-        <button class="address-menu__login">
-          <img class="address-menu__login-img" src="./img/icons/profile.svg" alt="">
-          <span class="address-menu__login-text">Войти в профиль</span>
-        </button>
+      </div>
+      <button class="product-card__button">
+        <span>В корзину за 74 ₽</span>
+      </button>
+    </div>
+  </div>
+  <div class="address-menu hidden swipe menu" id="addressDeliveryMenu">
+    <div class="address-menu__stick">
+      <img src="./img/icons/stick.svg" alt="" />
+    </div>
+    <div class="address-menu__body">
+      <div class="address-menu__info">
+        <h3 class="address-menu__name">Укажите адрес</h3>
+        <div class="address-menu__description">
+          Так мы определим наличие и рассчитаем время доставки.
+        </div>
+      </div>
+      <div class="address-menu__options">
+        <label class="address-menu__option option selected" id="#addressDelivery">
+          <div class="address-menu__option-radio">
+            <input type="radio" class="address-menu__option-input" name="addressOption" checked="checked" />
+            <span class="address-menu__option-icon"></span>
+            <span class="address-menu__option-label">Адрес доставки</span>
+          </div>
+          <div class="address-menu__address-input">
+            <input type="text" class="address-menu__street-inp" placeholder="Улица" />
+            <input type="text" class="address-menu__house-inp" placeholder="Дом" />
+          </div>
+          <div class="address-menu__address-selection">
+            <span class="address-menu__address">Пр. Победы, 254</span>
+            <span class="address-menu__address-additional">кв. 159, 4 подъезд, 5 этаж</span>
+          </div>
+        </label>
+        <label class="address-menu__option option column" id="#addressDelivery">
+          <div class="address-menu__option-radio">
+            <input type="radio" class="address-menu__option-input" name="addressOption" />
+            <span class="address-menu__option-icon"></span>
+            <span class="address-menu__option-label">Самовывоз</span>
+          </div>
+          <div class="address-menu__pickup-selection">
+            <span class="address-menu__pickup-text">Выберите ресторан</span>
+          </div>
+        </label>
+      </div>
+      <button class="address-menu__button">
+        <span>Выбрать</span>
+      </button>
+      <button class="address-menu__login">
+        <img class="address-menu__login-img" src="./img/icons/profile.svg" alt="">
+        <span class="address-menu__login-text">Войти в профиль</span>
+      </button>
+    </div>
+  </div>
+  <nav class="side-bar hidden menu">
+    <div class="side-bar__body">
+      <div class="side-bar__header">
+        <a class="side-bar__logo logo" href="#">
+          <img src="./img/logo.png" alt="Логотип суши пятница" />
+        </a>
+        <a href="#" class="side-bar__login login">
+          <img src="./img/icons/profile.svg" alt="" />
+          <div class="login__body">
+            <div class="login__login">Войти</div>
+            <div class="login__desc">
+              Начислим бонусы за закази сохраним адрес доставки.
+            </div>
+          </div>
+        </a>
+        <a href="#" class="side-bar__chat chat">
+          <img src="./img/icons/chat.svg" alt="" />
+          <p class="chat__text">Чат</p>
+        </a>
+      </div>
+      <div class="side-bar__footer">
+        <div class="side-bar__city">Челябинск</div>
+        <div class="side-bar__address-info">
+          <p class="side-bar__address">Пр. Победы, 254</p>
+          <p class="side-bar__address-label">Доставка</p>
+        </div>
+        <div class="side-bar__contacts">
+          <a href="#" class="side-bar__contacts-link">Контакты</a>
+        </div>
       </div>
     </div>
-    <div class="orders">
-      <div class="orders__wrapper"></div>
-      <div class="orders__body">
-        <div class="order" id="activeOrder">
-          <div class="order__stick">
-            <img src="./img/icons/stick.svg" alt="" />
+  </nav>
+  <nav class="side-bar hidden">
+    <div class="side-bar__body">
+      <div class="side-bar__header">
+        <a class="side-bar__logo logo" href="#">
+          <img src="/img/logo.png" alt="Логотип суши пятница">
+        </a>
+        <a href="#" class="side-bar__login login logged-in">
+          <img src="./img/icons/profile.svg" alt="">
+          <div class="login__body">
+            <div class="login__login">Денис</div>
           </div>
-          <div class="order__body">
-            <div class="order__info">
-              <div class="order__info-status">
-                <img src="./img/icons/orderStatus1.svg" alt="" class="order__info-icon">
-                <div class="order__info-text">
-                  <div class="order__number">Заказ 1</div>
-                  <div class="order__status-text">В очереди</div>
-                </div>
-              </div>
-              <div class="order__timer">
-                59:59
-              </div>
-            </div>
-            <div class="order__status">
-              <div class="order__status-block active">
-                <div class="order__status-icon ">
-                  <img src="./img/icons/orderStatus1.svg" alt="">
-                </div>
-                <div class="order__status-text">В очереди</div>
-              </div>
-              <div class="order__status-block">
-                <div class="order__status-icon">
-                  <img src="./img/icons/orderStatus2.svg" alt="">
-                </div>
-                <div class="order__status-text">Готовится</div>
-              </div>
-              <div class="order__status-block ">
-                <div class="order__status-icon">
-                  <img src="./img/icons/orderStatus3.svg" alt="">
-                </div>
-                <div class="order__status-text">Едет к вам</div>
-              </div>
-              <div class="order__status-block">
-                <div class="order__status-icon">
-                  <img src="./img/icons/orderStatus4.svg" alt="">
-                </div>
-                <div class="order__status-text">Доставлен</div>
-              </div>
-            </div>
-            <div class="order__buttons hidden">
-              <a class="order__button" href="#">
-                <span>Задать вопрос</span>
-              </a>
-              <a class="order__button" href="#">
-                <span>Подробнее о заказе</span>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="order" id="activeOrder">
-          <div class="order__stick">
-            <img src="./img/icons/stick.svg" alt="" />
-          </div>
-          <div class="order__body">
-            <div class="order__info">
-              <div class="order__info-status">
-                <img src="./img/icons/orderStatus2.svg" alt="" class="order__info-icon">
-                <div class="order__info-text">
-                  <div class="order__number">Заказ 2</div>
-                  <div class="order__status-text">Готовится</div>
-                </div>
-              </div>
-              <div class="order__timer">
-                45:23
-              </div>
-            </div>
-            <div class="order__status">
-              <div class="order__status-block">
-                <div class="order__status-icon">
-                  <img src="./img/icons/orderStatus1.svg" alt="">
-                </div>
-                <div class="order__status-text">В очереди</div>
-              </div>
-              <div class="order__status-block active">
-                <div class="order__status-icon">
-                  <img src="./img/icons/orderStatus2.svg" alt="">
-                </div>
-                <div class="order__status-text">Готовится</div>
-              </div>
-              <div class="order__status-block">
-                <div class="order__status-icon">
-                  <img src="./img/icons/orderStatus3.svg" alt="">
-                </div>
-                <div class="order__status-text">Едет к вам</div>
-              </div>
-              <div class="order__status-block">
-                <div class="order__status-icon">
-                  <img src="./img/icons/orderStatus4.svg" alt="">
-                </div>
-                <div class="order__status-text">Доставлен</div>
-              </div>
-            </div>
-            <!-- Блок если курьер едет к вам добавить класс hidden к order__map, чтобы скрыть-->
-            <div class="order__buttons">
-              <!-- Кнопка если курьер едет к вам добавить класс hidden к order__button, чтобы скрыть-->
 
-              <a class="order__button" href="#">
-                <span>Задать вопрос</span>
-              </a>
-              <a class="order__button" href="#">
-                <span>Подробнее о заказе</span>
-              </a>
-            </div>
-          </div>
+        </a>
+        <a href="#" class="side-bar__order">
+          <img src="./img/icons/history.svg" alt="">
+          <p class="side-bar__order-text">Заказы</p>
+        </a>
+        <a href="#" class="side-bar__my-addresses">
+          <img src="./img/icons/house.svg" alt="">
+          <p class="side-bar__my-addresses-text">Мои адреса</p>
+        </a>
+        <a href="#" class="side-bar__chat chat">
+          <img src="./img/icons/chat.svg" alt="">
+          <p class="chat__text">Чат</p>
+        </a>
+      </div>
+      <div class="side-bar__footer">
+        <div class="side-bar__city">
+          Челябинск
         </div>
-        <div class="order" id="activeOrder">
-          <div class="order__stick">
-            <img src="./img/icons/stick.svg" alt="" />
-          </div>
-          <div class="order__body">
-            <div class="order__info">
-              <div class="order__info-status">
-                <img src="./img/icons/orderStatus3.svg" alt="" class="order__info-icon">
-                <div class="order__info-text">
-                  <div class="order__number">Заказ 3</div>
-                  <div class="order__status-text">Едет к вам</div>
-                </div>
-              </div>
-              <div class="order__timer">
-                59:59
-              </div>
-            </div>
-            <div class="order__status">
-              <div class="order__status-block">
-                <div class="order__status-icon">
-                  <img src="./img/icons/orderStatus1.svg" alt="">
-                </div>
+        <div class="side-bar__address-info">
+          <p class="side-bar__address">Пр. Победы, 254</p>
+          <p class="side-bar__address-label">Доставка</p>
+        </div>
+        <div class="side-bar__contacts">
+          <a href="#" class="side-bar__contacts-link">Контакты</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="orders">
+    <div class="orders__wrapper"></div>
+    <div class="orders__body">
+      <div class="order" id="activeOrder">
+        <div class="order__stick">
+          <img src="./img/icons/stick.svg" alt="" />
+        </div>
+        <div class="order__body">
+          <div class="order__info">
+            <div class="order__info-status">
+              <img src="./img/icons/orderStatus1.svg" alt="" class="order__info-icon">
+              <div class="order__info-text">
+                <div class="order__number">Заказ 1</div>
                 <div class="order__status-text">В очереди</div>
               </div>
-              <div class="order__status-block">
-                <div class="order__status-icon">
-                  <img src="./img/icons/orderStatus2.svg" alt="">
-                </div>
-                <div class="order__status-text">Готовится</div>
-              </div>
-              <div class="order__status-block active">
-                <div class="order__status-icon">
-                  <img src="./img/icons/orderStatus3.svg" alt="">
-                </div>
-                <div class="order__status-text">Едет к вам</div>
-              </div>
-              <div class="order__status-block">
-                <div class="order__status-icon">
-                  <img src="./img/icons/orderStatus4.svg" alt="">
-                </div>
-                <div class="order__status-text">Доставлен</div>
-              </div>
             </div>
-            <!-- Блок если курьер едет к вам добавить класс hidden к order__map, чтобы скрыть-->
-            <div class="order__map">
-              <div style="position:relative;overflow:hidden;"><a
-                  href="https://yandex.ru/maps/213/moscow/?utm_medium=mapframe&utm_source=maps"
-                  style="color:#eee;font-size:12px;position:absolute;top:0px;">Москва</a><a
-                  href="https://yandex.ru/maps/213/moscow/?ll=37.694805%2C55.767983&utm_medium=mapframe&utm_source=maps&z=13.95"
-                  style="color:#eee;font-size:12px;position:absolute;top:14px;">Яндекс Карты</a><iframe
-                  src="https://yandex.ru/map-widget/v1/?ll=37.694805%2C55.767983&z=13.95" width="100%" height="200"
-                  allowfullscreen="true" style="position:relative;"></iframe></div>
-            </div>
-            <div class="order__buttons">
-              <!-- Кнопка если курьер едет к вам добавить класс hidden к order__button, чтобы скрыть-->
-              <a class="order__button" href="#">
-                <span>Позвонить курьеру</span>
-              </a>
-              <a class="order__button" href="#">
-                <span>Задать вопрос</span>
-              </a>
-              <a class="order__button" href="#">
-                <span>Подробнее о заказе</span>
-              </a>
+            <div class="order__timer">
+              59:59
             </div>
           </div>
-        </div>
-        <div class="order" id="activeOrder">
-          <div class="order__stick">
-            <img src="./img/icons/stick.svg" alt="" />
+          <div class="order__status">
+            <div class="order__status-block active">
+              <div class="order__status-icon ">
+                <img src="./img/icons/orderStatus1.svg" alt="">
+              </div>
+              <div class="order__status-text">В очереди</div>
+            </div>
+            <div class="order__status-block">
+              <div class="order__status-icon">
+                <img src="./img/icons/orderStatus2.svg" alt="">
+              </div>
+              <div class="order__status-text">Готовится</div>
+            </div>
+            <div class="order__status-block ">
+              <div class="order__status-icon">
+                <img src="./img/icons/orderStatus3.svg" alt="">
+              </div>
+              <div class="order__status-text">Едет к вам</div>
+            </div>
+            <div class="order__status-block">
+              <div class="order__status-icon">
+                <img src="./img/icons/orderStatus4.svg" alt="">
+              </div>
+              <div class="order__status-text">Доставлен</div>
+            </div>
           </div>
-          <div class="order__body">
-            <div class="order__info">
-              <div class="order__info-status">
-                <img src="./img/icons/orderStatus4.svg" alt="" class="order__info-icon">
-                <div class="order__info-text">
-                  <div class="order__number">Заказ 4</div>
-                  <div class="order__status-text">Доставлен</div>
-                </div>
-              </div>
-              <div class="order__timer">
-
-              </div>
-            </div>
-            <div class="order__status">
-              <div class="order__status-block">
-                <div class="order__status-icon">
-                  <img src="./img/icons/orderStatus1.svg" alt="">
-                </div>
-                <div class="order__status-text">В очереди</div>
-              </div>
-              <div class="order__status-block">
-                <div class="order__status-icon">
-                  <img src="./img/icons/orderStatus2.svg" alt="">
-                </div>
-                <div class="order__status-text">Готовится</div>
-              </div>
-              <div class="order__status-block ">
-                <div class="order__status-icon">
-                  <img src="./img/icons/orderStatus3.svg" alt="">
-                </div>
-                <div class="order__status-text">Едет к вам</div>
-              </div>
-              <div class="order__status-block active">
-                <div class="order__status-icon">
-                  <img src="./img/icons/orderStatus4.svg" alt="">
-                </div>
-                <div class="order__status-text">Доставлен</div>
-              </div>
-            </div>
-            <div class="order__buttons hidden">
-              <a class="order__button" href="#">
-                <span>Задать вопрос</span>
-              </a>
-              <a class="order__button" href="#">
-                <span>Подробнее о заказе</span>
-              </a>
-            </div>
+          <div class="order__buttons hidden">
+            <a class="order__button" href="#">
+              <span>Задать вопрос</span>
+            </a>
+            <a class="order__button" href="#">
+              <span>Подробнее о заказе</span>
+            </a>
           </div>
         </div>
       </div>
+      <div class="order" id="activeOrder">
+        <div class="order__stick">
+          <img src="./img/icons/stick.svg" alt="" />
+        </div>
+        <div class="order__body">
+          <div class="order__info">
+            <div class="order__info-status">
+              <img src="./img/icons/orderStatus2.svg" alt="" class="order__info-icon">
+              <div class="order__info-text">
+                <div class="order__number">Заказ 2</div>
+                <div class="order__status-text">Готовится</div>
+              </div>
+            </div>
+            <div class="order__timer">
+              45:23
+            </div>
+          </div>
+          <div class="order__status">
+            <div class="order__status-block">
+              <div class="order__status-icon">
+                <img src="./img/icons/orderStatus1.svg" alt="">
+              </div>
+              <div class="order__status-text">В очереди</div>
+            </div>
+            <div class="order__status-block active">
+              <div class="order__status-icon">
+                <img src="./img/icons/orderStatus2.svg" alt="">
+              </div>
+              <div class="order__status-text">Готовится</div>
+            </div>
+            <div class="order__status-block">
+              <div class="order__status-icon">
+                <img src="./img/icons/orderStatus3.svg" alt="">
+              </div>
+              <div class="order__status-text">Едет к вам</div>
+            </div>
+            <div class="order__status-block">
+              <div class="order__status-icon">
+                <img src="./img/icons/orderStatus4.svg" alt="">
+              </div>
+              <div class="order__status-text">Доставлен</div>
+            </div>
+          </div>
+          <!-- Блок если курьер едет к вам добавить класс hidden к order__map, чтобы скрыть-->
+          <div class="order__buttons">
+            <!-- Кнопка если курьер едет к вам добавить класс hidden к order__button, чтобы скрыть-->
 
+            <a class="order__button" href="#">
+              <span>Задать вопрос</span>
+            </a>
+            <a class="order__button" href="#">
+              <span>Подробнее о заказе</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="order" id="activeOrder">
+        <div class="order__stick">
+          <img src="./img/icons/stick.svg" alt="" />
+        </div>
+        <div class="order__body">
+          <div class="order__info">
+            <div class="order__info-status">
+              <img src="./img/icons/orderStatus3.svg" alt="" class="order__info-icon">
+              <div class="order__info-text">
+                <div class="order__number">Заказ 3</div>
+                <div class="order__status-text">Едет к вам</div>
+              </div>
+            </div>
+            <div class="order__timer">
+              59:59
+            </div>
+          </div>
+          <div class="order__status">
+            <div class="order__status-block">
+              <div class="order__status-icon">
+                <img src="./img/icons/orderStatus1.svg" alt="">
+              </div>
+              <div class="order__status-text">В очереди</div>
+            </div>
+            <div class="order__status-block">
+              <div class="order__status-icon">
+                <img src="./img/icons/orderStatus2.svg" alt="">
+              </div>
+              <div class="order__status-text">Готовится</div>
+            </div>
+            <div class="order__status-block active">
+              <div class="order__status-icon">
+                <img src="./img/icons/orderStatus3.svg" alt="">
+              </div>
+              <div class="order__status-text">Едет к вам</div>
+            </div>
+            <div class="order__status-block">
+              <div class="order__status-icon">
+                <img src="./img/icons/orderStatus4.svg" alt="">
+              </div>
+              <div class="order__status-text">Доставлен</div>
+            </div>
+          </div>
+          <!-- Блок если курьер едет к вам добавить класс hidden к order__map, чтобы скрыть-->
+          <div class="order__map">
+            <div style="position:relative;overflow:hidden;"><a
+                href="https://yandex.ru/maps/213/moscow/?utm_medium=mapframe&utm_source=maps"
+                style="color:#eee;font-size:12px;position:absolute;top:0px;">Москва</a><a
+                href="https://yandex.ru/maps/213/moscow/?ll=37.694805%2C55.767983&utm_medium=mapframe&utm_source=maps&z=13.95"
+                style="color:#eee;font-size:12px;position:absolute;top:14px;">Яндекс Карты</a><iframe
+                src="https://yandex.ru/map-widget/v1/?ll=37.694805%2C55.767983&z=13.95" width="100%" height="200"
+                allowfullscreen="true" style="position:relative;"></iframe></div>
+          </div>
+          <div class="order__buttons">
+            <!-- Кнопка если курьер едет к вам добавить класс hidden к order__button, чтобы скрыть-->
+            <a class="order__button" href="#">
+              <span>Позвонить курьеру</span>
+            </a>
+            <a class="order__button" href="#">
+              <span>Задать вопрос</span>
+            </a>
+            <a class="order__button" href="#">
+              <span>Подробнее о заказе</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="order" id="activeOrder">
+        <div class="order__stick">
+          <img src="./img/icons/stick.svg" alt="" />
+        </div>
+        <div class="order__body">
+          <div class="order__info">
+            <div class="order__info-status">
+              <img src="./img/icons/orderStatus4.svg" alt="" class="order__info-icon">
+              <div class="order__info-text">
+                <div class="order__number">Заказ 4</div>
+                <div class="order__status-text">Доставлен</div>
+              </div>
+            </div>
+            <div class="order__timer">
+
+            </div>
+          </div>
+          <div class="order__status">
+            <div class="order__status-block">
+              <div class="order__status-icon">
+                <img src="./img/icons/orderStatus1.svg" alt="">
+              </div>
+              <div class="order__status-text">В очереди</div>
+            </div>
+            <div class="order__status-block">
+              <div class="order__status-icon">
+                <img src="./img/icons/orderStatus2.svg" alt="">
+              </div>
+              <div class="order__status-text">Готовится</div>
+            </div>
+            <div class="order__status-block ">
+              <div class="order__status-icon">
+                <img src="./img/icons/orderStatus3.svg" alt="">
+              </div>
+              <div class="order__status-text">Едет к вам</div>
+            </div>
+            <div class="order__status-block active">
+              <div class="order__status-icon">
+                <img src="./img/icons/orderStatus4.svg" alt="">
+              </div>
+              <div class="order__status-text">Доставлен</div>
+            </div>
+          </div>
+          <div class="order__buttons hidden">
+            <a class="order__button" href="#">
+              <span>Задать вопрос</span>
+            </a>
+            <a class="order__button" href="#">
+              <span>Подробнее о заказе</span>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
 
   </div>

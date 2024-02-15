@@ -1,8 +1,34 @@
 var categoryList = document.querySelector(".categories__list");
 var categoryMenuButton = document.querySelector(".categories__menu-button");
 var bright80 = document.querySelector(".bright80");
+const wrapper = document.querySelector(".wrapper");
 const menus = document.querySelectorAll(".menu");
-//Функции, чтобы затемнять все, что под выезжающими меню и тд.
+
+function disableScroll() {
+  // Получаем текущую прокрутку страницы
+  const scrollY = window.scrollY;
+  // Задаем стили для блокировки прокрутки
+  // wrapper.style.overflow = "hidden";
+  wrapper.style.position = "fixed";
+  wrapper.style.top = `-${scrollY}px`;
+}
+
+// Функция для разблокировки прокрутки
+function enableScroll() {
+  // Получаем значение текущей прокрутки страницы, которое мы предварительно сохраняли
+  const scrollY = parseInt(wrapper.style.top.replace("-", ""));
+
+  // Удаляем стили блокировки прокрутки
+  wrapper.style.overflow = "";
+  wrapper.style.position = "";
+  wrapper.style.top = "";
+
+  // Прокручиваем страницу на сохраненное значение
+  window.scrollTo(0, scrollY);
+}
+
+// Пример использования
+// При выполнении определенного условия, вызываем функцию для блокировки прокрутки
 const showMenu = (menu) => {
   bright80.classList.add("active");
   menu?.classList.remove("hidden");
@@ -23,7 +49,8 @@ const hideMenu = () => {
   bright80.removeEventListener("click", () => {
     hideMenu();
   });
-  body.classList.remove("inactive");
+  wrapper.classList.remove("fixed");
+  // body.classList.remove("inactive");
 };
 bright80.addEventListener("click", () => {
   hideMenu();
@@ -64,7 +91,9 @@ showMenu();
 chooseCityLink.forEach(function (chooseCityLink) {
   chooseCityLink.addEventListener("click", function (event) {
     event.preventDefault();
-    body.classList.remove("inactive");
+    wrapper.classList.remove("fixed");
+
+    // body.classList.remove("inactive");
     chooseCity.classList.remove("active");
     chooseCity.classList.add("hidden");
     hideMenu();
@@ -79,7 +108,9 @@ var headerMenuButton = document.querySelector(".header__menu-button");
 
 headerMenuButton.addEventListener("click", function (event) {
   event.preventDefault();
-  body.classList.toggle("inactive");
+  wrapper.classList.toggle("fixed");
+
+  // body.classList.toggle("inactive");
   sideBar.classList.toggle("hidden");
   if (headerMenuButton.classList.contains("open")) {
     headerMenuButton.classList.remove("open");
@@ -91,7 +122,9 @@ headerMenuButton.addEventListener("click", function (event) {
 });
 categoryMenuButton.addEventListener("click", function (event) {
   event.preventDefault();
-  body.classList.toggle("inactive");
+  wrapper.classList.toggle("fixed");
+
+  // body.classList.toggle("inactive");
   sideBar.classList.toggle("hidden");
   if (headerMenuButton.classList.contains("open")) {
     headerMenuButton.classList.remove("open");
@@ -108,7 +141,9 @@ const sushiCard = document.querySelector("#sushiCard");
 
 sushi.addEventListener("click", (event) => {
   showMenu(sushiCard);
-  body.classList.add("inactive");
+  wrapper.classList.add("fixed");
+
+  // body.classList.add("inactive");
 });
 
 const productCola = document.querySelector("#cola");
@@ -116,7 +151,9 @@ const productCardCola = document.querySelector("#colaCard");
 
 productCola.addEventListener("click", (event) => {
   showMenu(productCardCola);
-  body.classList.add("inactive");
+  wrapper.classList.add("fixed");
+
+  // body.classList.add("inactive");
 });
 
 const swipeMenus = document.querySelectorAll(".swipe");
@@ -131,7 +168,9 @@ swipeMenus.forEach((item) => {
     item.style = "";
     item.style.transition = "bottom 0.5s ease";
     hideMenu(item);
-    body.classList.remove("inactive");
+    wrapper.classList.remove("fixed");
+
+    // body.classList.remove("inactive");
     menuVisible = false;
     setTimeout(() => {
       item.style = "";
@@ -292,11 +331,11 @@ orders.forEach((item, index) => {
   item.addEventListener("touchstart", function (e) {
     startY = e.touches[0].clientY;
     item.style.transition = "none";
-    body.classList.add("inactive");
+    // wrapper.classList.add("fixed");
+    disableScroll();
     startBottom = parseInt(
       window.getComputedStyle(item).getPropertyValue("bottom")
     );
-    document.body.addEventListener("touchmove", preventDefault);
   });
   item.addEventListener("touchmove", function (e) {
     item.style.transition = "none";
@@ -324,8 +363,9 @@ orders.forEach((item, index) => {
         showMenu();
       });
     }
-    document.body.removeEventListener("touchmove", preventDefault);
-    body.classList.remove("inactive");
+    enableScroll();
+
+    // body.classList.remove("inactive");
   });
 });
 
