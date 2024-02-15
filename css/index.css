@@ -36,6 +36,7 @@
 
 .wrapper {
   position: relative;
+  width: 100%;
 }
 .wrapper.fixed {
   /* overflow: hidden;
@@ -612,6 +613,9 @@ right: 0; */
   width: 100vw;
   border-radius: 16px 16px 0 0;
 }
+.categories2.hidden {
+  display: none;
+}
 .cart__text {
   font-family: "Cera Round Pro";
   font-weight: 500;
@@ -631,7 +635,7 @@ right: 0; */
   text-align: right;
   color: rgba(0, 0, 0, 0.4);
 }
-.cart.hidden {
+.cart__link.hidden {
   display: none;
 }
 .cart.empty {
