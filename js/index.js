@@ -6,7 +6,6 @@ const menus = document.querySelectorAll(".menu");
 const showMenu = (menu) => {
   bright80.classList.add("active");
   menu?.classList.remove("hidden");
-
   bright80.addEventListener("click", () => {
     hideMenu();
   });

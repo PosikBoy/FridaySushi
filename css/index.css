@@ -40,6 +40,8 @@
 .container {
   padding: 0px 20px;
 }
+.inactive {
+  overflow: hidden;
 }
 
 .bright80 {
@@ -1084,12 +1086,7 @@
   padding: 12px 20px 0px 20px;
   width: 100vw;
 }
-/* .order.hidden {
-  bottom: -190px;
-}
-.status3.hidden {
-  bottom: -452px;
-} */
+
 .order__stick {
   width: 100%;
   display: flex;
