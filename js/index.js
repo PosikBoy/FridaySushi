@@ -17,24 +17,20 @@ function disableScroll() {
 function enableScroll() {
   // Получаем значение текущей прокрутки страницы, которое мы предварительно сохраняли
   const scrollY = parseInt(wrapper.style.top.replace("-", ""));
-
   // Удаляем стили блокировки прокрутки
   wrapper.style.overflow = "";
   wrapper.style.position = "";
   wrapper.style.top = "";
-
   // Прокручиваем страницу на сохраненное значение
   window.scrollTo(0, scrollY);
 }
-
-// Пример использования
-// При выполнении определенного условия, вызываем функцию для блокировки прокрутки
 const showMenu = (menu) => {
   bright80.classList.add("active");
   menu?.classList.remove("hidden");
   bright80.addEventListener("click", () => {
     hideMenu();
   });
+  disableScroll();
 };
 
 const hideMenu = () => {
@@ -49,8 +45,7 @@ const hideMenu = () => {
   bright80.removeEventListener("click", () => {
     hideMenu();
   });
-  wrapper.classList.remove("fixed");
-  // body.classList.remove("inactive");
+  enableScroll();
 };
 bright80.addEventListener("click", () => {
   hideMenu();
@@ -83,7 +78,6 @@ window.addEventListener("scroll", function () {
 //Начало кода для выбора города
 const chooseCity = document.querySelector(".choose-city");
 const chooseCityLink = document.querySelectorAll(".choose-city__link");
-const body = document.querySelector("body");
 
 chooseCity.classList.add("active");
 showMenu();
@@ -91,9 +85,6 @@ showMenu();
 chooseCityLink.forEach(function (chooseCityLink) {
   chooseCityLink.addEventListener("click", function (event) {
     event.preventDefault();
-    wrapper.classList.remove("fixed");
-
-    // body.classList.remove("inactive");
     chooseCity.classList.remove("active");
     chooseCity.classList.add("hidden");
     hideMenu();
@@ -108,9 +99,6 @@ var headerMenuButton = document.querySelector(".header__menu-button");
 
 headerMenuButton.addEventListener("click", function (event) {
   event.preventDefault();
-  wrapper.classList.toggle("fixed");
-
-  // body.classList.toggle("inactive");
   sideBar.classList.toggle("hidden");
   if (headerMenuButton.classList.contains("open")) {
     headerMenuButton.classList.remove("open");
@@ -122,9 +110,6 @@ headerMenuButton.addEventListener("click", function (event) {
 });
 categoryMenuButton.addEventListener("click", function (event) {
   event.preventDefault();
-  wrapper.classList.toggle("fixed");
-
-  // body.classList.toggle("inactive");
   sideBar.classList.toggle("hidden");
   if (headerMenuButton.classList.contains("open")) {
     headerMenuButton.classList.remove("open");
@@ -141,9 +126,6 @@ const sushiCard = document.querySelector("#sushiCard");
 
 sushi.addEventListener("click", (event) => {
   showMenu(sushiCard);
-  wrapper.classList.add("fixed");
-
-  // body.classList.add("inactive");
 });
 
 const productCola = document.querySelector("#cola");
@@ -151,9 +133,6 @@ const productCardCola = document.querySelector("#colaCard");
 
 productCola.addEventListener("click", (event) => {
   showMenu(productCardCola);
-  wrapper.classList.add("fixed");
-
-  // body.classList.add("inactive");
 });
 
 const swipeMenus = document.querySelectorAll(".swipe");
@@ -168,9 +147,6 @@ swipeMenus.forEach((item) => {
     item.style = "";
     item.style.transition = "bottom 0.5s ease";
     hideMenu(item);
-    wrapper.classList.remove("fixed");
-
-    // body.classList.remove("inactive");
     menuVisible = false;
     setTimeout(() => {
       item.style = "";
@@ -194,11 +170,10 @@ swipeMenus.forEach((item) => {
     var currentY = e.touches[0].clientY;
     var diff = currentY - startY;
     var newBottom = startBottom - diff;
-
     if (newBottom >= -startHeight && newBottom <= 0) {
-      requestAnimationFrame(function () {
-        updateSwipeMenu(newBottom);
-      });
+      // requestAnimationFrame(function () {
+      updateSwipeMenu(newBottom);
+      // });
     }
   });
   item.addEventListener("touchend", function (e) {
@@ -242,7 +217,6 @@ var addressDelivery = document.querySelector(".side-bar__address-info");
 var addressDeliveryMenu = document.querySelector("#addressDeliveryMenu");
 addressDelivery.addEventListener("click", () => {
   addressDeliveryMenu.classList.toggle("hidden");
-  // toggleBrightness();
 });
 
 var addressMenuOptions = document.querySelectorAll(".address-menu__option");
@@ -331,7 +305,6 @@ orders.forEach((item, index) => {
   item.addEventListener("touchstart", function (e) {
     startY = e.touches[0].clientY;
     item.style.transition = "none";
-    // wrapper.classList.add("fixed");
     disableScroll();
     startBottom = parseInt(
       window.getComputedStyle(item).getPropertyValue("bottom")
@@ -365,17 +338,5 @@ orders.forEach((item, index) => {
       });
     }
     enableScroll();
-
-    // body.classList.remove("inactive");
   });
 });
-
-// sideBar.addEventListener("click", (event) => {
-//   if (event.target.className != "side-bar__body") {
-//     event.preventDefault();
-//     body.classList.toggle("inactive");
-//     headerMenuButton.classList.toggle("open");
-//     sideBar.classList.toggle("hidden");
-//     toggleBrightness();
-//   }
-// });

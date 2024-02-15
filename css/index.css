@@ -1121,6 +1121,9 @@ right: 0; */
   margin-right: 12px;
   transition: all 0.5s;
 }
+.order__info-status {
+  flex-grow: 1;
+}
 .order__info-icon.hidden {
   margin-right: 0px;
   width: 0;
