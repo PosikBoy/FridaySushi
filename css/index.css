@@ -704,6 +704,14 @@
   border: 1px solid #f0f0f0;
   border-radius: 16px;
 }
+
+.options__option {
+  display: flex;
+  justify-content: space-between;
+}
+.option__input {
+  display: flex;
+}
 .options__option-label {
   display: flex;
   font-family: "Cera Pro";
@@ -753,21 +761,24 @@
   background-color: #ff0000;
 }
 
+.option__info {
+  display: none;
+}
+
 .option.selected .option__info {
   display: block;
 }
 
-.option__info.active .info__body {
+/* INFO BLOCK STYLES */
+
+.info.active .info__body {
   display: block;
 }
 
-.option__info {
-  display: none;
-  position: absolute;
-  right: 12px;
-  top: 50%;
-  transform: translateY(-50%);
+.info {
+  position: relative;
 }
+
 .info__body {
   display: none;
   position: absolute;
@@ -815,6 +826,7 @@
   justify-content: space-between;
 }
 
+/* INFO BLOCK STYLES */
 /* cola card */
 .product-card__info2 {
   padding: 5px 0;

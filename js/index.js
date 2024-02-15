@@ -191,9 +191,9 @@ options.forEach(function (option) {
   });
 });
 
-var optionsInfo = document.querySelectorAll(".option__info");
+var info = document.querySelectorAll(".info");
 
-optionsInfo.forEach(function (option) {
+info.forEach(function (option) {
   option.addEventListener("click", function () {
     option.classList.toggle("active");
   });
