@@ -40,9 +40,6 @@
 .container {
   padding: 0px 20px;
 }
-
-.inactive {
-  overflow: hidden;
 }
 
 .bright80 {
@@ -651,7 +648,7 @@
   border-radius: 16px 16px 0 0;
 }
 .product-card.hidden {
-  bottom: -100%;
+  bottom: -500%;
   transition: all 0.5s;
 }
 
@@ -849,7 +846,7 @@
   border-radius: 16px 16px 0 0;
 }
 .address-menu.hidden {
-  bottom: -100%;
+  bottom: -500%;
   transition: all 0.5s;
 }
 .address-menu__body {

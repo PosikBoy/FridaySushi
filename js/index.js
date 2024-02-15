@@ -1,5 +1,3 @@
-//categories
-
 var categoryList = document.querySelector(".categories__list");
 var categoryMenuButton = document.querySelector(".categories__menu-button");
 var bright80 = document.querySelector(".bright80");
@@ -249,15 +247,27 @@ orders.forEach((item, index) => {
   let initialHeight = item.clientHeight;
   let initialBottom = -(initialHeight - (index + 1) * 70 - 60);
   item.style.bottom = initialBottom + "px";
-  console.log(initialBottom, initialHeight);
   var startY, startBottom;
   var menuVisible = true;
+  function checkWrapper() {
+    let flag = 0;
+    orders.forEach((item) => {
+      if (item.classList.contains("active")) {
+        flag += 1;
+      }
+    });
+    return flag;
+  }
   function updateMenu(newBottom) {
     item.style.bottom = newBottom + "px";
   }
   function hideMenu() {
     item.style.transition = "bottom 0.5s ease";
     item.style.bottom = initialBottom + "px";
+    item.classList.remove("active");
+    if (!checkWrapper()) {
+      ordersWrapper.classList.remove("active");
+    }
     statusInfoIcon.classList.remove("hidden");
     menuVisible = false;
     setTimeout(() => {
@@ -268,6 +278,7 @@ orders.forEach((item, index) => {
     item.style.transition = "bottom 0.3s ease";
     item.style.bottom = initialBottom + initialHeight - 100 + "px";
     menuVisible = true;
+    item.classList.add("active");
     ordersWrapper.classList.add("active");
     statusInfoIcon.classList.add("hidden");
   }
@@ -278,18 +289,19 @@ orders.forEach((item, index) => {
     startBottom = parseInt(
       window.getComputedStyle(item).getPropertyValue("bottom")
     );
+    document.body.addEventListener(
+      "touchmove",
+      function (event) {
+        event.preventDefault();
+      },
+      { passive: false }
+    );
   });
   item.addEventListener("touchmove", function (e) {
     item.style.transition = "none";
     var currentY = e.touches[0].clientY;
     var diff = currentY - startY;
     var newBottom = startBottom - diff;
-    console.log(
-      newBottom,
-      newBottom >= -initialHeight && newBottom <= initialHeight + initialBottom,
-      initialHeight - initialBottom
-    );
-
     if (
       newBottom >= -initialHeight &&
       newBottom <= initialHeight + initialBottom - 100
@@ -302,7 +314,6 @@ orders.forEach((item, index) => {
   item.addEventListener("touchend", function (e) {
     var touchEndY = e.changedTouches[0].clientY;
     var diffY = touchEndY - startY;
-
     if (diffY >= initialHeight * 0.2) {
       requestAnimationFrame(function () {
         hideMenu();
