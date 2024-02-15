@@ -195,28 +195,38 @@ addressMenuOptions.forEach(function (option) {
 
 const orders = document.querySelectorAll(".order");
 
+let zIndexs = 6;
 orders.forEach((item) => {
-  const statusInfoIcon = document.querySelector(".order__info-icon");
+  item.style.zIndex = zIndexs;
+  zIndexs -= 1;
+});
 
+let statusInfoIconArray = document.querySelectorAll(".order__info-icon");
+
+orders.forEach((item, index) => {
+  console.log(index);
+  let statusInfoIcon = statusInfoIconArray[index];
+  let initialHeight = item.clientHeight;
+  let initialBottom = -(initialHeight - (index + 1) * 70 - 60);
+  item.style.bottom = initialBottom + "px";
+  console.log(initialBottom, initialHeight);
   var startY, startBottom, startHeight;
   var menuVisible = true;
   function updateMenu(newBottom) {
     item.style.bottom = newBottom + "px";
   }
   function hideMenu() {
-    item.style = "";
     item.style.transition = "bottom 0.5s ease";
-    item.classList.add("hidden");
+    item.style.bottom = initialBottom + "px";
     statusInfoIcon.classList.remove("hidden");
-
     menuVisible = false;
     setTimeout(() => {
-      item.style = "";
+      item.style.transition = "";
     }, 500);
   }
   function showMenu() {
     item.style.transition = "bottom 0.3s ease";
-    item.style.bottom = "0";
+    item.style.bottom = initialBottom + initialHeight - 100 + "px";
     menuVisible = true;
     statusInfoIcon.classList.add("hidden");
   }
@@ -234,7 +244,16 @@ orders.forEach((item) => {
     var currentY = e.touches[0].clientY;
     var diff = currentY - startY;
     var newBottom = startBottom - diff;
-    if (newBottom >= -startHeight && newBottom <= 0) {
+    console.log(
+      newBottom,
+      newBottom >= -startHeight && newBottom <= startHeight + initialBottom,
+      startHeight - initialBottom
+    );
+
+    if (
+      newBottom >= -startHeight &&
+      newBottom <= startHeight + initialBottom - 100
+    ) {
       requestAnimationFrame(function () {
         updateMenu(newBottom);
       });
@@ -243,7 +262,6 @@ orders.forEach((item) => {
   item.addEventListener("touchend", function (e) {
     var touchEndY = e.changedTouches[0].clientY;
     var diffY = touchEndY - startY;
-    body.classList.remove("inactive");
 
     if (diffY >= startHeight * 0.2) {
       requestAnimationFrame(function () {
@@ -254,5 +272,6 @@ orders.forEach((item) => {
         showMenu();
       });
     }
+    body.classList.remove("inactive");
   });
 });

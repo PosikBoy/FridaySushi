@@ -52,7 +52,7 @@
   width: 100vw;
   top: 0;
   left: 0;
-  z-index: 3;
+  z-index: 10;
   opacity: 0;
   transition: opacity 0.5s;
   pointer-events: none;
@@ -81,7 +81,7 @@
   border-radius: 50%;
   display: block;
   position: relative;
-  z-index: 11;
+  z-index: 12;
   width: 36px;
   height: 36px;
   flex-shrink: 0;
@@ -129,7 +129,7 @@
   width: 100vw;
   height: 100vh;
   position: fixed;
-  z-index: 10;
+  z-index: 11;
   top: 0;
 }
 
@@ -281,7 +281,7 @@
   width: 100vw;
   height: 100vh;
   position: fixed;
-  z-index: 12;
+  z-index: 11;
   top: 0;
 }
 .choose-city.hidden {
@@ -349,21 +349,20 @@
 
 .story {
   border: 2px solid transparent;
-  background: linear-gradient(
-    45deg,
-    rgba(255, 219, 108, 1),
-    rgba(255, 196, 108, 1)
-  );
+  height: 160px;
+  width: 120px;
+  flex: 0 0 auto;
   border-radius: 20px;
   position: relative;
 }
 .story.checked {
   border-radius: 20px;
-  border: 1px solid #999999;
   background: none;
   position: relative;
 }
 .story__link {
+  width: 100%;
+  height: 100%;
   display: block;
   position: relative;
 }
@@ -372,6 +371,7 @@
   font-size: 12px;
   line-height: 100%;
   letter-spacing: -0.01em;
+  width: 95px;
   color: white;
   position: absolute;
   bottom: 13px;
@@ -380,10 +380,9 @@
 }
 
 .story__image {
-  width: 96px;
-  height: 96px;
-  border: 4px white solid;
-  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
   overflow: hidden;
 }
 
@@ -593,7 +592,7 @@
   justify-content: center;
   gap: 10px;
   position: fixed;
-  z-index: 3;
+  z-index: 9;
   bottom: 0;
   height: 56px;
   width: 100vw;
@@ -636,7 +635,7 @@
   flex-direction: column;
   align-items: center;
   bottom: 0;
-  z-index: 100;
+  z-index: 12;
   overflow: hidden;
   transition: all 0.5s;
   border-radius: 16px 16px 0 0;
@@ -764,7 +763,7 @@
   position: absolute;
   top: -60px;
   left: -250px;
-  z-index: 1000;
+  z-index: 13;
   padding: 10px 16px;
   border-radius: 8px;
   width: 240px;
@@ -822,7 +821,7 @@
   flex-direction: column;
   align-items: center;
   bottom: 0;
-  z-index: 100;
+  z-index: 12;
   overflow: hidden;
   transition: all 0.5s;
   border-radius: 16px 16px 0 0;
@@ -1054,8 +1053,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  bottom: 0;
-  z-index: 2;
+  bottom: -1000;
+  /* z-index: 2; */
   overflow: hidden;
   transition: all 0.5s;
   border-radius: 16px 16px 0 0;
@@ -1066,13 +1065,12 @@
   padding: 12px 20px 0px 20px;
   width: 100vw;
 }
-.order.hidden {
+/* .order.hidden {
   bottom: -190px;
 }
 .status3.hidden {
-  bottom: -552px;
-
-}
+  bottom: -452px;
+} */
 .order__stick {
   width: 100%;
   display: flex;
@@ -1145,10 +1143,12 @@
 .order__status-block.active {
   opacity: 1;
 }
+.order__map {
+  margin-bottom: -10px;
+}
 
-.order__map img{
-  width: 100%;
-  im
+.orders {
+  position: relative;
 }
 .order__status-text {
   font-family: "Cera Pro";
