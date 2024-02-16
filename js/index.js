@@ -156,6 +156,7 @@ swipeMenus.forEach((item) => {
   });
   item.addEventListener("touchmove", function (e) {
     e.stopPropagation();
+e.preventDefault();
     item.style.transition = "none";
     var currentY = e.touches[0].clientY;
     var diff = currentY - startY;
