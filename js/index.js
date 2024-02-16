@@ -9,6 +9,7 @@ function disableScroll() {
   wrapper.style.overflow = "hidden";
   wrapper.style.position = "fixed";
   wrapper.style.top = `-${scrollY}px`;
+  console.log(scrollY);
 }
 
 // Функция для разблокировки прокрутки
@@ -19,30 +20,27 @@ function enableScroll() {
   wrapper.style.overflow = "";
   wrapper.style.position = "";
   wrapper.style.top = "";
+  console.log(scrollY);
   // Прокручиваем страницу на сохраненное значение
   window.scrollTo(0, scrollY);
 }
 const showMenu = (menu) => {
   bright80.classList.add("active");
   menu?.classList.remove("hidden");
-  bright80.addEventListener("click", () => {
-    hideMenu();
-  });
+  bright80.addEventListener("click", hideMenu);
   disableScroll();
 };
 
 const hideMenu = () => {
-  console.log("hidemenu");
   bright80.classList.remove("active");
   //скрываем все меню, при нажатии на крестик или область с пониженной яркостью
   menus.forEach((item) => {
     item.classList.add("hidden");
     item.style = "";
   });
-  headerMenuButton.classList.remove("open");
-  bright80.removeEventListener("click", () => {
-    hideMenu();
-  });
+  sideBarMenuButton.classList.remove("open");
+  headerMenuButton.classList.remove("hidden");
+  bright80.removeEventListener("click", hideMenu);
   enableScroll();
 };
 bright80.addEventListener("click", () => {
@@ -91,29 +89,24 @@ var headerMenuButton = document.querySelector(".header__menu-button");
 
 headerMenuButton.addEventListener("click", function (event) {
   event.preventDefault();
-  sideBar.classList.toggle("hidden");
-  if (headerMenuButton.classList.contains("open")) {
-    headerMenuButton.classList.remove("open");
-    hideMenu();
-  } else {
-    headerMenuButton.classList.add("open");
-    showMenu(sideBar);
-  }
+  showMenu(sideBar);
+  headerMenuButton.classList.add("hidden");
+  sideBarMenuButton.classList.add("open");
 });
-var categoryMenuButton = document.querySelectorAll(".categories__menu-button");
 
+var categoryMenuButton = document.querySelectorAll(".categories__menu-button");
+var sideBarMenuButton = document.querySelector(".side-bar__menu-button");
 categoryMenuButton.forEach((button) => {
   button.addEventListener("click", function (event) {
     event.preventDefault();
-    sideBar.classList.toggle("hidden");
-    if (headerMenuButton.classList.contains("open")) {
-      headerMenuButton.classList.remove("open");
-      hideMenu();
-    } else {
-      headerMenuButton.classList.add("open");
-      showMenu(sideBar);
-    }
+    showMenu(sideBar);
+    headerMenuButton.classList.add("hidden");
+    sideBarMenuButton.classList.add("open");
   });
+});
+
+sideBarMenuButton.addEventListener("click", () => {
+  hideMenu();
 });
 
 // product card
@@ -163,6 +156,8 @@ swipeMenus.forEach((item) => {
     startHeight = item.offsetHeight;
   });
   item.addEventListener("touchmove", function (e) {
+    e.stopPropagation();
+
     item.style.transition = "none";
     var currentY = e.touches[0].clientY;
     var diff = currentY - startY;

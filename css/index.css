@@ -90,15 +90,26 @@ right: 0; */
   height: 36px;
   flex-shrink: 0;
 }
-.menu-button.open {
-  background-color: rgba(192, 192, 192, 1);
-  position: fixed;
-  z-index: 12;
+
+.header__menu-button.hidden {
+  display: none;
 }
-.menu-button.open {
+.side-bar__menu-button {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  display: none;
+  position: relative;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+}
+.side-bar__menu-button.open {
+  display: block;
+  background-color: rgba(192, 192, 192, 1);
   position: fixed;
   right: 20px;
   top: 20px;
+  z-index: 12;
 }
 
 .menu-button span::after,
