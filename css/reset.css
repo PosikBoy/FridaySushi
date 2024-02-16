@@ -103,5 +103,5 @@ body {
   height: 100%;
 }
 body {
-  overscroll-behavior-y: none;
+  overscroll-behavior: none;
 }
