@@ -156,28 +156,21 @@ swipeMenus.forEach((item) => {
   });
   item.addEventListener("touchmove", function (e) {
     e.stopPropagation();
-e.preventDefault();
     item.style.transition = "none";
     var currentY = e.touches[0].clientY;
     var diff = currentY - startY;
     var newBottom = startBottom - diff;
     if (newBottom >= -startHeight && newBottom <= 0) {
-      // requestAnimationFrame(function () {
       updateSwipeMenu(newBottom);
-      // });
     }
   });
   item.addEventListener("touchend", function (e) {
     var touchEndY = e.changedTouches[0].clientY;
     var diffY = touchEndY - startY;
     if (diffY >= startHeight * 0.2) {
-      requestAnimationFrame(function () {
-        hideSwipeMenu();
-      });
+      hideSwipeMenu();
     } else {
-      requestAnimationFrame(function () {
-        showSwipeMenu();
-      });
+      showSwipeMenu();
     }
   });
 });
@@ -207,7 +200,8 @@ info.forEach(function (option) {
 var addressDelivery = document.querySelector(".side-bar__address-info");
 var addressDeliveryMenu = document.querySelector("#addressDeliveryMenu");
 addressDelivery.addEventListener("click", () => {
-  addressDeliveryMenu.classList.toggle("hidden");
+  hideMenu();
+  showMenu(addressDeliveryMenu);
 });
 
 var addressMenuOptions = document.querySelectorAll(".address-menu__option");
