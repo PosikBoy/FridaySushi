@@ -200,7 +200,8 @@ info.forEach(function (option) {
 var addressDelivery = document.querySelector(".side-bar__address-info");
 var addressDeliveryMenu = document.querySelector("#addressDeliveryMenu");
 addressDelivery.addEventListener("click", () => {
-  addressDeliveryMenu.classList.toggle("hidden");
+  hideMenu();
+  showMenu(addressDeliveryMenu);
 });
 
 var addressMenuOptions = document.querySelectorAll(".address-menu__option");
