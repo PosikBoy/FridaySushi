@@ -26,6 +26,7 @@ const showMenu = (menu) => {
   bright80.classList.add("active");
   menu?.classList.remove("hidden");
   bright80.addEventListener("click", hideMenu);
+  disableScroll();
 };
 
 const hideMenu = () => {
@@ -67,8 +68,7 @@ const chooseCity = document.querySelector(".choose-city");
 const chooseCityLink = document.querySelectorAll(".choose-city__link");
 
 chooseCity.classList.add("active");
-showMenu();
-disableScroll();
+showMenu(chooseCity);
 
 chooseCityLink.forEach(function (chooseCityLink) {
   chooseCityLink.addEventListener("click", function (event) {
@@ -89,7 +89,6 @@ var headerMenuButton = document.querySelector(".header__menu-button");
 headerMenuButton.addEventListener("click", function (event) {
   event.preventDefault();
   showMenu(sideBar);
-  disableScroll();
   headerMenuButton.classList.add("hidden");
   sideBarMenuButton.classList.add("open");
 });
@@ -100,7 +99,6 @@ categoryMenuButton.forEach((button) => {
   button.addEventListener("click", function (event) {
     event.preventDefault();
     showMenu(sideBar);
-    disableScroll();
     headerMenuButton.classList.add("hidden");
     sideBarMenuButton.classList.add("open");
   });
@@ -152,7 +150,6 @@ swipeMenus.forEach((item) => {
   item.addEventListener("touchstart", function (e) {
     startY = e.touches[0].clientY;
     item.style.transition = "none";
-    disableScroll();
     startBottom = parseInt(
       window.getComputedStyle(item).getPropertyValue("bottom")
     );
@@ -295,7 +292,6 @@ orders.forEach((item, index) => {
   item.addEventListener("touchstart", function (e) {
     startY = e.touches[0].clientY;
     item.style.transition = "none";
-    disableScroll();
     startBottom = parseInt(
       window.getComputedStyle(item).getPropertyValue("bottom")
     );
