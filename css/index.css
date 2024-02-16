@@ -411,19 +411,25 @@ right: 0; */
   background-color: white;
   padding: 10px 0 10px 20px;
 }
-
-.categories__menu-button {
-  opacity: 0;
-  width: 0;
-  margin-right: -10px;
-  transition: all 0.3s;
+.categories.hidden {
+  z-index: -1;
 }
-
-.categories__menu-button.active {
-  opacity: 1;
+.categories2 {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  background-color: white;
+  padding: 10px 0 10px 20px;
+}
+.categories2.hidden {
+  display: none;
+}
+.categories__menu-button {
   width: 36px;
   transition: all 0.3s;
-  margin-right: 0px;
 }
 .categories__list {
   overflow-x: scroll;

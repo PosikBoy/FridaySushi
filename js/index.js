@@ -1,5 +1,3 @@
-var categoryList = document.querySelector(".categories__list");
-var categoryMenuButton = document.querySelector(".categories__menu-button");
 var bright80 = document.querySelector(".bright80");
 const wrapper = document.querySelector(".wrapper");
 const menus = document.querySelectorAll(".menu");
@@ -53,24 +51,20 @@ bright80.addEventListener("click", () => {
 // Конец кода для понижения яркости экрана при
 
 // Начало кода для кнопки, которая повляется в категориях товаров.
-let isMenuButtonShown = false;
-function addMenuButton() {
-  categoryMenuButton.classList.add("active");
-  isMenuButtonShown = true;
-}
+var categoryList = document.querySelector(".categories__list");
+var category = document.querySelector(".categories");
+var category2 = document.querySelector(".categories2");
 
-function removeMenuButton() {
-  categoryMenuButton.classList.remove("active");
-  isMenuButtonShown = false;
-}
+var categoryMenuButton = document.querySelector(".categories__menu-button");
+
 window.addEventListener("scroll", function () {
   var rect = categoryList.getBoundingClientRect();
   if (rect.top <= 10) {
-    addMenuButton();
+    category2.classList.remove("hidden");
+    category.classList.add("hidden");
   } else {
-    if (isMenuButtonShown) {
-      removeMenuButton();
-    }
+    category2.classList.add("hidden");
+    category.classList.remove("hidden");
   }
 });
 // Конец кода для кнопки, которая повялется в категориях товаров.
