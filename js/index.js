@@ -2,6 +2,7 @@ var bright80 = document.querySelector(".bright80");
 const wrapper = document.querySelector(".wrapper");
 const menus = document.querySelectorAll(".menu");
 let realScroll;
+
 function disableScroll() {
   // Получаем текущую прокрутку страницы
   realScroll = window.scrollY;
@@ -9,7 +10,6 @@ function disableScroll() {
   wrapper.style.overflow = "hidden";
   wrapper.style.position = "fixed";
   wrapper.style.top = `-${realScroll}px`;
-  console.log(scrollY);
 }
 
 // Функция для разблокировки прокрутки
@@ -19,15 +19,13 @@ function enableScroll() {
   wrapper.style.overflow = "";
   wrapper.style.position = "";
   wrapper.style.top = "";
-  console.log(realScroll);
-  // Прокручиваем страницу на сохраненное значение
+  realScroll; // Прокручиваем страницу на сохраненное значение
   window.scrollTo(0, realScroll);
 }
 const showMenu = (menu) => {
   bright80.classList.add("active");
   menu?.classList.remove("hidden");
   bright80.addEventListener("click", hideMenu);
-  disableScroll();
 };
 
 const hideMenu = () => {
@@ -40,10 +38,10 @@ const hideMenu = () => {
   sideBarMenuButton.classList.remove("open");
   headerMenuButton.classList.remove("hidden");
   bright80.removeEventListener("click", hideMenu);
-  enableScroll();
 };
 bright80.addEventListener("click", () => {
   hideMenu();
+  enableScroll();
 });
 // Конец кода для понижения яркости экрана при
 
@@ -70,6 +68,7 @@ const chooseCityLink = document.querySelectorAll(".choose-city__link");
 
 chooseCity.classList.add("active");
 showMenu();
+disableScroll();
 
 chooseCityLink.forEach(function (chooseCityLink) {
   chooseCityLink.addEventListener("click", function (event) {
@@ -77,6 +76,7 @@ chooseCityLink.forEach(function (chooseCityLink) {
     chooseCity.classList.remove("active");
     chooseCity.classList.add("hidden");
     hideMenu();
+    enableScroll();
   });
 });
 //Конец кода для выбора города
@@ -89,6 +89,7 @@ var headerMenuButton = document.querySelector(".header__menu-button");
 headerMenuButton.addEventListener("click", function (event) {
   event.preventDefault();
   showMenu(sideBar);
+  disableScroll();
   headerMenuButton.classList.add("hidden");
   sideBarMenuButton.classList.add("open");
 });
@@ -99,6 +100,7 @@ categoryMenuButton.forEach((button) => {
   button.addEventListener("click", function (event) {
     event.preventDefault();
     showMenu(sideBar);
+    disableScroll();
     headerMenuButton.classList.add("hidden");
     sideBarMenuButton.classList.add("open");
   });
@@ -106,6 +108,7 @@ categoryMenuButton.forEach((button) => {
 
 sideBarMenuButton.addEventListener("click", () => {
   hideMenu();
+  enableScroll();
 });
 
 // product card
@@ -131,22 +134,11 @@ swipeMenus.forEach((item) => {
   function updateSwipeMenu(newBottom) {
     item.style.bottom = newBottom + "px";
   }
-  function disableScroll() {
-    wrapper.style.overflow = "hidden";
-    wrapper.style.position = "fixed";
-    wrapper.style.top = `-${realScroll}px`;
-  }
-  function enableScroll() {
-    wrapper.style.overflow = "";
-    wrapper.style.position = "";
-    wrapper.style.top = "";
-    window.scrollTo(0, realScroll);
-  }
   function hideSwipeMenu() {
     item.style = "";
     item.style.transition = "bottom 0.5s ease";
     hideMenu(item);
-
+    enableScroll();
     menuVisible = false;
     setTimeout(() => {
       item.style = "";
@@ -155,7 +147,6 @@ swipeMenus.forEach((item) => {
   function showSwipeMenu() {
     item.style.transition = "bottom 0.3s ease";
     item.style.bottom = "0";
-    z;
     menuVisible = true;
   }
   item.addEventListener("touchstart", function (e) {
