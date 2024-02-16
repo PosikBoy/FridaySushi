@@ -214,6 +214,7 @@
 }
 
 .recomend__item {
+  width: 142px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -527,6 +528,8 @@
 .cart__button {
   font-family: "Cera Round Pro";
   display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 10px;
   font-weight: 400;
   font-size: 21px;
