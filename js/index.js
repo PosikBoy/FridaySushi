@@ -55,8 +55,6 @@ var categoryList = document.querySelector(".categories__list");
 var category = document.querySelector(".categories");
 var category2 = document.querySelector(".categories2");
 
-var categoryMenuButton = document.querySelector(".categories__menu-button");
-
 window.addEventListener("scroll", function () {
   var rect = categoryList.getBoundingClientRect();
   if (rect.top <= 10) {
@@ -102,16 +100,20 @@ headerMenuButton.addEventListener("click", function (event) {
     showMenu(sideBar);
   }
 });
-categoryMenuButton.addEventListener("click", function (event) {
-  event.preventDefault();
-  sideBar.classList.toggle("hidden");
-  if (headerMenuButton.classList.contains("open")) {
-    headerMenuButton.classList.remove("open");
-    hideMenu();
-  } else {
-    headerMenuButton.classList.add("open");
-    showMenu(sideBar);
-  }
+var categoryMenuButton = document.querySelectorAll(".categories__menu-button");
+
+categoryMenuButton.forEach((button) => {
+  button.addEventListener("click", function (event) {
+    event.preventDefault();
+    sideBar.classList.toggle("hidden");
+    if (headerMenuButton.classList.contains("open")) {
+      headerMenuButton.classList.remove("open");
+      hideMenu();
+    } else {
+      headerMenuButton.classList.add("open");
+      showMenu(sideBar);
+    }
+  });
 });
 
 // product card
@@ -154,6 +156,7 @@ swipeMenus.forEach((item) => {
   item.addEventListener("touchstart", function (e) {
     startY = e.touches[0].clientY;
     item.style.transition = "none";
+    disableScroll();
     startBottom = parseInt(
       window.getComputedStyle(item).getPropertyValue("bottom")
     );
@@ -182,6 +185,7 @@ swipeMenus.forEach((item) => {
         showSwipeMenu();
       });
     }
+    enableScroll();
   });
 });
 
