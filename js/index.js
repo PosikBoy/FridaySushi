@@ -149,7 +149,6 @@ swipeMenus.forEach((item) => {
   item.addEventListener("touchstart", function (e) {
     startY = e.touches[0].clientY;
     item.style.transition = "none";
-    disableScroll();
     startBottom = parseInt(
       window.getComputedStyle(item).getPropertyValue("bottom")
     );
@@ -157,7 +156,6 @@ swipeMenus.forEach((item) => {
   });
   item.addEventListener("touchmove", function (e) {
     e.stopPropagation();
-
     item.style.transition = "none";
     var currentY = e.touches[0].clientY;
     var diff = currentY - startY;
@@ -180,7 +178,6 @@ swipeMenus.forEach((item) => {
         showSwipeMenu();
       });
     }
-    enableScroll();
   });
 });
 
