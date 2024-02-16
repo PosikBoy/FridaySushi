@@ -1,21 +1,21 @@
 var bright80 = document.querySelector(".bright80");
 const wrapper = document.querySelector(".wrapper");
 const menus = document.querySelectorAll(".menu");
-
+let realScroll;
 function disableScroll() {
   // Получаем текущую прокрутку страницы
-  const scrollY = window.scrollY;
+  realScroll = window.scrollY;
   // Задаем стили для блокировки прокрутки
   wrapper.style.overflow = "hidden";
   wrapper.style.position = "fixed";
-  wrapper.style.top = `-${scrollY}px`;
+  wrapper.style.top = `-${realScroll}px`;
   console.log(scrollY);
 }
 
 // Функция для разблокировки прокрутки
 function enableScroll() {
   // Получаем значение текущей прокрутки страницы, которое мы предварительно сохраняли
-  const scrollY = parseInt(wrapper.style.top.replace("-", ""));
+  const scrollY = realScroll;
   // Удаляем стили блокировки прокрутки
   wrapper.style.overflow = "";
   wrapper.style.position = "";
@@ -132,10 +132,24 @@ swipeMenus.forEach((item) => {
   function updateSwipeMenu(newBottom) {
     item.style.bottom = newBottom + "px";
   }
+  function disableScroll() {
+    wrapper.style.overflow = "hidden";
+    wrapper.style.position = "fixed";
+    wrapper.style.top = `-${realScroll}px`;
+  }
+  function enableScroll() {
+    wrapper.style.overflow = "";
+    wrapper.style.position = "";
+    wrapper.style.top = "";
+
+    // Прокручиваем страницу на сохраненное значение
+    window.scrollTo(0, scrollY);
+  }
   function hideSwipeMenu() {
     item.style = "";
     item.style.transition = "bottom 0.5s ease";
     hideMenu(item);
+
     menuVisible = false;
     setTimeout(() => {
       item.style = "";
@@ -144,11 +158,13 @@ swipeMenus.forEach((item) => {
   function showSwipeMenu() {
     item.style.transition = "bottom 0.3s ease";
     item.style.bottom = "0";
+    z;
     menuVisible = true;
   }
   item.addEventListener("touchstart", function (e) {
     startY = e.touches[0].clientY;
     item.style.transition = "none";
+    disableScroll();
     startBottom = parseInt(
       window.getComputedStyle(item).getPropertyValue("bottom")
     );
@@ -167,6 +183,7 @@ swipeMenus.forEach((item) => {
   item.addEventListener("touchend", function (e) {
     var touchEndY = e.changedTouches[0].clientY;
     var diffY = touchEndY - startY;
+    enableScroll();
     if (diffY >= startHeight * 0.2) {
       hideSwipeMenu();
     } else {
