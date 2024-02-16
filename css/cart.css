@@ -1,0 +1,544 @@
+.container {
+  padding: 0px 20px;
+}
+
+.header__body {
+  margin: 20px 0 7px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__title {
+  font-family: "Cera Round Pro";
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 114%;
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+
+.header__back-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.header__back-img {
+  transform: rotate(180deg);
+}
+.menu-button {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  display: block;
+  position: relative;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+}
+.menu-button span::after,
+.menu-button span::before {
+  content: "";
+  position: absolute;
+  border-radius: 1px;
+  left: 10px;
+  width: 14px;
+  height: 2px;
+  background-color: #000000;
+  transition: all 0.5s ease-out;
+}
+.menu-button span::before {
+  top: 13.5px;
+}
+.menu-button span::after {
+  bottom: 13.5px;
+}
+.menu-button.open span::before {
+  transform: rotate(-45deg);
+  top: 16px;
+}
+.menu-button.open span::after {
+  transform: rotate(45deg);
+  bottom: 16px;
+}
+
+/* product */
+
+.cart__body {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.cart__products li:last-child {
+  border-bottom: none;
+}
+.product {
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+}
+
+.product__info {
+  width: 227px;
+  margin-left: 12px;
+}
+
+.product__image {
+  position: relative;
+  width: 96px;
+  height: 72px;
+  flex: 0.1 0 auto;
+}
+
+.product__title {
+  font-family: "Cera Round Pro";
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 118%;
+  letter-spacing: -0.01em;
+  margin-bottom: 8px;
+}
+
+.product__value {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.product__price {
+  font-family: "Cera Round Pro";
+
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 114%;
+  letter-spacing: -0.02em;
+  color: var(--black);
+}
+
+.product__quantity {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 114px;
+  height: 36px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  background: #f0f0f0;
+}
+
+.product__quantity-plus,
+.product__quantity-minus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.product__quantity-count {
+  font-family: "Cera Pro";
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 133%;
+  letter-spacing: -0.01em;
+  text-align: center;
+}
+
+.product__icon {
+  display: none;
+}
+
+.product__icon.active {
+  display: block;
+  position: absolute;
+  top: -2px;
+  left: 0px;
+}
+
+.recomend {
+  width: 100%;
+
+  height: 294px;
+}
+
+.recomend__body {
+  background: #f0f0f0;
+  border-radius: 16px;
+  padding: 25px 20px;
+}
+
+.recomend__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.recomend__title {
+  font-family: "Cera Round Pro";
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 114%;
+  letter-spacing: -0.02em;
+}
+
+.recomend__buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.recomend__back,
+.recomend__next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  padding: 10px;
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.recomend__back.active,
+.recomend__next.active {
+  background: white;
+}
+
+.recomend__back img {
+  transform: rotate(180deg);
+}
+
+.reсomend__items {
+  display: flex;
+  gap: 10px;
+}
+
+.recomend__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.recomend__item-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.recomend__item-image {
+  width: 127px;
+  height: 90px;
+}
+.recomend__item-name {
+  font-family: "Cera Round Pro";
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 118%;
+  letter-spacing: -0.01em;
+}
+.recomend__item-price {
+  margin-top: 10px;
+  border-radius: 101px;
+  padding: 8px 16px;
+  width: 74px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Cera Round Pro";
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 118%;
+  letter-spacing: -0.01em;
+  background: #ffdb6c;
+}
+
+/* discount block */
+.discount {
+  padding-top: 8px;
+  background-color: white;
+  border-radius: 16px 16px 0 0;
+}
+.discount__options {
+  border: 1px solid #f0f0f0;
+  border-radius: 16px;
+}
+.discount__option {
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+  position: relative;
+  padding: 20px;
+  width: 100%;
+}
+.discount__option-input:checked + .discount__option-icon::before {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  content: "";
+  background-color: #000000;
+}
+
+.discount__option-label {
+  font-family: "Cera Pro";
+  font-size: 15px;
+  line-height: 133%;
+  letter-spacing: -0.01em;
+}
+.discount__option-radio {
+  display: flex;
+  align-items: center;
+}
+.option.selected {
+  background-color: #f0f0f0;
+  border: 1px solid #f0f0f0;
+}
+
+.discount__option-input {
+  display: none;
+}
+.discount__option-icon {
+  position: relative;
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+.discount__promo-input input {
+  width: 100%;
+  height: 48px;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  padding: 14px 16px;
+  font-family: "Cera Pro";
+  font-size: 15px;
+  line-height: 133%;
+  letter-spacing: -0.01em;
+  color: black;
+}
+
+.discount__promo-input {
+  display: none;
+}
+.discount__option.selected .discount__promo-input {
+  display: flex;
+  gap: 20px;
+}
+.discount__promo-input {
+  position: relative;
+}
+.discount__promo-button {
+  position: absolute;
+  z-index: 10;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 3px;
+  padding: 6px 8px;
+  background: #ffdb6c;
+  font-family: "Cera Pro";
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 133%;
+  letter-spacing: -0.01em;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+
+.discount__promo-input.valid .discount__promo-button {
+  opacity: 1;
+  transition: all 0.3s;
+  visibility: initial;
+}
+
+.discount__promo-deny {
+  position: absolute;
+  z-index: 1;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: "Cera Pro";
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 133%;
+  display: none;
+  letter-spacing: -0.01em;
+}
+
+.discount__promo-deny.active {
+  display: block;
+}
+.discount__promo-applied {
+  font-family: "Cera Pro";
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 133%;
+  letter-spacing: -0.01em;
+  display: none;
+}
+.discount__promo-applied.success {
+  color: #00b955;
+  display: block;
+}
+.discount__promo-success.error {
+  color: #fe3f3f;
+  display: block;
+}
+
+.discount__bonus-input {
+  position: relative;
+}
+
+.discount__bonus-input input {
+  width: 100%;
+  height: 48px;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  padding: 14px 16px;
+  font-family: "Cera Pro";
+  font-size: 15px;
+  line-height: 133%;
+  letter-spacing: -0.01em;
+  color: black;
+}
+
+.discount__bonus-all {
+  position: absolute;
+  z-index: 1;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: "Cera Pro";
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 133%;
+  letter-spacing: -0.01em;
+}
+.discount__bonus-all.hidden {
+  display: none;
+}
+.discount__bonus-button {
+  position: absolute;
+  z-index: 2;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 3px;
+  padding: 6px 8px;
+  background: #ffdb6c;
+  font-family: "Cera Pro";
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 133%;
+  letter-spacing: -0.01em;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+
+.discount__bonus-count {
+  margin-left: 10px;
+  font-family: "Cera Round Pro";
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 118%;
+  letter-spacing: -0.01em;
+  color: #999999;
+  display: flex;
+  align-items: center;
+}
+.discount__bonus-input.valid .discount__bonus-button {
+  opacity: 1;
+  transition: all 0.3s;
+  visibility: initial;
+}
+
+.discount__bonus-input {
+  display: none;
+}
+.discount__option.selected .discount__bonus-input {
+  display: block;
+}
+
+.discount__bonus-deny {
+  position: absolute;
+  z-index: 1;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: "Cera Pro";
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 133%;
+  display: none;
+  letter-spacing: -0.01em;
+}
+.discount__bonus-deny.active {
+  display: block;
+}
+
+.discount__bonus-applied {
+  font-family: "Cera Pro";
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 133%;
+  letter-spacing: -0.01em;
+  display: none;
+}
+.discount__bonus-applied.success {
+  color: #00b955;
+  display: block;
+}
+.discount__bonus-success.error {
+  color: #fe3f3f;
+  display: block;
+}
+
+.cart__summary ul li {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+  font-family: "Cera Round Pro";
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 118%;
+  letter-spacing: -0.01em;
+  color: #999999;
+}
+.cart__summary ul li span {
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 118%;
+  letter-spacing: -0.01em;
+  color: black;
+}
+
+.cart__button {
+  font-family: "Cera Round Pro";
+  display: flex;
+  gap: 10px;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 114%;
+  letter-spacing: -0.02em;
+  border-radius: 101px;
+  padding: 12px 57px;
+  width: 100%;
+  height: 48px;
+  background: #ffdb6c;
+  margin-bottom: 20px;
+}
+.cart__button-value {
+  color: rgba(0, 0, 0, 0.4);
+}

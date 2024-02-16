@@ -1,3 +1,39 @@
+@font-face {
+  font-family: "Cera Pro";
+  src: url("../fonts/CeraPro-Regular.woff2") format("woff2"),
+    url("../fonts/CeraPro-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cera Round Pro";
+  src: url("../fonts/CeraRoundPro-Regular.woff2") format("woff2"),
+    url("../fonts/CeraRoundPro-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cera Round Pro";
+  src: url("../fonts/CeraRoundPro-Medium.woff2") format("woff2"),
+    url("../fonts/CeraRoundPro-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cera Pro";
+  src: url("../fonts/CeraPro-Bold.woff2") format("woff2"),
+    url("../fonts/CeraPro-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
 *,
 body {
   padding: 0px;
