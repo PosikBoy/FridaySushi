@@ -203,6 +203,8 @@ var addressDelivery = document.querySelector(".side-bar__address-info");
 var addressDeliveryMenu = document.querySelector("#addressDeliveryMenu");
 addressDelivery.addEventListener("click", () => {
   hideMenu();
+  enableScroll();
+
   showMenu(addressDeliveryMenu);
 });
 
