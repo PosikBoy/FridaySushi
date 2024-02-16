@@ -15,14 +15,13 @@ function disableScroll() {
 // Функция для разблокировки прокрутки
 function enableScroll() {
   // Получаем значение текущей прокрутки страницы, которое мы предварительно сохраняли
-  const scrollY = realScroll;
   // Удаляем стили блокировки прокрутки
   wrapper.style.overflow = "";
   wrapper.style.position = "";
   wrapper.style.top = "";
-  console.log(scrollY);
+  console.log(realScroll);
   // Прокручиваем страницу на сохраненное значение
-  window.scrollTo(0, scrollY);
+  window.scrollTo(0, realScroll);
 }
 const showMenu = (menu) => {
   bright80.classList.add("active");
@@ -141,9 +140,7 @@ swipeMenus.forEach((item) => {
     wrapper.style.overflow = "";
     wrapper.style.position = "";
     wrapper.style.top = "";
-
-    // Прокручиваем страницу на сохраненное значение
-    window.scrollTo(0, scrollY);
+    window.scrollTo(0, realScroll);
   }
   function hideSwipeMenu() {
     item.style = "";
