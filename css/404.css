@@ -1,0 +1,92 @@
+.container {
+  padding: 0 20px;
+}
+
+.header__body {
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 40px;
+  width: 108px;
+  display: block;
+}
+.menu-button {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  display: block;
+  position: relative;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+}
+
+.header__menu-button.hidden {
+  display: none;
+}
+.menu-button span::after,
+.menu-button span::before {
+  content: "";
+  position: absolute;
+  border-radius: 1px;
+  left: 10px;
+  width: 14px;
+  height: 2px;
+  background-color: #000000;
+  transition: all 0.5s ease-out;
+}
+
+.menu-button span::before {
+  top: 13.5px;
+}
+.menu-button span::after {
+  bottom: 13.5px;
+}
+.menu-button.open span::before {
+  transform: rotate(-45deg);
+  top: 16px;
+}
+.menu-button.open span::after {
+  transform: rotate(45deg);
+  bottom: 16px;
+}
+.unknown {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.unknown__title {
+  font-family: "Cera Round Pro";
+  font-weight: 400;
+  font-size: 80px;
+  letter-spacing: -0.03em;
+  text-align: center;
+  color: #ffdb6c;
+}
+.unknown__subtitle {
+  font-family: "Cera Round Pro";
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 114%;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: black;
+  margin-bottom: 48px;
+}
+.catalog {
+  font-family: "Cera Round Pro";
+  border-radius: 52px;
+  padding: 10px 0px;
+  width: 240px;
+  height: 40px;
+  background-color: #ffdb6c;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 118%;
+  letter-spacing: -0.01em;
+}

@@ -1,0 +1,127 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.container {
+  padding: 0 20px;
+}
+
+.header__body {
+  margin: 20px 0 7px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__title {
+  font-family: "Cera Round Pro";
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 114%;
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+
+.header__back-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.header__back-img {
+  transform: rotate(180deg);
+}
+.menu-button {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  display: block;
+  position: relative;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+}
+.menu-button span::after,
+.menu-button span::before {
+  content: "";
+  position: absolute;
+  border-radius: 1px;
+  left: 10px;
+  width: 14px;
+  height: 2px;
+  background-color: #000000;
+  transition: all 0.5s ease-out;
+}
+.menu-button span::before {
+  top: 13.5px;
+}
+.menu-button span::after {
+  bottom: 13.5px;
+}
+.menu-button.open span::before {
+  transform: rotate(-45deg);
+  top: 16px;
+}
+.menu-button.open span::after {
+  transform: rotate(45deg);
+  bottom: 16px;
+}
+.my-bonuses__body {
+  background-color: rgba(255, 237, 182, 1);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 20px 20px 24px 20px;
+}
+.my-bonuses__title {
+  font-family: "Cera Pro";
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 133%;
+  letter-spacing: -0.01em;
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.my-bonuses__header {
+  margin-bottom: 24px;
+}
+.my-bonuses__bonuses-count {
+  font-family: "Cera Round Pro";
+  font-weight: 500;
+  font-size: 27px;
+  line-height: 126%;
+  letter-spacing: -0.03em;
+  text-align: center;
+}
+.my-bonuses__info {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.my-bonuses__link {
+  font-family: "Cera Pro";
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 133%;
+  letter-spacing: -0.01em;
+  text-align: center;
+  color: black;
+}
+
+.personal-info__title {
+  font-family: "Cera Round Pro";
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 114%;
+  letter-spacing: -0.02em;
+}
+.personal-info__name-label {
+}
