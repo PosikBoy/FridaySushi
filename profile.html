@@ -26,6 +26,7 @@
         </header>
         <div class="my-bonuses">
             <div class="container">
+                <!-- К блоку my-bonuses__body добавить класс no-bonuses, чтобы сделать серым -->
                 <div class="my-bonuses__body">
                     <div class="my-bonuses__header">
                         <div class="my-bonuses__title">У вас</div>
@@ -44,20 +45,32 @@
                     <div class="personal-info__title">
                         Личные данные
                     </div>
-                    <div class="personal-info__name">
-                        <label for="name" class="personal-info__name-label">Имя</label>
-                        <input type="text" class="personal-info__name-input" id="name">
-                    </div>
-                    <div class="personal-info__name">
-                        <label for="name" class="personal-info__name-label">Имя</label>
-                        <input type="text" class="personal-info__name-input" id="name">
-                    </div>
-                    <div class="personal-info__name">
-                        <label for="name" class="personal-info__name-label">Имя</label>
-                        <input type="text" class="personal-info__name-input" id="name">
+                    <div class="personal-info__data">
+                        <div class="personal-info__name">
+                            <label for="name" class="personal-info__label personal-info__label-name">Имя</label>
+                            <input type="text" class="personal-info__input personal-info__input-name" id="name"
+                                placeholder="Введите имя">
+                        </div>
+                        <div class="personal-info__phone">
+                            <label for="phone" class="personal-info__label personal-info__label-phone">Номер
+                                телефона</label>
+                            <input type="text" class="personal-info__input personal-info__input-phone" id="phone"
+                                disabled value="+7 987 123 45 67">
+                        </div>
+                        <div class="personal-info__birth">
+                            <label for="birth" class="personal-info__label personal-info__label-birth">День
+                                рождения</label>
+                            <input type="text" maxlength="10" class="personal-info__input personal-info__input-birth"
+                                id="birth" placeholder="Выберите дату">
+                            <img src="./img/icons/calendar.svg" alt="" class="personal-info__calendar-img">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="log-out">
+            <button class="log-out__button"><img src="./img/icons/logOut.svg" alt="">Выйти из профиля</button>
+        </div>
     </div>
+    <script src="./js/profile.js"></script>
 </body>

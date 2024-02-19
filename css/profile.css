@@ -77,8 +77,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
   padding: 20px 20px 24px 20px;
+}
+.my-bonuses__body.no-bonuses {
+  background: var(--greybg);
 }
 .my-bonuses__title {
   font-family: "Cera Pro";
@@ -115,13 +117,91 @@
   text-align: center;
   color: black;
 }
-
+.personal-info__body {
+  background: var(--greybg);
+  border-radius: 16px;
+  padding: 20px;
+}
 .personal-info__title {
   font-family: "Cera Round Pro";
   font-weight: 500;
   font-size: 21px;
   line-height: 114%;
   letter-spacing: -0.02em;
+  margin-bottom: 15px;
 }
-.personal-info__name-label {
+.personal-info__data {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.personal-info__label {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 123%;
+  letter-spacing: -0.01em;
+  color: var(--greytext);
+}
+.personal-info__input {
+  border: 1px solid var(--greysticks);
+  border-radius: 6px;
+  padding: 14px 16px;
+  width: 100%;
+  height: 48px;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 133%;
+  letter-spacing: -0.01em;
+  color: var(--black);
+  font-family: var(--font-family);
+}
+.personal-info__birth {
+  position: relative;
+}
+.personal-info__input-name {
+  background: var(--white);
+}
+.personal-info__calendar-img {
+  pointer-events: none;
+  position: absolute;
+  left: 16px;
+  top: 50%;
+}
+
+.personal-info__input-birth {
+  padding-left: 41px;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: auto;
+  height: auto;
+  color: transparent;
+  background: transparent;
+}
+input[type="date"]::-webkit-input-placeholder {
+  z-index: 99;
+}
+
+input[type="date"]:placeholder {
+  z-index: 99;
+}
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-clear-button {
+  z-index: -10;
+}
+.log-out__button {
+  margin: 10px auto;
+  display: flex;
+  gap: 12px;
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 118%;
+  letter-spacing: -0.01em;
+  color: var(--red);
 }

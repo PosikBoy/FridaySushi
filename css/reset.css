@@ -34,6 +34,20 @@
   font-display: swap;
 }
 
+:root {
+  --duck: #ffdb6c;
+  --black: #000;
+  --greytext: #999;
+  --greysticks: rgba(0, 0, 0, 0.1);
+  --greybg: #f0f0f0;
+  --white: #fff;
+  --red: #fe3f3f;
+  --green: #00b955;
+  --font-family: "Cera Pro", sans-serif;
+  --second-family: "Cera Round Pro", sans-serif;
+  --third-family: "Font Awesome 6 Pro", sans-serif;
+}
+
 *,
 body {
   padding: 0px;
