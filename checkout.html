@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1, user-scalable=no" />
+    <title>Суши пятница - каталог</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/checkout.css" />
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="container">
+                <div class="header__body">
+                    <a href="#" class="header__back-button">
+                        <img src="./img/icons/arrow2.svg" alt="">
+                    </a>
+                    <h3 class="header__title">Оформление</h3>
+                    <div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="account-info">
+            <div class="container">
+                <div class="account-info__body">
+                    <span class="account-info__name">Денис</span>
+                    <span class="account-info__phone">+7 987 123 45 67</span>
+                </div>
+            </div>
+        </div>
+        <div class="delivery-selection">
+            <div class="container">
+                <div class="delivery-selection__options">
+                    <label class="delivery-selection__option option new-address selected" id="#addressDelivery">
+                        <div class="delivery-selection__option-radio">
+                            <input type="radio" class="delivery-selection__option-input" checked="checked"
+                                name="deliveryOption" />
+                            <span class="delivery-selection__option-icon"></span>
+                            <span class="delivery-selection__option-label">Доставка</span>
+                        </div>
+                        <button href="#" class="delivery-selection__current">
+                            <div class="delivery-selection__current-text">
+                                <p class="delivery-selection__current-address">Пр. Победы, 254</p>
+                                <span class="delivery-selection__current-details">кв. 159, 4 подъезд, 5 этаж</span>
+                            </div>
+                        </button>
+                        <div class="delivery-selection__new-address">
+                            <div class="delivery-selection__address-input">
+                                <input type="text" class="delivery-selection__street-inp" id="addressInput"
+                                    placeholder="Улица" />
+                            </div>
+                            <div class="delivery-selection__address-input">
+                                <input type="text" class="delivery-selection__building-inp" id="addressInput"
+                                    placeholder="Дом" />
+                                <input type="text" class="delivery-selection__flat-inp" id="addressInput"
+                                    placeholder="Квартира" />
+                            </div>
+                            <div class="delivery-selection__address-input">
+                                <input type="text" class="delivery-selection__entrance-inp" id="addressInput"
+                                    placeholder="Подъезд" />
+                                <input type="text" class="delivery-selection__floor-inp" id="addressInput"
+                                    placeholder="Этаж" />
+                            </div>
+                        </div>
+                        <div class="delivery-selection__address-input">
+                            <textarea class="delivery-selection__comment-textarea" id="commentTextarea"
+                                placeholder="Комментарий..." oninput="resizeComment()"></textarea>
+                        </div>
+                        <div class="delivery-selection__error">К сожалению, адрес не входит в зону доставки.
+                            Закажите
+                            самовывозом или в пределах зон доставок.</div>
+                    </label>
+                    <label class="delivery-selection__option option" id="#addressDelivery">
+                        <div class="delivery-selection__option-radio">
+                            <input type="radio" class="delivery-selection__option-input" name="deliveryOption" />
+                            <span class="delivery-selection__option-icon"></span>
+                            <span class="delivery-selection__option-address">Самовывоз</span>
+                        </div>
+                        <button href="#" class="delivery-selection__pickup-selection">
+                            <span class="delivery-selection__pickup-text">Выберите ресторан</span>
+                        </button>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="wishes">
+            <div class="container">
+                <div class="wishes__body">
+                    <label class="wishes__title" for="wishesTextarea">
+                        Пожелания к заказу
+                    </label>
+                    <textarea class="wishes__textarea" id="wishesTextarea" placeholder="Комментарий..."
+                        oninput="resizeWishes()"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="delivery-time">
+            <div class="container">
+                <div class="delivery-time__body">
+                    <label class="delivery-time__title">
+                        Когда привезти заказ?
+                    </label>
+                    <select id="deliveryTime" class="delivery-time__list" name="fruits">
+                        <option value="45min">Через ~45 минут</option>
+                        <option value="1630">16:30</option>
+                        <option value="1700">17:00</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="pay-type">
+            <div class="container">
+                <div class="pay-type__body">
+                    <div class="pay-type__title">Способ оплаты</div>
+                    <div class="pay-type__options">
+                        <label class="pay-type__option option selected" id="#payType">
+                            <div class="pay-type__option-radio">
+                                <input type="radio" class="pay-type__option-input" checked="checked" name="payType" />
+                                <span class="pay-type__option-icon"></span>
+                                <span class="pay-type__option-label">Картой курьеру</span>
+                            </div>
+                        </label>
+                        <label class="pay-type__option option" id="#payType">
+                            <div class="pay-type__option-radio">
+                                <input type="radio" class="pay-type__option-input" name="payType" />
+                                <span class="pay-type__option-icon"></span>
+                                <span class="pay-type__option-label">Наличными курьеру</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="order-btn">
+            <div class="container">
+                <div class="order-btn__body">
+                    <div class="order-btn__text">Заказать</div>
+                    <div class="order-btn__price">925 ₽</div>
+                </div>
+            </div>
+        </button>
+    </div>
+
+    <div class="pickup-selection">
+        <div class="container">
+            <div class="pickup-selection__body">
+                <div class="pickup-selection__header">
+                    <a href="#" class="pickup-selection__back-button">
+                        <img src="./img/icons/arrow2.svg" alt="">
+                    </a>
+                    <h3 class="pickup-selection__title">Выбрать адрес</h3>
+                    <div>
+                    </div>
+                </div>
+                <div class="pickup-selection__options">
+                    <label class="pickup-selection__option option selected" id="#pickupAddress">
+                        <div class="pickup-selection__option-radio">
+                            <input type="radio" class="pickup-selection__option-input" checked="checked"
+                                name="pickupAddress" />
+                            <span class="pickup-selection__option-icon"></span>
+                            <span class="pickup-selection__option-label">На Гагарина, 14</span>
+                        </div>
+                    </label>
+                    <label class="pickup-selection__option option" id="#pickupAddress">
+                        <div class="pickup-selection__option-radio">
+                            <input type="radio" class="pickup-selection__option-input" name="pickupAddress" />
+                            <span class="pickup-selection__option-icon"></span>
+                            <span class="pickup-selection__option-label">На ЧМЗ</span>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="my-addresses">
+        <div class="container">
+            <div class="my-addresses__header">
+                <a href="#" class="my-addresses__back-button">
+                    <img src="./img/icons/arrow2.svg" alt="">
+                </a>
+                <h3 class="my-addresses__title">Выберите адрес</h3>
+                <div></div>
+            </div>
+            <div class="my-addresses__body">
+                <div class="my-addresses__options">
+                    <label class="my-addresses__option option selected" id="#addressDelivery">
+                        <div class="my-addresses__option-radio">
+                            <input type="radio" class="my-addresses__option-input" name="addressOption"
+                                checked="checked" />
+                            <span class="my-addresses__option-icon"></span>
+                            <span class="my-addresses__option-address">Пр. Победы, 254</span>
+
+                        </div>
+                        <div class="my-addresses__address-input">
+                            <input type="text" class="my-addresses__street-inp" placeholder="Улица" id="addressInput"
+                                value="Пр. Победы" />
+                        </div>
+                        <div class="my-addresses__address-input">
+                            <input type="text" class="my-addresses__building-inp" placeholder="Дом" id="addressInput"
+                                value="дом 254" />
+                            <input type="text" class="my-addresses__flat-inp" placeholder="Квартира" id="addressInput"
+                                value="кв. 159" />
+                        </div>
+                        <div class="my-addresses__address-input">
+                            <input type="text" class="my-addresses__entrance-inp" id="addressInput"
+                                placeholder="Подъезд" value="4 подъезд" />
+                            <input type="text" class="my-addresses__floor-inp" placeholder="Этаж" id="addressInput"
+                                value="5 этаж" />
+                        </div>
+                        <button class="my-addresses__save">Сохранить</button>
+                        <button class="my-adresses__delete">
+                            <img src="./img/icons/trash.svg" alt="">
+                        </button>
+                    </label>
+                    <label class="my-addresses__option option " id="#addressDelivery">
+                        <div class="my-addresses__option-radio">
+                            <input type="radio" class="my-addresses__option-input" name="addressOption" />
+                            <span class="my-addresses__option-icon"></span>
+                            <span class="my-addresses__option-address">Пр. Победы, 254</span>
+                        </div>
+                        <div class="my-addresses__address-input">
+                            <input type="text" class="my-addresses__street-inp" placeholder="Улица" id="addressInput"
+                                value="Пр. Победы" />
+                        </div>
+                        <div class="my-addresses__address-input">
+                            <input type="text" class="my-addresses__building-inp" placeholder="Дом" id="addressInput"
+                                value="дом 254" />
+                            <input type="text" class="my-addresses__flat-inp" placeholder="Квартира" id="addressInput"
+                                value="кв. 159" />
+                        </div>
+                        <div class="my-addresses__address-input">
+                            <input type="text" class="my-addresses__entrance-inp" id="addressInput"
+                                placeholder="Подъезд" value="4 подъезд" />
+                            <input type="text" class="my-addresses__floor-inp" placeholder="Этаж" id="addressInput"
+                                value="5 этаж" />
+                        </div>
+                        <button class="my-addresses__save">Сохранить</button>
+                        <button class="my-adresses__delete">
+                            <img src="./img/icons/trash.svg" alt="">
+                        </button>
+                    </label>
+                    <label class="my-addresses__option option" id="#addressDelivery">
+                        <div class="my-addresses__option-radio">
+                            <input type="radio" class="my-addresses__option-input" name="addressOption" />
+                            <span class="my-addresses__option-icon"></span>
+                            <span class="my-addresses__option-address">Пр. Победы, 254</span>
+
+                        </div>
+                        <div class="my-addresses__address-input">
+                            <input type="text" class="my-addresses__street-inp" placeholder="Улица" id="addressInput"
+                                value="Пр. Победы" />
+                        </div>
+                        <div class="my-addresses__address-input">
+                            <input type="text" class="my-addresses__building-inp" placeholder="Дом" id="addressInput"
+                                value="дом 254" />
+                            <input type="text" class="my-addresses__flat-inp" placeholder="Квартира" id="addressInput"
+                                value="кв. 159" />
+                        </div>
+                        <div class="my-addresses__address-input">
+                            <input type="text" class="my-addresses__entrance-inp" id="addressInput"
+                                placeholder="Подъезд" value="4 подъезд" />
+                            <input type="text" class="my-addresses__floor-inp" placeholder="Этаж" id="addressInput"
+                                value="5 этаж" />
+                        </div>
+                        <button class="my-addresses__save">Сохранить</button>
+                        <button class="my-adresses__delete">
+                            <img src="./img/icons/trash.svg" alt="">
+                        </button>
+                    </label>
+                    <label class="my-addresses__option option" id="#addressDelivery">
+                        <div class="my-addresses__option-radio">
+                            <input type="radio" class="my-addresses__option-input" name="addressOption" />
+                            <span class="my-addresses__option-icon"></span>
+                            <span class="my-addresses__option-address">Новый адрес</span>
+                        </div>
+                        <div class="my-addresses__address-input">
+                            <input type="text" class="my-addresses__street-inp" id="addressInput" placeholder="Улица" />
+                        </div>
+                        <div class="my-addresses__address-input">
+                            <input type="text" class="my-addresses__building-inp" id="addressInput" placeholder="Дом" />
+                            <input type="text" class="my-addresses__flat-inp" id="addressInput"
+                                placeholder="Квартира" />
+                        </div>
+                        <div class="my-addresses__address-input">
+                            <input type="text" class="my-addresses__entrance-inp" id="addressInput"
+                                placeholder="Подъезд" />
+                            <input type="text" class="my-addresses__floor-inp" id="addressInput" placeholder="Этаж" />
+                        </div>
+                        <button class="my-addresses__save">Сохранить</button>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bright80"></div>
+    <div class="modal-menu">
+        <div class="modal-menu__img">
+            <img src="./img/icons/deleteAddress.svg" alt="">
+        </div>
+        <div class="modal-menu__text">
+            Вы уверены, что хотите удалить адрес <b>Пр. Победы, 254</b>?
+        </div>
+        <div class="modal-menu__buttons">
+            <button class="modal-menu__delete-button">Удалить</button>
+            <button class="modal-menu__cancel-button">Отменить</button>
+        </div>
+    </div>
+    <script src="./js/checkout.js"></script>
+</body>
