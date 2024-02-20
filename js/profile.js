@@ -1,7 +1,7 @@
 window.addEventListener("DOMContentLoaded", () => {
-  const dateInput = document.getElementById("birth");
+  const dateInput = document?.getElementById("birth");
 
-  dateInput.addEventListener("input", function (event) {
+  dateInput?.addEventListener("input", function (event) {
     const input = event.target;
     const inputValue = input.value.replace(/\D/g, "");
     const inputLength = inputValue.length;
@@ -30,7 +30,7 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  dateInput.addEventListener("keydown", function (event) {
+  dateInput?.addEventListener("keydown", function (event) {
     const key = event.key;
 
     if (key === "Backspace") {
