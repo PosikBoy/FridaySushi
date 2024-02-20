@@ -148,7 +148,11 @@
   transition: all 0.3s;
   display: block;
 }
-
+.delivery__body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 .delivery__item {
   padding: 20px 0;
   display: flex;
@@ -190,7 +194,11 @@
 .pickup.active {
   display: block;
 }
-
+.pickup__body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 .pickup__info li:last-child {
   border-bottom: none;
 }

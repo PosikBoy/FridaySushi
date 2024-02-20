@@ -204,7 +204,6 @@ var addressDeliveryMenu = document.querySelector("#addressDeliveryMenu");
 addressDelivery.addEventListener("click", () => {
   hideMenu();
   enableScroll();
-
   showMenu(addressDeliveryMenu);
 });
 
