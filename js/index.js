@@ -16,9 +16,9 @@ window.addEventListener("DOMContentLoaded", () => {
       // Получаем текущую прокрутку страницы
       realScroll = window.scrollY;
       // Задаем стили для блокировки прокрутки
-      wrapper?.style.overflow = "hidden";
-      wrapper?.style.position = "fixed";
-      wrapper?.style.top = `-${realScroll}px`;
+      wrapper.style.overflow = "hidden";
+      wrapper.style.position = "fixed";
+      wrapper.style.top = `-${realScroll}px`;
     }
   };
   // Функция для разблокировки прокрутки
@@ -26,9 +26,9 @@ window.addEventListener("DOMContentLoaded", () => {
     //Проверка на всякий случай
     if (isScrollDisabled) {
       isScrollDisabled = false;
-      wrapper?.style.overflow = "";
-      wrapper?.style.position = "";
-      wrapper?.style.top = "";
+      wrapper.style.overflow = "";
+      wrapper.style.position = "";
+      wrapper.style.top = "";
       window.scrollTo(0, realScroll);
     }
   };
@@ -125,7 +125,9 @@ window.addEventListener("DOMContentLoaded", () => {
 
   const sideBar = document?.querySelector(".side-bar");
   const headerMenuButton = document?.querySelector(".header__menu-button");
-  const categoryMenuButton = document?.querySelector(".categories__menu-button");
+  const categoryMenuButton = document?.querySelector(
+    ".categories__menu-button"
+  );
   const sideBarMenuButton = document?.querySelector(".side-bar__menu-button");
   //при нажатии на кнопку в шапке сраницы показываем боковое меню
   headerMenuButton?.addEventListener("click", (event) => {
@@ -287,7 +289,9 @@ window.addEventListener("DOMContentLoaded", () => {
     closeAllMenus();
     showMenu(addressDeliveryMenu);
   });
-  const addressMenuOptions = document?.querySelectorAll(".address-menu__option");
+  const addressMenuOptions = document?.querySelectorAll(
+    ".address-menu__option"
+  );
 
   //При клике на опцию убираем класс selected со всех опций и добавляем той, на которую кликнули
   addressMenuOptions?.forEach((option) => {
