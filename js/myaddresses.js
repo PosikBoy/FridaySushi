@@ -15,8 +15,9 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   const addressInputs = document?.querySelectorAll("#addressInput");
+
   addressInputs.forEach((item) => {
-    item.addEventListener("input", (event) => {
+    item.addEventListener("input", () => {
       let saveButton = item.parentNode.parentNode.querySelector(
         ".my-addresses__save"
       );

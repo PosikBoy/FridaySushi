@@ -51,12 +51,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
   const deleteButtons = document?.querySelectorAll(".my-adresses__delete");
   const modalMenu = document?.querySelector(".modal-menu");
-  const bright80 = document?.querySelector(".bright80");
-  console.log(bright80);
+  const brightness = document?.querySelector(".brightness");
+  console.log(brightness);
   deleteButtons.forEach((item) => {
     item.addEventListener("click", (event) => {
       modalMenu.classList.add("active");
-      bright80.classList.add("active");
+      brightness.classList.add("active");
     });
   });
 
@@ -65,11 +65,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
   deleteButton.addEventListener("click", (event) => {
     modalMenu.classList.remove("active");
-    bright80.classList.remove("active");
+    brightness.classList.remove("active");
   });
   cancelButton.addEventListener("click", (event) => {
     modalMenu.classList.remove("active");
-    bright80.classList.remove("active");
+    brightness.classList.remove("active");
   });
   const chooseAddressButton = document?.querySelector(
     ".delivery-selection__current"

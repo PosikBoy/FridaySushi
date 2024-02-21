@@ -298,6 +298,7 @@ window.addEventListener("DOMContentLoaded", () => {
   //При клике на опцию убираем класс selected со всех опций и добавляем той, на которую кликнули
   addressMenuOptions?.forEach((option) => {
     option.addEventListener("click", () => {
+      console.log("Adsc");
       addressMenuOptions.forEach((item) => {
         item.classList.remove("selected");
       });

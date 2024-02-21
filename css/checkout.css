@@ -1193,10 +1193,9 @@ textarea::-webkit-scrollbar {
   transform: translate(-50%, -50%);
   border-radius: 16px;
   padding: 24px 20px 20px 20px;
-  margin: 0 20px;
   width: 351px;
   height: 212px;
-  z-index: 3;
+  z-index: 16;
   background: var(--white);
   display: flex;
   flex-direction: column;
