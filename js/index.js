@@ -1,9 +1,12 @@
-var bright80 = document.querySelector(".bright80");
+const brightness = document.querySelector(".bright80");
 const wrapper = document.querySelector(".wrapper");
 const menus = document.querySelectorAll(".menu");
 let realScroll;
-
+let isModalOpen = false;
+let isScrollDisabled = false;
+let isBrightnessActive = false
 function disableScroll() {
+  isScrollDisabled = true
   // Получаем текущую прокрутку страницы
   realScroll = window.scrollY;
   // Задаем стили для блокировки прокрутки
@@ -14,6 +17,7 @@ function disableScroll() {
 
 // Функция для разблокировки прокрутки
 function enableScroll() {
+  isScrollDisabled = false
   // Получаем значение текущей прокрутки страницы, которое мы предварительно сохраняли
   // Удаляем стили блокировки прокрутки
   wrapper.style.overflow = "";
@@ -23,30 +27,45 @@ function enableScroll() {
   window.scrollTo(0, realScroll);
 }
 const showMenu = (menu) => {
-  bright80.classList.add("active");
+if (isModalOpen){
+    closeAllMenus()
+    toggleBrightness()
+}
   menu?.classList.remove("hidden");
-  bright80.addEventListener("click", hideMenu);
-  disableScroll();
+  isModalOpen = true
 };
 
-const hideMenu = () => {
-  bright80.classList.remove("active");
-  //скрываем все меню, при нажатии на крестик или область с пониженной яркостью
-  menus.forEach((item) => {
-    item.classList.add("hidden");
-    item.style = "";
-  });
-  sideBarMenuButton.classList.remove("open");
-  headerMenuButton.classList.remove("hidden");
-  bright80.removeEventListener("click", hideMenu);
+const hideMenu = (menu) => {
+  menu?.classList.add("hidden");
 };
-bright80.addEventListener("click", () => {
-  hideMenu();
-  enableScroll();
-});
-// Конец кода для понижения яркости экрана при
+const closeAllMenus = () => {
+    menus.forEach((item) => {
+        item.classList.add("hidden")
+    })
+      isModalOpen = false
+}
 
-// Начало кода для кнопки, которая повляется в категориях товаров.
+const toggleBrightness = () =>{
+    if (isBrightnessActive){
+       setTimeout(()=>{
+            brightness.classList.remove("active")
+            isBrightnessActive = false
+        }, 300)
+    }
+    else {
+        brightness.classList.add("active")
+        isBrightnessActive = true
+    }
+}
+
+brightness?.addEventListener("touchstart", () => {
+    if (isScrollDisabled) {
+        enableScroll()
+    }
+    closeAllMenus()
+    toggleBrightness()
+})
+
 var categoryList = document.querySelector(".categories__list");
 var category = document.querySelector(".categories");
 var category2 = document.querySelector(".categories2");
@@ -67,15 +86,17 @@ window.addEventListener("scroll", function () {
 const chooseCity = document.querySelector(".choose-city");
 const chooseCityLink = document.querySelectorAll(".choose-city__link");
 
-chooseCity.classList.add("active");
 showMenu(chooseCity);
+toggleBrightness()
+disableScroll()
 
-chooseCityLink.forEach(function (chooseCityLink) {
+chooseCityLink?.forEach(function (chooseCityLink) {
   chooseCityLink.addEventListener("click", function (event) {
     event.preventDefault();
     chooseCity.classList.remove("active");
     chooseCity.classList.add("hidden");
-    hideMenu();
+    closeAllMenus()
+    toggleBrightness()
     enableScroll();
   });
 });
@@ -89,6 +110,8 @@ var headerMenuButton = document.querySelector(".header__menu-button");
 headerMenuButton.addEventListener("click", function (event) {
   event.preventDefault();
   showMenu(sideBar);
+  toggleBrightness()
+  disableScroll()
   headerMenuButton.classList.add("hidden");
   sideBarMenuButton.classList.add("open");
 });
@@ -99,14 +122,19 @@ categoryMenuButton.forEach((button) => {
   button.addEventListener("click", function (event) {
     event.preventDefault();
     showMenu(sideBar);
+  toggleBrightness()
+  disableScroll()
     headerMenuButton.classList.add("hidden");
     sideBarMenuButton.classList.add("open");
   });
 });
 
 sideBarMenuButton.addEventListener("click", () => {
-  hideMenu();
+  hideMenu(sideBar);
+  toggleBrightness()
   enableScroll();
+  headerMenuButton.classList.remove("hidden");
+    sideBarMenuButton.classList.remove("open");
 });
 
 // product card
@@ -114,7 +142,8 @@ const sushi = document.querySelector("#sushi");
 const sushiCard = document.querySelector("#sushiCard");
 
 sushi.addEventListener("click", (event) => {
-  showMenu(sushiCard);
+  showMenu(sushiCard)
+  toggleBrightness();
 });
 
 const productCola = document.querySelector("#cola");
@@ -122,6 +151,7 @@ const productCardCola = document.querySelector("#colaCard");
 
 productCola.addEventListener("click", (event) => {
   showMenu(productCardCola);
+  toggleBrightness()
 });
 
 const swipeMenus = document.querySelectorAll(".swipe");
@@ -135,8 +165,8 @@ swipeMenus.forEach((item) => {
   function hideSwipeMenu() {
     item.style = "";
     item.style.transition = "bottom 0.5s ease";
-    hideMenu(item);
-    enableScroll();
+    closeAllMenus()
+    toggleBrightness()
     menuVisible = false;
     setTimeout(() => {
       item.style = "";
@@ -150,6 +180,7 @@ swipeMenus.forEach((item) => {
   item.addEventListener("touchstart", function (e) {
     startY = e.touches[0].clientY;
     item.style.transition = "none";
+    disableScroll()
     startBottom = parseInt(
       window.getComputedStyle(item).getPropertyValue("bottom")
     );
@@ -202,8 +233,7 @@ info.forEach(function (option) {
 var addressDelivery = document.querySelector(".side-bar__address-info");
 var addressDeliveryMenu = document.querySelector("#addressDeliveryMenu");
 addressDelivery.addEventListener("click", () => {
-  hideMenu();
-  enableScroll();
+  closeAllMenus()
   showMenu(addressDeliveryMenu);
 });
 
@@ -228,7 +258,7 @@ orders.forEach((item) => {
   zIndexs -= 1;
 });
 
-ordersWrapper.addEventListener("click", () => {
+ordersWrapper?.addEventListener("click", () => {
   orders.forEach((item, index) => {
     let statusInfoIcon = statusInfoIconArray[index];
     let initialBottom = -(item.clientHeight - (index + 1) * 70 - 60);
