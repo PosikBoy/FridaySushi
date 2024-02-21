@@ -344,7 +344,7 @@ window.addEventListener("DOMContentLoaded", () => {
     let statusInfoIcon = statusInfoIconArray[index];
     let initialHeight = item.clientHeight;
     console.log(initialHeight);
-    let initialBottom = -(initialHeight - (index + 1) * 70 - 20);
+    let initialBottom = -(initialHeight - (index + 1) * 70 - 56);
     item.style.bottom = initialBottom + "px";
     let startY, startBottom;
     const checkWrapper = () => {

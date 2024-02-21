@@ -1,6 +1,9 @@
 .wrapper {
   position: relative;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 .wrapper.fixed {
   z-index: 1;
