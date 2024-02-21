@@ -1153,7 +1153,7 @@ textarea::-webkit-scrollbar {
   letter-spacing: -0.01em;
   color: #999999;
 }
-.my-addresses__save {
+.my-addresses__choose {
   border-radius: 52px;
   padding: 10px 0px;
   width: 100%;
@@ -1167,8 +1167,7 @@ textarea::-webkit-scrollbar {
   font-family: var(--second-family);
   display: none;
 }
-
-.my-addresses__save.active {
+.my-addresses__option.selected .my-addresses__choose {
   display: block;
 }
 .my-adresses__delete {

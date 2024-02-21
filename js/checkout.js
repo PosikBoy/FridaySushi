@@ -44,20 +44,8 @@ window.addEventListener("DOMContentLoaded", () => {
     option.addEventListener("click", function () {
       addressMenuOptions.forEach(function (item) {
         item.classList.remove("selected");
-        let saveButton = item.querySelector(".my-addresses__save");
-        saveButton.classList.remove("active");
       });
       this.classList.add("selected");
-    });
-  });
-
-  const addressInputs = document?.querySelectorAll("#addressInput");
-  addressInputs.forEach((item) => {
-    item.addEventListener("input", (event) => {
-      let saveButton = item.parentNode.parentNode.querySelector(
-        ".my-addresses__save"
-      );
-      saveButton.classList.add("active");
     });
   });
 
