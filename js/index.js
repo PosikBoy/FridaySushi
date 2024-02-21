@@ -83,8 +83,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
   //при достижении изначального блока категорий меньше 15 пикселей, то первый блок исчезает и появляется второй, уже с кнопкой.
   window.addEventListener("scroll", () => {
-    const rect = categoryList.getBoundingClientRect();
-    if (rect.top <= 15) {
+    const rect = categoryList?.getBoundingClientRect();
+    if (rect?.top <= 15) {
       category2?.classList.remove("hidden");
       category?.classList.add("hidden");
     } else {
@@ -99,9 +99,11 @@ window.addEventListener("DOMContentLoaded", () => {
   const chooseCity = document?.querySelector(".choose-city");
   const chooseCityLink = document?.querySelectorAll(".choose-city__link");
   //Сразу показываем меню выбора города, так как это изначальное его состояние
-  showMenu(chooseCity);
-  toggleBrightness();
-  disableScroll();
+  if (chooseCity) {
+    showMenu(chooseCity);
+    toggleBrightness();
+    disableScroll();
+  }
 
   //Закрываем меню выбора города при нажатии на любую ссылку
 
@@ -299,7 +301,7 @@ window.addEventListener("DOMContentLoaded", () => {
       addressMenuOptions.forEach((item) => {
         item.classList.remove("selected");
       });
-      this.classList.add("selected");
+      option.classList.add("selected");
     });
   });
 
@@ -332,7 +334,9 @@ window.addEventListener("DOMContentLoaded", () => {
 
   //Задаем блоку с товарами паддинг снизу. Это нужно для того, чтобы при активных заказах, заказы не перекрывали меню
   const productsBlock = document?.querySelector(".products");
-  productsBlock.style.paddingBottom = 80 * orders.length + "px";
+  if (productsBlock) {
+    productsBlock.style.paddingBottom = 80 * orders.length + "px";
+  }
 
   //Каждому заказу добавляем слушатели событий
   //Похожее поведение уже было, поэтому комментарии излишни

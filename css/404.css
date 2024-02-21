@@ -1,7 +1,460 @@
+.wrapper {
+  width: 100%;
+}
+.wrapper.fixed {
+  z-index: 1;
+}
 .container {
   padding: 0 20px;
 }
 
+.brightness {
+  position: fixed;
+  background-color: #00000054;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.5s;
+  pointer-events: none;
+}
+.brightness.active {
+  pointer-events: initial;
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+.side-bar {
+  width: 79%;
+  height: 100vh;
+  position: fixed;
+  z-index: 11;
+  top: 0;
+  left: -100%;
+  transition: all 0.5s;
+  visibility: hidden;
+}
+
+.side-bar.active {
+  visibility: visible;
+  left: 0;
+  transition: all 0.5s;
+}
+.side-bar__menu-button {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  position: relative;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  display: none;
+  background-color: rgba(192, 192, 192, 1);
+  position: fixed;
+  right: 20px;
+  top: 20px;
+}
+.side-bar.active .side-bar__menu-button {
+  z-index: 12;
+  display: block;
+  background-color: rgba(192, 192, 192, 1);
+}
+.side-bar__menu-button span::after,
+.side-bar__menu-button span::before {
+  content: "";
+  position: absolute;
+  border-radius: 1px;
+  left: 10px;
+  width: 14px;
+  height: 2px;
+  background-color: #000000;
+  transition: all 0.5s ease-out;
+}
+.side-bar__menu-button span::before {
+  transition: all 0.3s;
+  transform: rotate(-45deg);
+  top: 16px;
+}
+.side-bar__menu-button span::after {
+  transition: all 0.3s;
+  transform: rotate(45deg);
+  bottom: 16px;
+}
+.side-bar__logo {
+  display: block;
+  width: 108px;
+  height: 40px;
+  margin-bottom: 20px;
+}
+.side-bar__body {
+  padding: 20px 0 20px 20px;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 0 16px 16px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.login {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  gap: 20px;
+  padding: 21px 0;
+  max-width: 259px;
+}
+.login.logged-in img {
+  margin-top: 3px;
+}
+.login img {
+  width: 22px;
+  height: 22px;
+}
+
+.login__login {
+  font-family: "Cera Round Pro", sans-serif;
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 114%;
+  letter-spacing: -0.02em;
+  color: #000000;
+}
+.login__desc {
+  font-family: "Cera Pro", sans-serif;
+  margin-left: px;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 133%;
+  letter-spacing: -0.01em;
+  color: #999999;
+}
+
+.side-bar__order {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  gap: 20px;
+  padding: 21px 0;
+  max-width: 259px;
+}
+.side-bar__order-text {
+  font-family: "Cera Round Pro", sans-serif;
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 114%;
+  letter-spacing: -0.02em;
+  color: #000000;
+}
+.side-bar__order img {
+  width: 22px;
+  height: 22px;
+}
+
+.side-bar__my-addresses {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  gap: 20px;
+  padding: 21px 0;
+  max-width: 259px;
+}
+.side-bar__my-addresses-text {
+  font-family: "Cera Round Pro", sans-serif;
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 114%;
+  letter-spacing: -0.02em;
+  color: #000000;
+}
+.side-bar__my-addresses img {
+  width: 22px;
+  height: 22px;
+}
+
+.chat {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  gap: 20px;
+  padding: 21px 0;
+  max-width: 259px;
+}
+.chat img {
+  display: inline;
+  width: 22px;
+  height: 22px;
+}
+.chat__text {
+  font-family: "Cera Round Pro", sans-serif;
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 114%;
+  letter-spacing: -0.02em;
+  color: #000000;
+}
+
+.side-bar__city,
+.side-bar__address,
+.side-bar__contacts-link {
+  font-family: "Cera Round Pro", sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 118%;
+  letter-spacing: -0.01em;
+  color: black;
+}
+
+.side-bar__city,
+.side-bar__address-info,
+.side-bar__contacts {
+  padding: 10px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  max-width: 259px;
+}
+
+.side-bar__address-label {
+  font-family: "Cera Pro", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 133%;
+  letter-spacing: -0.01em;
+  color: #999999;
+}
+.address-menu {
+  padding-top: 8px;
+  background-color: white;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  bottom: 0;
+  z-index: 12;
+  overflow: hidden;
+  transition: all 0.5s;
+  border-radius: 16px 16px 0 0;
+  bottom: -100%;
+  visibility: hidden;
+}
+.address-menu.active {
+  bottom: 0;
+  visibility: visible;
+  transition: all 0.5s;
+}
+.address-menu__body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 12px 20px 20px 20px;
+  width: 100vw;
+}
+.address-menu__stick {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.address-menu__name {
+  font-family: "Cera Round Pro";
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 114%;
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+}
+
+.address-menu__description {
+  font-family: "Cera Pro";
+  font-size: 15px;
+  line-height: 133%;
+  letter-spacing: -0.01em;
+  color: #999999;
+}
+.address-menu__button {
+  background: #ffdb6c;
+  border-radius: 101px;
+  padding: 12px 57px;
+  width: 100%;
+  font-family: "Cera Round Pro";
+  font-size: 17px;
+  line-height: 118%;
+  letter-spacing: -0.01em;
+}
+
+.address-menu__options {
+  border: 1px solid #f0f0f0;
+  border-radius: 16px;
+}
+.address-menu__option-label {
+  font-family: "Cera Pro";
+  font-size: 15px;
+  line-height: 133%;
+  letter-spacing: -0.01em;
+}
+.address-menu__option-radio {
+  display: flex;
+}
+.option.selected {
+  background-color: #f0f0f0;
+  border: 1px solid #f0f0f0;
+  /* Здесь указываете цвет серого фона */
+}
+
+.address-menu__option-input {
+  display: none;
+}
+.address-menu__option {
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+  position: relative;
+  padding: 20px;
+  width: 100%;
+}
+
+.address-menu__address-input input {
+  width: 100%;
+  height: 48px;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  padding: 14px 16px;
+  font-family: "Cera Pro";
+  font-size: 15px;
+  line-height: 133%;
+  letter-spacing: -0.01em;
+  color: black;
+}
+
+.address-menu__address-input input::placeholder {
+  font-family: "Cera Pro";
+  font-size: 15px;
+  line-height: 133%;
+  letter-spacing: -0.01em;
+  color: #999999;
+}
+
+.address-menu__house-inp {
+  width: 91px !important;
+}
+.address-menu__option-icon {
+  position: relative;
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.address-menu__address-input {
+  display: none;
+}
+.address-menu__option.selected .address-menu__address-input {
+  display: flex;
+  gap: 20px;
+}
+
+.address-menu__option-input:checked + .address-menu__option-icon::before {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  content: "";
+  background-color: #000000;
+}
+
+.address-menu__pickup-selection {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  padding: 14px 16px;
+  width: 100%;
+  /* height: 48px; */
+  display: none;
+}
+
+.address-menu__option.selected .address-menu__pickup-selection {
+  display: block;
+}
+
+.address-menu__pickup-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Cera Pro";
+  font-size: 15px;
+  line-height: 133%;
+  letter-spacing: -0.01em;
+  color: black;
+}
+
+.address-menu__pickup-text::after {
+  content: "";
+  width: 6px;
+  height: 11px;
+  display: block;
+  background-image: url("../img/icons/arrow2.svg");
+}
+
+.address-menu__address-selection {
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  padding: 14px 16px;
+  width: 100%;
+  display: none;
+  flex-direction: column;
+}
+
+.address-menu__option.selected .address-menu__address-selection {
+  display: flex;
+}
+
+.address-menu__address-selection::after {
+  position: absolute;
+  right: 20px;
+  top: 26px;
+  content: "";
+  width: 6px;
+  height: 11px;
+  display: block;
+  background-image: url("../img/icons/arrow2.svg");
+}
+
+.address-menu__address {
+  font-family: "Cera Pro";
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 133%;
+  letter-spacing: -0.01em;
+  color: black;
+}
+.address-menu__address-additional {
+  font-family: "Cera Pro";
+
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 123%;
+  letter-spacing: -0.01em;
+  color: #999999;
+}
+.address-menu__login {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.address-menu__login-text {
+  font-family: "Cera Round Pro";
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 118%;
+  letter-spacing: -0.01em;
+  text-align: right;
+  color: black;
+}
 .header__body {
   margin: 20px 0;
   display: flex;
