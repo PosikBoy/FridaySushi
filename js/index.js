@@ -263,14 +263,14 @@ window.addEventListener("DOMContentLoaded", () => {
   //Код для выбора опций в карточках товара
   const options = document?.querySelectorAll(".option");
   const info = document?.querySelectorAll(".info");
-
+  console.log(options);
   //При клике на опцию убираем класс selected со всех опций и добавляем той, на которую кликнули
-  options?.forEach((option) => {
+  options.forEach((option) => {
     option.addEventListener("click", () => {
       options.forEach((item) => {
         item.classList.remove("selected");
       });
-      this.classList.add("selected");
+      option.classList.add("selected");
     });
   });
   //info - блок с калориями, белками и тд. При клике на него, добавляем/убираем класс active.Далее меню показывается с помощью наследования в css
