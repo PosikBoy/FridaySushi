@@ -16,9 +16,9 @@ window.addEventListener("DOMContentLoaded", () => {
       // Получаем текущую прокрутку страницы
       realScroll = window.scrollY;
       // Задаем стили для блокировки прокрутки
-      wrapper.style.overflow = "hidden";
-      wrapper.style.position = "fixed";
-      wrapper.style.top = `-${realScroll}px`;
+      wrapper?.style.overflow = "hidden";
+      wrapper?.style.position = "fixed";
+      wrapper?.style.top = `-${realScroll}px`;
     }
   };
   // Функция для разблокировки прокрутки
@@ -26,18 +26,18 @@ window.addEventListener("DOMContentLoaded", () => {
     //Проверка на всякий случай
     if (isScrollDisabled) {
       isScrollDisabled = false;
-      wrapper.style.overflow = "";
-      wrapper.style.position = "";
-      wrapper.style.top = "";
+      wrapper?.style.overflow = "";
+      wrapper?.style.position = "";
+      wrapper?.style.top = "";
       window.scrollTo(0, realScroll);
     }
   };
   //функция, которая закрывает все всплывающие меню, которые помечены классом menu(строка 5)
   const closeAllMenus = () => {
-    menus.forEach((item) => {
+    menus?.forEach((item) => {
       item.classList.remove("active");
     });
-    headerMenuButton.classList.add("active");
+    headerMenuButton?.classList.add("active");
     isModalOpen = false;
   };
 
@@ -55,11 +55,11 @@ window.addEventListener("DOMContentLoaded", () => {
   const toggleBrightness = () => {
     if (isBrightnessActive) {
       setTimeout(() => {
-        brightness.classList.remove("active");
+        brightness?.classList.remove("active");
         isBrightnessActive = false;
       }, 300);
     } else {
-      brightness.classList.add("active");
+      brightness?.classList.add("active");
       isBrightnessActive = true;
     }
   };
@@ -77,27 +77,27 @@ window.addEventListener("DOMContentLoaded", () => {
   Все сделано именно так, потому что сафари*/
 
   //Получаем все нужные кнопки/листы
-  const categoryList = document.querySelector(".categories__list");
-  const category = document.querySelector(".categories");
-  const category2 = document.querySelector(".categories2");
+  const categoryList = document?.querySelector(".categories__list");
+  const category = document?.querySelector(".categories");
+  const category2 = document?.querySelector(".categories2");
 
   //при достижении изначального блока категорий меньше 15 пикселей, то первый блок исчезает и появляется второй, уже с кнопкой.
   window.addEventListener("scroll", () => {
     const rect = categoryList.getBoundingClientRect();
     if (rect.top <= 15) {
-      category2.classList.remove("hidden");
-      category.classList.add("hidden");
+      category2?.classList.remove("hidden");
+      category?.classList.add("hidden");
     } else {
-      category2.classList.add("hidden");
-      category.classList.remove("hidden");
+      category2?.classList.add("hidden");
+      category?.classList.remove("hidden");
     }
   });
   /*Конец бока для категорий*/
 
   //Код для выбора города
   //получаем нужный блок и ссылки
-  const chooseCity = document.querySelector(".choose-city");
-  const chooseCityLink = document.querySelectorAll(".choose-city__link");
+  const chooseCity = document?.querySelector(".choose-city");
+  const chooseCityLink = document?.querySelectorAll(".choose-city__link");
   //Сразу показываем меню выбора города, так как это изначальное его состояние
   showMenu(chooseCity);
   toggleBrightness();
@@ -123,12 +123,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
   //получаем нужный блок и кнопку в шапке страницы
 
-  const sideBar = document.querySelector(".side-bar");
-  const headerMenuButton = document.querySelector(".header__menu-button");
-  const categoryMenuButton = document.querySelector(".categories__menu-button");
-  const sideBarMenuButton = document.querySelector(".side-bar__menu-button");
+  const sideBar = document?.querySelector(".side-bar");
+  const headerMenuButton = document?.querySelector(".header__menu-button");
+  const categoryMenuButton = document?.querySelector(".categories__menu-button");
+  const sideBarMenuButton = document?.querySelector(".side-bar__menu-button");
   //при нажатии на кнопку в шапке сраницы показываем боковое меню
-  headerMenuButton.addEventListener("click", (event) => {
+  headerMenuButton?.addEventListener("click", (event) => {
     event.preventDefault();
     showMenu(sideBar);
     toggleBrightness();
@@ -139,23 +139,23 @@ window.addEventListener("DOMContentLoaded", () => {
 
   //при нажатии на кнопку в категориях страницы показываем боковое меню
 
-  categoryMenuButton.addEventListener("click", (event) => {
+  categoryMenuButton?.addEventListener("click", (event) => {
     event.preventDefault();
     showMenu(sideBar);
     toggleBrightness();
     disableScroll();
     //Убираем кнопку, тк в сайдбаре уже есть своя
 
-    headerMenuButton.classList.remove("active");
+    headerMenuButton?.classList.remove("active");
   });
 
   //при нажатии на кнопку закрытия в сайдбаре убираем боковое меню
-  sideBarMenuButton.addEventListener("click", () => {
+  sideBarMenuButton?.addEventListener("click", () => {
     closeAllMenus();
     toggleBrightness();
     enableScroll();
     //Возвращаем кнопку в хедере
-    headerMenuButton.classList.add("active");
+    headerMenuButton?.classList.add("active");
   });
 
   // Начинается код для продуктов
@@ -165,27 +165,27 @@ window.addEventListener("DOMContentLoaded", () => {
   я не знаю как это будет на битриксе. Вдруг там в страничке будет не сразу монтирование всех карточек на сервере,
   а будет добавление его только при клике, поэтому сделал только демонстрационный
   пример*/
-  const sushi = document.querySelector("#sushi");
-  const sushiCard = document.querySelector("#sushiCard");
+  const sushi = document?.querySelector("#sushi");
+  const sushiCard = document?.querySelector("#sushiCard");
 
-  sushi.addEventListener("click", (event) => {
+  sushi?.addEventListener("click", (event) => {
     showMenu(sushiCard);
     toggleBrightness();
   });
 
-  const productCola = document.querySelector("#cola");
-  const productCardCola = document.querySelector("#colaCard");
+  const productCola = document?.querySelector("#cola");
+  const productCardCola = document?.querySelector("#colaCard");
 
-  productCola.addEventListener("click", (event) => {
+  productCola?.addEventListener("click", (event) => {
     showMenu(productCardCola);
     toggleBrightness();
   });
   // Конец кода для продуктов
 
   //Начало кода для всех свайпающихся карточек (выбор адреса, карточки товара и тд)
-  const swipeMenus = document.querySelectorAll(".swipe");
+  const swipeMenus = document?.querySelectorAll(".swipe");
 
-  swipeMenus.forEach((item) => {
+  swipeMenus?.forEach((item) => {
     let startY, startBottom, startHeight;
     //Функция обновления положения блока на экране. Вызывается  при каждом движении сенсора
     const updateSwipeMenu = (newBottom) => {
@@ -259,11 +259,11 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   //Код для выбора опций в карточках товара
-  const options = document.querySelectorAll(".option");
-  const info = document.querySelectorAll(".info");
+  const options = document?.querySelectorAll(".option");
+  const info = document?.querySelectorAll(".info");
 
   //При клике на опцию убираем класс selected со всех опций и добавляем той, на которую кликнули
-  options.forEach((option) => {
+  options?.forEach((option) => {
     option.addEventListener("click", () => {
       options.forEach((item) => {
         item.classList.remove("selected");
@@ -272,7 +272,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   });
   //info - блок с калориями, белками и тд. При клике на него, добавляем/убираем класс active.Далее меню показывается с помощью наследования в css
-  info.forEach((option) => {
+  info?.forEach((option) => {
     option.addEventListener("click", () => {
       option.classList.toggle("active");
     });
@@ -280,17 +280,17 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // Код для выбора адреса доставки
 
-  const addressDelivery = document.querySelector(".side-bar__address-info");
-  const addressDeliveryMenu = document.querySelector("#addressDeliveryMenu");
+  const addressDelivery = document?.querySelector(".side-bar__address-info");
+  const addressDeliveryMenu = document?.querySelector("#addressDeliveryMenu");
   //При нажатии на кнопку, вызываем нужное меню(кнопка в сайдбаре)
-  addressDelivery.addEventListener("click", () => {
+  addressDelivery?.addEventListener("click", () => {
     closeAllMenus();
     showMenu(addressDeliveryMenu);
   });
-  const addressMenuOptions = document.querySelectorAll(".address-menu__option");
+  const addressMenuOptions = document?.querySelectorAll(".address-menu__option");
 
   //При клике на опцию убираем класс selected со всех опций и добавляем той, на которую кликнули
-  addressMenuOptions.forEach((option) => {
+  addressMenuOptions?.forEach((option) => {
     option.addEventListener("click", () => {
       addressMenuOptions.forEach((item) => {
         item.classList.remove("selected");
@@ -300,14 +300,14 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   //Код для активных заказов. Можно его в отдельный файл
-  const orders = document.querySelectorAll(".order");
+  const orders = document?.querySelectorAll(".order");
   //блок для всего, что выше заказов. Он становится активным при хотя бы одном заказе, который свайпнули вверх.
-  const ordersWrapper = document.querySelector(".orders__wrapper");
-  const statusInfoIconArray = document.querySelectorAll(".order__info-icon");
+  const ordersWrapper = document?.querySelector(".orders__wrapper");
+  const statusInfoIconArray = document?.querySelectorAll(".order__info-icon");
 
   let zIndexs = 6;
   //Раздаем каждому заказу свой zindex(костыль по сути. но как без него не представляю)
-  orders.forEach((item) => {
+  orders?.forEach((item) => {
     item.style.zIndex = zIndexs;
     zIndexs -= 1;
   });
@@ -327,12 +327,12 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   //Задаем блоку с товарами паддинг снизу. Это нужно для того, чтобы при активных заказах, заказы не перекрывали меню
-  const productsBlock = document.querySelector(".products");
+  const productsBlock = document?.querySelector(".products");
   productsBlock.style.paddingBottom = 80 * orders.length + "px";
 
   //Каждому заказу добавляем слушатели событий
   //Похожее поведение уже было, поэтому комментарии излишни
-  orders.forEach((item, index) => {
+  orders?.forEach((item, index) => {
     let statusInfoIcon = statusInfoIconArray[index];
     let initialHeight = item.clientHeight;
     console.log(initialHeight);
