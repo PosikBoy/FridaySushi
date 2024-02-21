@@ -323,6 +323,7 @@ orders.forEach((item, index) => {
   item.addEventListener("touchstart", function (e) {
     startY = e.touches[0].clientY;
     item.style.transition = "none";
+    disableScroll();
     startBottom = parseInt(
       window.getComputedStyle(item).getPropertyValue("bottom")
     );
