@@ -25,7 +25,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  const deleteButtons = document?.querySelectorAll(".my-adresses__delete");
+  const deleteButtons = document?.querySelectorAll(".my-addresses__delete");
   const modalMenu = document?.querySelector(".modal-menu");
   const brightness = document?.querySelector(".brightness");
   deleteButtons.forEach((item) => {

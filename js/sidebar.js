@@ -4,6 +4,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const wrapper = document?.querySelector(".wrapper");
   const menus = document?.querySelectorAll(".menu");
   //Объявляем переменные состояния экрана
+
   let realScroll;
   let isModalOpen = false;
   let isScrollDisabled = false;

@@ -169,10 +169,10 @@
                         <input type="text" class="address-menu__street-inp" placeholder="Улица" />
                         <input type="text" class="address-menu__house-inp" placeholder="Дом" />
                     </div>
-                    <a href="./myaddresses.html" class="address-menu__address-selection">
+                    <button class="address-menu__address-selection">
                         <span class="address-menu__address">Пр. Победы, 254</span>
                         <span class="address-menu__address-additional">кв. 159, 4 подъезд, 5 этаж</span>
-                    </a>
+                    </button>
                 </label>
                 <label class="address-menu__option option column" id="#addressDelivery">
                     <div class="address-menu__option-radio">
@@ -200,21 +200,22 @@
         </button>
         <div class="side-bar__body">
             <div class="side-bar__header">
-                <a class="side-bar__logo logo" href="#">
-                    <img src="./img/logo.png" al t="Логотип суши пятница">
+                <a class="side-bar__logo logo" href="./">
+                    <img src="./img/logo.png" alt="Логотип суши пятница">
                 </a>
-                <a href="#" class="side-bar__login login logged-in">
+                <a href="./profile.html" class="side-bar__login login logged-in">
                     <img src="./img/icons/profile.svg" alt="">
                     <div class="login__body">
                         <div class="login__login">Денис</div>
+                        <div class="login__bonuses">280 <img src="./img/icons/bonus-value-white.svg" fill="white"
+                                alt=""></div>
                     </div>
-
                 </a>
-                <a href="#" class="side-bar__order">
+                <a href="./myorders.html" class="side-bar__order">
                     <img src="./img/icons/history.svg" alt="">
                     <p class="side-bar__order-text">Заказы</p>
                 </a>
-                <a href="#" class="side-bar__my-addresses">
+                <a href="./myaddresses.html" class="side-bar__my-addresses">
                     <img src="./img/icons/house.svg" alt="">
                     <p class="side-bar__my-addresses-text">Мои адреса</p>
                 </a>
@@ -232,11 +233,180 @@
                     <p class="side-bar__address-label">Доставка</p>
                 </div>
                 <div class="side-bar__contacts">
-                    <a href="#" class="side-bar__contacts-link">Контакты</a>
+                    <a href="./contacts.html" class="side-bar__contacts-link">Контакты</a>
                 </div>
             </div>
         </div>
     </nav>
+    <div class="my-addresses menu">
+        <div class="container">
+            <div class="my-addresses__header">
+                <button class="my-addresses__back-button">
+                    <img src="./img/icons/arrow2.svg" alt="">
+                </button>
+                <h3 class="my-addresses__title">Выберите адрес</h3>
+                <div></div>
+            </div>
+            <div class="my-addresses__body">
+                <div class="my-addresses__options">
+                    <label class="my-addresses__option selected" id="#addressDelivery">
+                        <div class="my-addresses__option-radio">
+                            <input type="radio" class="my-addresses__option-input" name="myAddressesOption"
+                                checked="checked" />
+                            <span class="my-addresses__option-icon"></span>
+                            <span class="my-addresses__option-address">Пр. Победы, 254</span>
+                        </div>
+                        <div class="my-addresses__address-input">
+                            <input type="text" class="my-addresses__street-inp" placeholder="Улица" id="addressInput"
+                                value="Пр. Победы" />
+                        </div>
+                        <div class="my-addresses__address-input">
+                            <input type="text" class="my-addresses__building-inp" placeholder="Дом" id="addressInput"
+                                value="дом 254" />
+                            <input type="text" class="my-addresses__flat-inp" placeholder="Квартира" id="addressInput"
+                                value="кв. 159" />
+                        </div>
+                        <div class="my-addresses__address-input">
+                            <input type="text" class="my-addresses__entrance-inp" id="addressInput"
+                                placeholder="Подъезд" value="4 подъезд" />
+                            <input type="text" class="my-addresses__floor-inp" placeholder="Этаж" id="addressInput"
+                                value="5 этаж" />
+                        </div>
+                        <button class="my-addresses__choose">Выбрать</button>
+                        <button class="my-addresses__delete">
+                            <img src="./img/icons/trash.svg" alt="">
+                        </button>
+                    </label>
+                    <label class="my-addresses__option" id="#addressDelivery">
+                        <div class="my-addresses__option-radio">
+                            <input type="radio" class="my-addresses__option-input" name="myAddressesOption" />
+                            <span class="my-addresses__option-icon"></span>
+                            <span class="my-addresses__option-address">Пр. Победы, 254</span>
+                        </div>
+                        <div class="my-addresses__address-input">
+                            <input type="text" class="my-addresses__street-inp" placeholder="Улица" id="addressInput"
+                                value="Пр. Победы" />
+                        </div>
+                        <div class="my-addresses__address-input">
+                            <input type="text" class="my-addresses__building-inp" placeholder="Дом" id="addressInput"
+                                value="дом 254" />
+                            <input type="text" class="my-addresses__flat-inp" placeholder="Квартира" id="addressInput"
+                                value="кв. 159" />
+                        </div>
+                        <div class="my-addresses__address-input">
+                            <input type="text" class="my-addresses__entrance-inp" id="addressInput"
+                                placeholder="Подъезд" value="4 подъезд" />
+                            <input type="text" class="my-addresses__floor-inp" placeholder="Этаж" id="addressInput"
+                                value="5 этаж" />
+                        </div>
+                        <button class="my-addresses__choose">Выбрать</button>
+                        <button class="my-addresses__delete">
+                            <img src="./img/icons/trash.svg" alt="">
+                        </button>
+                    </label>
+                    <label class="my-addresses__option" id="#addressDelivery">
+                        <div class="my-addresses__option-radio">
+                            <input type="radio" class="my-addresses__option-input" name="myAddressesOption" />
+                            <span class="my-addresses__option-icon"></span>
+                            <span class="my-addresses__option-address">Пр. Победы, 254</span>
+
+                        </div>
+                        <div class="my-addresses__address-input">
+                            <input type="text" class="my-addresses__street-inp" placeholder="Улица" id="addressInput"
+                                value="Пр. Победы" />
+                        </div>
+                        <div class="my-addresses__address-input">
+                            <input type="text" class="my-addresses__building-inp" placeholder="Дом" id="addressInput"
+                                value="дом 254" />
+                            <input type="text" class="my-addresses__flat-inp" placeholder="Квартира" id="addressInput"
+                                value="кв. 159" />
+                        </div>
+                        <div class="my-addresses__address-input">
+                            <input type="text" class="my-addresses__entrance-inp" id="addressInput"
+                                placeholder="Подъезд" value="4 подъезд" />
+                            <input type="text" class="my-addresses__floor-inp" placeholder="Этаж" id="addressInput"
+                                value="5 этаж" />
+                        </div>
+                        <button class="my-addresses__choose">Выбрать</button>
+                        <button class="my-addresses__delete">
+                            <img src="./img/icons/trash.svg" alt="">
+                        </button>
+                    </label>
+                    <label class="my-addresses__option" id="#addressDelivery">
+                        <div class="my-addresses__option-radio">
+                            <input type="radio" class="my-addresses__option-input" name="myAddressesOption" />
+                            <span class="my-addresses__option-icon"></span>
+                            <span class="my-addresses__option-address">Новый адрес</span>
+                        </div>
+                        <div class="my-addresses__address-input">
+                            <input type="text" class="my-addresses__street-inp" id="addressInput" placeholder="Улица" />
+                        </div>
+                        <div class="my-addresses__address-input">
+                            <input type="text" class="my-addresses__building-inp" id="addressInput" placeholder="Дом" />
+                            <input type="text" class="my-addresses__flat-inp" id="addressInput"
+                                placeholder="Квартира" />
+                        </div>
+                        <div class="my-addresses__address-input">
+                            <input type="text" class="my-addresses__entrance-inp" id="addressInput"
+                                placeholder="Подъезд" />
+                            <input type="text" class="my-addresses__floor-inp" id="addressInput" placeholder="Этаж" />
+                        </div>
+                        <button class="my-addresses__choose">Выбрать</button>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-menu menu">
+        <div class="modal-menu__body">
+            <div class="modal-menu__img">
+                <img src="./img/icons/deleteAddress.svg" alt="">
+            </div>
+            <div class="modal-menu__text">
+                Вы уверены, что хотите удалить адрес <b>Пр. Победы, 254</b>?
+            </div>
+            <div class="modal-menu__buttons">
+                <button class="modal-menu__delete-button">Удалить</button>
+                <button class="modal-menu__cancel-button">Отменить</button>
+            </div>
+        </div>
+    </div>
+    <div class="pickup-selection menu">
+        <div class="container">
+            <div class="pickup-selection__body">
+                <div class="pickup-selection__header">
+                    <button class="pickup-selection__back-button">
+                        <img src="./img/icons/arrow2.svg" alt="">
+                    </button>
+                    <h3 class="pickup-selection__title">Выбрать адрес</h3>
+                    <div>
+                    </div>
+                </div>
+                <div class="pickup-selection__options">
+                    <label class="pickup-selection__option selected" id="#pickupAddress">
+                        <div class="pickup-selection__option-radio">
+                            <input type="radio" class="pickup-selection__option-input" checked="checked"
+                                name="pickupAddress" />
+                            <span class="pickup-selection__option-icon"></span>
+                            <span class="pickup-selection__option-label">На Гагарина, 14</span>
+
+                        </div>
+                        <button class="pickup-selection__choose">Выбрать</button>
+                    </label>
+                    <label class="pickup-selection__option" id="#pickupAddress">
+                        <div class="pickup-selection__option-radio">
+                            <input type="radio" class="pickup-selection__option-input" name="pickupAddress" />
+                            <span class="pickup-selection__option-icon"></span>
+                            <span class="pickup-selection__option-label">На ЧМЗ</span>
+
+                        </div>
+                        <button class="pickup-selection__choose">Выбрать</button>
+
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="./js/contacts.js"></script>
     <script src="./js/index.js"></script>
 

@@ -18,6 +18,7 @@ window.addEventListener("DOMContentLoaded", () => {
       // Задаем стили для блокировки прокрутки
       wrapper.style.overflow = "hidden";
       wrapper.style.position = "fixed";
+
       wrapper.style.top = `-${realScroll}px`;
     }
   };
@@ -26,6 +27,7 @@ window.addEventListener("DOMContentLoaded", () => {
     //Проверка на всякий случай
     if (isScrollDisabled) {
       isScrollDisabled = false;
+
       wrapper.style.overflow = "";
       wrapper.style.position = "";
       wrapper.style.top = "";
@@ -57,7 +59,7 @@ window.addEventListener("DOMContentLoaded", () => {
       setTimeout(() => {
         brightness?.classList.remove("active");
         isBrightnessActive = false;
-      }, 300);
+      }, 200);
     } else {
       brightness?.classList.add("active");
       isBrightnessActive = true;
@@ -241,6 +243,9 @@ window.addEventListener("DOMContentLoaded", () => {
       let currentY = e.touches[0].clientY;
       let diff = currentY - startY;
       let newBottom = startBottom - diff;
+      info?.forEach((option) => {
+        option.classList.remove("active");
+      });
       //Тут идет проверка на то, чтобы пользователь не мог просвайпать меню выше чем надо и ниже чем надо
       if (newBottom >= -startHeight && newBottom <= 0) {
         updateSwipeMenu(newBottom);
@@ -263,9 +268,8 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   //Код для выбора опций в карточках товара
-  const options = document?.querySelectorAll(".option");
-  const info = document?.querySelectorAll(".info");
-  console.log(options);
+  const options = document?.querySelectorAll(".product-card__option");
+  const info = document?.querySelectorAll(".product-card__info");
   //При клике на опцию убираем класс selected со всех опций и добавляем той, на которую кликнули
   options.forEach((option) => {
     option.addEventListener("click", () => {
@@ -298,14 +302,83 @@ window.addEventListener("DOMContentLoaded", () => {
   //При клике на опцию убираем класс selected со всех опций и добавляем той, на которую кликнули
   addressMenuOptions?.forEach((option) => {
     option.addEventListener("click", () => {
-      console.log("Adsc");
       addressMenuOptions.forEach((item) => {
         item.classList.remove("selected");
       });
       option.classList.add("selected");
     });
   });
+  const addressSelectionBtn = document.querySelector(
+    ".address-menu__address-selection"
+  );
+  const myAdressesModalMenu = document.querySelector(".my-addresses");
+  addressSelectionBtn?.addEventListener("click", () => {
+    disableScroll();
+    closeAllMenus();
+    showMenu(myAdressesModalMenu);
+    toggleBrightness();
+  });
+  const myAddressBackBtn = document.querySelector(".my-addresses__back-button");
+  myAddressBackBtn?.addEventListener("click", () => {
+    closeAllMenus();
+    enableScroll();
+  });
 
+  const myAddressesOptions = document.querySelectorAll(".my-addresses__option");
+  myAddressesOptions?.forEach((option) => {
+    option.addEventListener("click", () => {
+      myAddressesOptions.forEach((item) => {
+        item.classList.remove("selected");
+      });
+      option.classList.add("selected");
+    });
+  });
+  const deleteButtons = document?.querySelectorAll(".my-addresses__delete");
+  const modalMenu = document?.querySelector(".modal-menu");
+  deleteButtons?.forEach((item) => {
+    item.addEventListener("click", (event) => {
+      modalMenu.classList.add("active");
+    });
+  });
+
+  const deleteButton = document?.querySelector(".modal-menu__delete-button");
+  const cancelButton = document?.querySelector(".modal-menu__cancel-button");
+
+  deleteButton?.addEventListener("click", (event) => {
+    modalMenu.classList.remove("active");
+  });
+  cancelButton?.addEventListener("click", (event) => {
+    modalMenu.classList.remove("active");
+  });
+
+  const pickupSelectionBtn = document.querySelector(
+    ".address-menu__pickup-selection"
+  );
+  const pickupSelectionMenu = document?.querySelector(".pickup-selection");
+  const pickupSelectionOptions = document?.querySelectorAll(
+    ".pickup-selection__option"
+  );
+  pickupSelectionBtn?.addEventListener("click", () => {
+    disableScroll();
+    closeAllMenus();
+    showMenu(pickupSelectionMenu);
+    toggleBrightness();
+  });
+  pickupSelectionOptions?.forEach(function (option) {
+    option.addEventListener("click", function () {
+      pickupSelectionOptions.forEach(function (item) {
+        item.classList.remove("selected");
+      });
+      this.classList.add("selected");
+    });
+  });
+  const pickupBackBtn = document?.querySelector(
+    ".pickup-selection__back-button"
+  );
+  pickupBackBtn?.addEventListener("click", () => {
+    closeAllMenus();
+    enableScroll();
+  });
   //Код для активных заказов. Можно его в отдельный файл
   const orders = document?.querySelectorAll(".order");
   //блок для всего, что выше заказов. Он становится активным при хотя бы одном заказе, который свайпнули вверх.
@@ -344,7 +417,6 @@ window.addEventListener("DOMContentLoaded", () => {
   orders?.forEach((item, index) => {
     let statusInfoIcon = statusInfoIconArray[index];
     let initialHeight = item.clientHeight;
-    console.log(initialHeight);
     let initialBottom = -(initialHeight - (index + 1) * 70 - 56);
     item.style.bottom = initialBottom + "px";
     let startY, startBottom;

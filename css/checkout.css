@@ -484,7 +484,7 @@
   transform: rotate(180deg);
 }
 .account-info__body {
-  background: rgba(255, 219, 108, 0.5);
+  background: rgba(255, 214, 102, 1);
   border-radius: 16px;
   padding: 20px;
   height: 64px;
@@ -777,6 +777,7 @@ textarea::-webkit-scrollbar {
   background: var(--greybg);
   border-radius: 16px;
   padding: 20px;
+  position: relative;
 }
 
 .delivery-time__title {
@@ -788,6 +789,18 @@ textarea::-webkit-scrollbar {
   letter-spacing: -0.02em;
   color: var(--black);
   margin-bottom: 16px;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.delivery-time__body img {
+  position: absolute;
+  right: 40px;
+  top: 80px;
+  transform: rotate(90deg);
 }
 
 .delivery-time__list {
@@ -1024,25 +1037,6 @@ textarea::-webkit-scrollbar {
 .my-addresses.active {
   display: block;
 }
-
-.bright80 {
-  position: fixed;
-  background-color: #00000054;
-  height: 100vh;
-  width: 100vw;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  opacity: 0;
-  transition: opacity 0.5s;
-  pointer-events: none;
-}
-.bright80.active {
-  pointer-events: initial;
-  opacity: 1;
-  transition: opacity 0.5s;
-}
-
 .my-addresses__header {
   margin: 20px 0 7px;
   display: flex;
