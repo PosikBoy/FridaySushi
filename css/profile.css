@@ -627,6 +627,8 @@
   color: var(--greytext);
 }
 .personal-info__label-offer {
+  display: block;
+  width: 80%;
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 16px;

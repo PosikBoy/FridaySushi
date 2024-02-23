@@ -151,7 +151,6 @@ window.addEventListener("DOMContentLoaded", () => {
     toggleBrightness();
     disableScroll();
     //Убираем кнопку, тк в сайдбаре уже есть своя
-
     headerMenuButton?.classList.remove("active");
   });
 
@@ -229,6 +228,9 @@ window.addEventListener("DOMContentLoaded", () => {
       item.style.transition = "none";
       //блокируем скролл, чтобы фон не скроллился вместе с менюшкой
       disableScroll();
+      info?.forEach((option) => {
+        option.classList.remove("active");
+      });
       startBottom = parseInt(
         window.getComputedStyle(item).getPropertyValue("bottom")
       );
@@ -243,9 +245,7 @@ window.addEventListener("DOMContentLoaded", () => {
       let currentY = e.touches[0].clientY;
       let diff = currentY - startY;
       let newBottom = startBottom - diff;
-      info?.forEach((option) => {
-        option.classList.remove("active");
-      });
+
       //Тут идет проверка на то, чтобы пользователь не мог просвайпать меню выше чем надо и ниже чем надо
       if (newBottom >= -startHeight && newBottom <= 0) {
         updateSwipeMenu(newBottom);
