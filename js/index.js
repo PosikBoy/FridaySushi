@@ -228,9 +228,12 @@ window.addEventListener("DOMContentLoaded", () => {
       item.style.transition = "none";
       //блокируем скролл, чтобы фон не скроллился вместе с менюшкой
       disableScroll();
-      info?.forEach((option) => {
-        option.classList.remove("active");
-      });
+      if (!e.target.classList.contains("option__icon")) {
+        info?.forEach((option) => {
+          option.classList.remove("active");
+        });
+      }
+
       startBottom = parseInt(
         window.getComputedStyle(item).getPropertyValue("bottom")
       );
