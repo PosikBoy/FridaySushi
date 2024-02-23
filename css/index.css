@@ -1504,12 +1504,12 @@
   height: 100vh;
   width: 100vw;
   visibility: hidden;
-  bottom: -100%;
+  top: 100%;
   transition: all 0.5s;
 }
 .pickup-selection.active {
   visibility: visible;
-  bottom: 0;
+  top: 0;
   transition: all 0.5s;
 }
 .pickup-selection__body {
