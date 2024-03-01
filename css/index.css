@@ -894,8 +894,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  bottom: 0;
-  z-index: 12;
+  bottom: -100px;
+  z-index: 11;
   overflow: hidden;
   border-radius: 16px 16px 0 0;
   visibility: visible;
@@ -904,6 +904,10 @@
   background: var(--greybg);
 }
 
+.address-menu.opened .address-menu__body {
+  padding: 12px 20px 120px 20px;
+  transition: padding 0.3s;
+}
 .address-menu.hidden {
   visibility: hidden;
   max-height: 0;
@@ -912,19 +916,20 @@
 .address-menu__body {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  padding: 12px 20px 20px 20px;
+  transition: padding 0.3s;
+  padding: 12px 20px 100px 20px;
   width: 100vw;
 }
 .address-menu__stick {
   width: 100%;
-
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  display: none;
+  display: flex;
 }
-
+.address-menu__info {
+  margin-bottom: 20px;
+}
 .address-menu__title {
   font-family: "Cera Round Pro";
   font-weight: 500;
@@ -944,15 +949,19 @@
 
 .address-menu__buttons {
   display: flex;
+  visibility: visible;
+  transition: all 0.3s;
+  opacity: 1;
   gap: 10px;
 }
 
 .address-menu.opened .address-menu__buttons {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+  max-height: 0;
+  transition: all 0.3s;
 }
-.address-menu.opened .address-menu__stick {
-  display: flex;
-}
+
 .address-menu__open {
   background: #ffdb6c;
   border-radius: 101px;
@@ -973,14 +982,17 @@
   width: 107px;
   flex-shrink: 0;
 }
+.address-menu__login-img {
+  pointer-events: none;
+}
 .address-menu__login-text {
   font-family: "Cera Round Pro";
   font-weight: 400;
   font-size: 17px;
   line-height: 118%;
   letter-spacing: -0.01em;
-  text-align: right;
   color: black;
+  pointer-events: none;
 }
 .address-menu__city {
   display: none;
@@ -1025,6 +1037,7 @@
 .address-menu__options {
   max-height: 0;
   visibility: hidden;
+  margin-bottom: 20px;
 }
 .address-menu.opened .address-menu__options {
   border: 1px solid #f0f0f0;

@@ -298,15 +298,26 @@ window.addEventListener("DOMContentLoaded", () => {
   const addressDeliveryOpenBtn = document?.querySelector(".address-menu__open");
   const addressMenuBtn = document?.querySelector(".address-menu__button");
   const cartBlock = document?.querySelector(".cart");
-  addressMenuBtn?.addEventListener("click", () => {
-    addressDeliveryMenu.classList.add("hidden");
-    cartBlock.classList.add("active");
+  const cartBlockAddressBtn = document?.querySelector(".cart__header");
+  cartBlockAddressBtn.addEventListener("click", () => {
+    addressDeliveryMenu.classList.remove("hidden");
+    cartBlock.classList.remove("active");
     toggleBrightness();
   });
-  addressDeliveryOpenBtn?.addEventListener("click", () => {
-    addressDeliveryMenu.classList.add("opened");
-    toggleBrightness();
-
+  const deliveryMenuFunction = () => {
+    addressDeliveryMenu.addEventListener("click", (event) => {
+      if (!event.target.classList.contains("address-menu__login")) {
+        showSwipeMenu();
+      }
+    });
+    addressMenuBtn?.addEventListener("click", () => {
+      addressDeliveryMenu.classList.add("hidden");
+      cartBlock.classList.add("active");
+      toggleBrightness();
+    });
+    addressDeliveryOpenBtn?.addEventListener("click", () => {
+      showSwipeMenu();
+    });
     let startY, startBottom, startHeight;
     //Функция обновления положения блока на экране. Вызывается  при каждом движении сенсора
     const updateSwipeMenu = (newBottom) => {
@@ -318,13 +329,10 @@ window.addEventListener("DOMContentLoaded", () => {
       addressDeliveryMenu.style = "";
       //добавляем анимацию
       addressDeliveryMenu.style.transition = "all 0.3s ease";
-
-      addressDeliveryMenu.classList.remove("opened");
-      toggleBrightness();
-
-      addressDeliveryMenu.removeEventListener("touchstart", touchStartListener);
-      addressDeliveryMenu.removeEventListener("touchmove", touchMoveListener);
-      addressDeliveryMenu.removeEventListener("touchend", touchEndListener);
+      if (addressDeliveryMenu.classList.contains("opened")) {
+        addressDeliveryMenu.classList.remove("opened");
+        toggleBrightness();
+      }
 
       //убираем анимацию, чтобы не было конфликтов при следующем вызове меню через 300мс(длительность анимации)
       setTimeout(() => {
@@ -334,10 +342,14 @@ window.addEventListener("DOMContentLoaded", () => {
     //Функция для открытия этого свайпающегося меню. Вызывается в случае свайпа меньше 20% от высоты меню
     const showSwipeMenu = () => {
       //Убираем стили, чтобы не было конфликтов
-      addressDeliveryMenu.style = "";
+
+      if (!addressDeliveryMenu.classList.contains("opened")) {
+        addressDeliveryMenu.classList.add("opened");
+        toggleBrightness();
+      }
       //добавляем анимацию и перемещаем меню обратно
+      addressDeliveryMenu.style.bottom = "";
       addressDeliveryMenu.style.transition = "bottom 0.3s ease";
-      addressDeliveryMenu.style.bottom = "0";
       //Убираем стили, чтобы не было конфликтов
       setTimeout(() => {
         addressDeliveryMenu.style = "";
@@ -383,16 +395,27 @@ window.addEventListener("DOMContentLoaded", () => {
       let diffY = touchEndY - startY;
       //Разрешаем скролл фона
       enableScroll();
+      console.log(diffY);
+
       //Если длина свайпа больше 20% высота, то закрываем меню, иначе возвращаем в изначальное положение
-      if (diffY >= startHeight * 0.2) {
-        hideSwipeMenu();
+      if (addressDeliveryMenu.classList.contains("opened")) {
+        if (diffY >= 50) {
+          hideSwipeMenu();
+        } else {
+          showSwipeMenu();
+        }
       } else {
-        showSwipeMenu();
+        if (diffY <= -50) {
+          showSwipeMenu();
+        } else {
+          hideSwipeMenu();
+        }
       }
     };
 
     addressDeliveryMenu.addEventListener("touchend", touchEndListener);
-  });
+  };
+  deliveryMenuFunction();
   const addressMenuOptions = document?.querySelectorAll(
     ".address-menu__option"
   );
