@@ -299,13 +299,13 @@ window.addEventListener("DOMContentLoaded", () => {
   const addressMenuBtn = document?.querySelector(".address-menu__button");
   const cartBlock = document?.querySelector(".cart");
   const cartBlockAddressBtn = document?.querySelector(".cart__header");
-  cartBlockAddressBtn.addEventListener("click", () => {
+  cartBlockAddressBtn?.addEventListener("click", () => {
     addressDeliveryMenu.classList.remove("hidden");
     cartBlock.classList.remove("active");
     toggleBrightness();
   });
   const deliveryMenuFunction = () => {
-    addressDeliveryMenu.addEventListener("click", (event) => {
+    addressDeliveryMenu?.addEventListener("click", (event) => {
       if (!event.target.classList.contains("address-menu__login")) {
         showSwipeMenu();
       }
@@ -373,7 +373,7 @@ window.addEventListener("DOMContentLoaded", () => {
       startHeight = addressDeliveryMenu.offsetHeight;
     };
     //Слушатель события при начале скролла(тап)
-    addressDeliveryMenu.addEventListener("touchstart", touchStartListener);
+    addressDeliveryMenu?.addEventListener("touchstart", touchStartListener);
 
     //Слушатель события при перемещении скролла(свайп)
     let touchMoveListener = (e) => {
@@ -388,7 +388,7 @@ window.addEventListener("DOMContentLoaded", () => {
         updateSwipeMenu(newBottom);
       }
     };
-    addressDeliveryMenu.addEventListener("touchmove", touchMoveListener);
+    addressDeliveryMenu?.addEventListener("touchmove", touchMoveListener);
     //Слушатель события при конце скролла(отпустил меню)
     let touchEndListener = (e) => {
       let touchEndY = e.changedTouches[0].clientY;
@@ -413,7 +413,7 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     };
 
-    addressDeliveryMenu.addEventListener("touchend", touchEndListener);
+    addressDeliveryMenu?.addEventListener("touchend", touchEndListener);
   };
   deliveryMenuFunction();
   const addressMenuOptions = document?.querySelectorAll(
