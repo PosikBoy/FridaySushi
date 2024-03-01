@@ -71,6 +71,7 @@ window.addEventListener("DOMContentLoaded", () => {
       enableScroll();
     }
     closeAllMenus();
+    addressDeliveryMenu?.classList.remove("opened");
     toggleBrightness();
   });
 
@@ -119,6 +120,7 @@ window.addEventListener("DOMContentLoaded", () => {
       closeAllMenus();
       toggleBrightness();
       enableScroll();
+      addressDeliveryMenu.classList.remove("hidden");
     });
   });
   //Конец кода для выбора города
@@ -187,7 +189,7 @@ window.addEventListener("DOMContentLoaded", () => {
   });
   // Конец кода для продуктов
 
-  //Начало кода для всех свайпающихся карточек (выбор адреса, карточки товара и тд)
+  //Начало кода для всех свайпающихся карточек ( карточки товара и тд)
   const swipeMenus = document?.querySelectorAll(".swipe");
 
   swipeMenus?.forEach((item) => {
@@ -291,17 +293,109 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // Код для выбора адреса доставки
 
-  const addressDelivery = document?.querySelector(".side-bar__address-info");
   const addressDeliveryMenu = document?.querySelector("#addressDeliveryMenu");
   //При нажатии на кнопку, вызываем нужное меню(кнопка в сайдбаре)
-  addressDelivery?.addEventListener("click", () => {
-    closeAllMenus();
-    showMenu(addressDeliveryMenu);
+  const addressDeliveryOpenBtn = document?.querySelector(".address-menu__open");
+  const addressMenuBtn = document?.querySelector(".address-menu__button");
+  const cartBlock = document?.querySelector(".cart");
+  addressMenuBtn?.addEventListener("click", () => {
+    addressDeliveryMenu.classList.add("hidden");
+    cartBlock.classList.add("active");
+    toggleBrightness();
+  });
+  addressDeliveryOpenBtn?.addEventListener("click", () => {
+    addressDeliveryMenu.classList.add("opened");
+    toggleBrightness();
+
+    let startY, startBottom, startHeight;
+    //Функция обновления положения блока на экране. Вызывается  при каждом движении сенсора
+    const updateSwipeMenu = (newBottom) => {
+      addressDeliveryMenu.style.bottom = newBottom + "px";
+    };
+    //Функция для закрытия этого свайпающегося меню.
+    const hideSwipeMenu = () => {
+      //обнуляем стили, чтобы не было конфликтов
+      addressDeliveryMenu.style = "";
+      //добавляем анимацию
+      addressDeliveryMenu.style.transition = "all 0.3s ease";
+
+      addressDeliveryMenu.classList.remove("opened");
+      toggleBrightness();
+
+      addressDeliveryMenu.removeEventListener("touchstart", touchStartListener);
+      addressDeliveryMenu.removeEventListener("touchmove", touchMoveListener);
+      addressDeliveryMenu.removeEventListener("touchend", touchEndListener);
+
+      //убираем анимацию, чтобы не было конфликтов при следующем вызове меню через 300мс(длительность анимации)
+      setTimeout(() => {
+        addressDeliveryMenu.style = "";
+      }, 300);
+    };
+    //Функция для открытия этого свайпающегося меню. Вызывается в случае свайпа меньше 20% от высоты меню
+    const showSwipeMenu = () => {
+      //Убираем стили, чтобы не было конфликтов
+      addressDeliveryMenu.style = "";
+      //добавляем анимацию и перемещаем меню обратно
+      addressDeliveryMenu.style.transition = "bottom 0.3s ease";
+      addressDeliveryMenu.style.bottom = "0";
+      //Убираем стили, чтобы не было конфликтов
+      setTimeout(() => {
+        addressDeliveryMenu.style = "";
+      }, 300);
+    };
+    let touchStartListener = (e) => {
+      startY = e.touches[0].clientY;
+      //Убираем анимацию, чтобы не было конфликтов
+      addressDeliveryMenu.style.transition = "none";
+      //блокируем скролл, чтобы фон не скроллился вместе с менюшкой
+      disableScroll();
+      if (!e.target.classList.contains("option__icon")) {
+        info?.forEach((option) => {
+          option.classList.remove("active");
+        });
+      }
+
+      startBottom = parseInt(
+        window.getComputedStyle(addressDeliveryMenu).getPropertyValue("bottom")
+      );
+      startHeight = addressDeliveryMenu.offsetHeight;
+    };
+    //Слушатель события при начале скролла(тап)
+    addressDeliveryMenu.addEventListener("touchstart", touchStartListener);
+
+    //Слушатель события при перемещении скролла(свайп)
+    let touchMoveListener = (e) => {
+      //Выключаем всплытие для сафари
+      e.stopPropagation();
+      let currentY = e.touches[0].clientY;
+      let diff = currentY - startY;
+      let newBottom = startBottom - diff;
+
+      //Тут идет проверка на то, чтобы пользователь не мог просвайпать меню выше чем надо и ниже чем надо
+      if (newBottom >= -startHeight && newBottom <= 0) {
+        updateSwipeMenu(newBottom);
+      }
+    };
+    addressDeliveryMenu.addEventListener("touchmove", touchMoveListener);
+    //Слушатель события при конце скролла(отпустил меню)
+    let touchEndListener = (e) => {
+      let touchEndY = e.changedTouches[0].clientY;
+      let diffY = touchEndY - startY;
+      //Разрешаем скролл фона
+      enableScroll();
+      //Если длина свайпа больше 20% высота, то закрываем меню, иначе возвращаем в изначальное положение
+      if (diffY >= startHeight * 0.2) {
+        hideSwipeMenu();
+      } else {
+        showSwipeMenu();
+      }
+    };
+
+    addressDeliveryMenu.addEventListener("touchend", touchEndListener);
   });
   const addressMenuOptions = document?.querySelectorAll(
     ".address-menu__option"
   );
-
   //При клике на опцию убираем класс selected со всех опций и добавляем той, на которую кликнули
   addressMenuOptions?.forEach((option) => {
     option.addEventListener("click", () => {
@@ -365,7 +459,6 @@ window.addEventListener("DOMContentLoaded", () => {
     disableScroll();
     closeAllMenus();
     showMenu(pickupSelectionMenu);
-    toggleBrightness();
   });
   pickupSelectionOptions?.forEach(function (option) {
     option.addEventListener("click", function () {
@@ -381,109 +474,5 @@ window.addEventListener("DOMContentLoaded", () => {
   pickupBackBtn?.addEventListener("click", () => {
     closeAllMenus();
     enableScroll();
-  });
-  //Код для активных заказов. Можно его в отдельный файл
-  const orders = document?.querySelectorAll(".order");
-  //блок для всего, что выше заказов. Он становится активным при хотя бы одном заказе, который свайпнули вверх.
-  const ordersWrapper = document?.querySelector(".orders__wrapper");
-  const statusInfoIconArray = document?.querySelectorAll(".order__info-icon");
-
-  let zIndexs = 6;
-  //Раздаем каждому заказу свой zindex(костыль по сути. но как без него не представляю)
-  orders?.forEach((item) => {
-    item.style.zIndex = zIndexs;
-    zIndexs -= 1;
-  });
-  //При нажатии на врайппер все заказы возвращаются в свое изначальное положение, а затем враппер становится неактивным
-  ordersWrapper?.addEventListener("click", () => {
-    orders.forEach((item, index) => {
-      let statusInfoIcon = statusInfoIconArray[index];
-      let initialBottom = -(item.clientHeight - (index + 1) * 70 - 60);
-      item.style.transition = "bottom 0.5s ease";
-      statusInfoIcon.classList.remove("hidden");
-      item.style.bottom = initialBottom + "px";
-      setTimeout(() => {
-        item.style.transition = "";
-      }, 500);
-      ordersWrapper.classList.remove("active");
-    });
-  });
-
-  //Задаем блоку с товарами паддинг снизу. Это нужно для того, чтобы при активных заказах, заказы не перекрывали меню
-  const productsBlock = document?.querySelector(".products");
-  if (productsBlock) {
-    productsBlock.style.paddingBottom = 80 * orders.length + "px";
-  }
-
-  //Каждому заказу добавляем слушатели событий
-  //Похожее поведение уже было, поэтому комментарии излишни
-  orders?.forEach((item, index) => {
-    let statusInfoIcon = statusInfoIconArray[index];
-    let initialHeight = item.clientHeight;
-    let initialBottom = -(initialHeight - (index + 1) * 70 - 56);
-    item.style.bottom = initialBottom + "px";
-    let startY, startBottom;
-    const checkWrapper = () => {
-      let flag = false;
-      orders.forEach((item) => {
-        if (item.classList.contains("active")) {
-          flag += true;
-        }
-      });
-      return flag;
-    };
-    const updateMenu = (newBottom) => {
-      item.style.bottom = newBottom + "px";
-    };
-    const hideMenu = () => {
-      item.style.transition = "bottom 0.5s ease";
-      item.style.bottom = initialBottom + "px";
-      item.classList.remove("active");
-      if (!checkWrapper()) {
-        ordersWrapper.classList.remove("active");
-      }
-      statusInfoIcon.classList.remove("hidden");
-      setTimeout(() => {
-        item.style.transition = "";
-      }, 500);
-    };
-    const showMenu = () => {
-      item.style.transition = "bottom 0.3s ease";
-      item.style.bottom = initialBottom + initialHeight - 100 + "px";
-      item.classList.add("active");
-      ordersWrapper.classList.add("active");
-      statusInfoIcon.classList.add("hidden");
-    };
-    item.addEventListener("touchstart", (e) => {
-      startY = e.touches[0].clientY;
-      item.style.transition = "none";
-      disableScroll();
-      startBottom = parseInt(
-        window.getComputedStyle(item).getPropertyValue("bottom")
-      );
-    });
-    item.addEventListener("touchmove", (e) => {
-      e.stopPropagation();
-      item.style.transition = "none";
-      let currentY = e.touches[0].clientY;
-      let diff = currentY - startY;
-      let newBottom = startBottom - diff;
-      if (
-        newBottom >= -initialHeight &&
-        newBottom <= initialHeight + initialBottom - 100
-      ) {
-        updateMenu(newBottom);
-      }
-    });
-    item.addEventListener("touchend", (e) => {
-      let touchEndY = e.changedTouches[0].clientY;
-      let diffY = touchEndY - startY;
-      if (diffY >= initialHeight * 0.2) {
-        hideMenu();
-      } else {
-        showMenu();
-      }
-      enableScroll();
-    });
   });
 });

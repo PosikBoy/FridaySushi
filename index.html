@@ -177,6 +177,20 @@
         </div>
       </div>
     </section>
+    <div class="cart ">
+      <div class="container">
+        <div class="cart__body">
+          <div class="cart__header">
+            <div class="cart__address">Чонгарский переулок, 26А</div>
+            <div class="cart__info">Доставка ~ 45 мин</div>
+          </div>
+          <a href="/cart" class="cart__button">
+            <div class="cart__button-text">Корзина</div>
+            <div class="cart__button-value">0 ₽</div>
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
   <section class="categories2 hidden">
     <button class="categories__menu-button menu-button">
@@ -197,14 +211,7 @@
       </li>
     </ul>
   </section>
-  <a class="cart empty" href="./cart/cart.html">
-    <div class="cart__text">Корзина</div>
-    <div class="cart__value"></div>
-  </a>
-  <a class="cart filled hidden" href="./cart/cart.html">
-    <div class="cart__text">Корзина</div>
-    <div class="cart__value">925 ₽</div>
-  </a>
+
 
   <div class="choose-city">
     <div class="choose-city__body">
@@ -400,53 +407,7 @@
       </button>
     </div>
   </div>
-  <div class="address-menu swipe menu" id="addressDeliveryMenu">
-    <div class="address-menu__stick">
-      <img src="./img/icons/stick.svg" alt="" />
-    </div>
-    <div class="address-menu__body">
-      <div class="address-menu__info">
-        <h3 class="address-menu__name">Укажите адрес</h3>
-        <div class="address-menu__description">
-          Так мы определим наличие и рассчитаем время доставки.
-        </div>
-      </div>
-      <div class="address-menu__options">
-        <label class="address-menu__option selected" id="#addressDelivery">
-          <div class="address-menu__option-radio">
-            <input type="radio" class="address-menu__option-input" name="addressOption" checked="checked" />
-            <span class="address-menu__option-icon"></span>
-            <span class="address-menu__option-label">Адрес доставки</span>
-          </div>
-          <div class="address-menu__address-input">
-            <input type="text" class="address-menu__street-inp" placeholder="Улица" />
-            <input type="text" class="address-menu__house-inp" placeholder="Дом" />
-          </div>
-          <button class="address-menu__address-selection">
-            <span class="address-menu__address">Пр. Победы, 254</span>
-            <span class="address-menu__address-additional">кв. 159, 4 подъезд, 5 этаж</span>
-          </button>
-        </label>
-        <label class="address-menu__option option column" id="#addressDelivery">
-          <div class="address-menu__option-radio">
-            <input type="radio" class="address-menu__option-input" name="addressOption" />
-            <span class="address-menu__option-icon"></span>
-            <span class="address-menu__option-label">Самовывоз</span>
-          </div>
-          <div class="address-menu__pickup-selection">
-            <span class="address-menu__pickup-text">Выберите ресторан</span>
-          </div>
-        </label>
-      </div>
-      <button class="address-menu__button">
-        <span>Выбрать</span>
-      </button>
-      <button class="address-menu__login">
-        <img class="address-menu__login-img" src="./img/icons/profile.svg" alt="">
-        <span class="address-menu__login-text">Войти в профиль</span>
-      </button>
-    </div>
-  </div>
+
   <nav class="side-bar menu">
     <button class="side-bar__menu-button">
       <span></span>
@@ -477,13 +438,6 @@
         </a>
       </div>
       <div class="side-bar__footer">
-        <div class="side-bar__city">
-          Челябинск
-        </div>
-        <div class="side-bar__address-info">
-          <p class="side-bar__address">Пр. Победы, 254</p>
-          <p class="side-bar__address-label">Доставка</p>
-        </div>
         <div class="side-bar__contacts">
           <a href="./contacts.html" class="side-bar__contacts-link">Контакты</a>
         </div>
@@ -500,6 +454,8 @@
         <div></div>
       </div>
       <div class="my-addresses__body">
+        <div class="my-addresses__buttons">
+        </div>
         <div class="my-addresses__options">
           <label class="my-addresses__option selected" id="#addressDelivery">
             <div class="my-addresses__option-radio">
@@ -652,6 +608,59 @@
       </div>
     </div>
   </div>
+  <!-- Класс hidden, если необходимо спрятать меню "Какой у вас адрес?" -->
+  <div class="address-menu hidden menu" id="addressDeliveryMenu">
+    <div class="address-menu__stick">
+      <img src="./img/icons/stick.svg" alt="" />
+    </div>
+    <div class="address-menu__body">
+      <div class="address-menu__info">
+        <h3 class="address-menu__title">Какой у вас адрес?</h3>
+        <div class="address-menu__description">
+          Определим наличие и рассчитаем доставку.
+        </div>
+        <div class="address-menu__city">
+          <div class="address-menu__city-text">Челябинск</div>
+          <div class="address-menu__city-img">
+            <img src="./img/icons/arrow2.svg" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="address-menu__buttons">
+        <button class="address-menu__open">Указать адрес</button>
+        <a href="#" class="address-menu__login">
+          <img class="address-menu__login-img" src="./img/icons/profile.svg" alt="">
+          <span class="address-menu__login-text">Войти</span>
+        </a>
+      </div>
+      <div class="address-menu__options">
+        <label class="address-menu__option selected" id="#addressDelivery">
+          <div class="address-menu__option-radio">
+            <input type="radio" class="address-menu__option-input" name="addressOption" checked="checked" />
+            <span class="address-menu__option-icon"></span>
+            <span class="address-menu__option-label">Адрес доставки</span>
+          </div>
+          <div class="address-menu__address-input">
+            <input type="text" class="address-menu__street-inp" placeholder="Улица" />
+            <input type="text" class="address-menu__house-inp" placeholder="Дом" />
+          </div>
+        </label>
+        <label class="address-menu__option option column" id="#addressDelivery">
+          <div class="address-menu__option-radio">
+            <input type="radio" class="address-menu__option-input" name="addressOption" />
+            <span class="address-menu__option-icon"></span>
+            <span class="address-menu__option-label">Самовывоз</span>
+          </div>
+          <div class="address-menu__pickup-selection">
+            <span class="address-menu__pickup-text">Выберите ресторан</span>
+          </div>
+        </label>
+      </div>
+      <button class="address-menu__button">
+        <span>Выбрать</span>
+      </button>
+    </div>
+  </div>
   <!-- <nav class="side-bar menu">
     <button class="side-bar__menu-button">
       <span></span>
@@ -687,6 +696,47 @@
       </div>
     </div>
   </nav> -->
+  <div class="orders">
+    <div class="orders__body">
+      <a href="./order.html" class="orders__order order">
+        <div class="order__info">
+          <div class="order__img">
+            <img src="./img/icons/orderStatus2.svg" alt="">
+          </div>
+          <div class="order__status">
+            <div class="order__number">Заказ 95</div>
+            <div class="order__info-status">Готовится</div>
+          </div>
+        </div>
+        <div class="order__timer">59:59</div>
+      </a>
+      <a href="./order.html" class="orders__order order">
+        <div class="order__info">
+          <div class="order__img">
+            <img src="./img/icons/orderStatus3.svg" alt="">
+          </div>
+          <div class="order__status">
+            <div class="order__number">Заказ 88</div>
+            <div class="order__info-status">Едет к вам</div>
+          </div>
+        </div>
+        <div class="order__timer">35:06</div>
+      </a>
+      <a href="./order.html" class="orders__order order">
+        <div class="order__info">
+          <div class="order__img">
+            <img src="./img/icons/orderStatus3.svg" alt="">
+          </div>
+          <div class="order__status">
+            <div class="order__number">Заказ 81</div>
+            <div class="order__info-status">Едет к вам</div>
+          </div>
+        </div>
+        <div class="order__timer">15:42</div>
+      </a>
+    </div>
+
+  </div>
   <script src="./js/index.js"></script>
 </body>
 

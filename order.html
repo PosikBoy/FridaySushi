@@ -5,8 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1, user-scalable=no" />
   <title>Суши пятница - каталог</title>
-  <link rel="stylesheet" href="./css/index.css" />
+  <link rel="stylesheet" href="./css/order.css" />
   <link rel="stylesheet" href="./css/reset.css" />
+
 </head>
 
 <body>
@@ -15,706 +16,26 @@
     <header class="header">
       <div class="container">
         <div class="header__body">
-          <a class="header__logo logo" href="#">
-            <img src="./img/logo.png" alt="Логотип суши пятница" />
-          </a>
-          <button class="header__menu-button menu-button active">
-            <span></span>
-          </button>
-        </div>
-      </div>
-    </header>
-    <section class="stories">
-      <div class="stories__story story checked">
-        <a href="" class="story__link">
-          <div class="story__image">
-            <img src="./img/stories/story_1.png" alt="" />
-          </div>
-          <p class="story__label">Фруктовый ролл в подарок</p>
-        </a>
-      </div>
-      <div class="stories__story story">
-        <a href="" class="story__link">
-          <div class="story__image">
-            <img src="./img/stories/story_2.png" alt="" />
-          </div>
-          <p class="story__label">Роллы по акции</p>
-        </a>
-      </div>
-      <div class="stories__story story">
-        <a href="" class="story__link">
-          <div class="story__image">
-            <img src="./img/stories/story_3.png" alt="" />
-          </div>
-          <p class="story__label">Роллы на рождествои</p>
-        </a>
-      </div>
-      <div class="stories__story story">
-        <a href="" class="story__link">
-          <div class="story__image">
-            <img src="./img/stories/story_2.png" alt="" />
-          </div>
-        </a>
-        <p class="story__label">Новогоднее меню</p>
-      </div>
-    </section>
-    <section class="categories">
-      <ul class="categories__list">
-        <li class="categories__item active">
-          <a href="#" class="categories__link">Роллы</a>
-        </li>
-        <li class="categories__item">
-          <a href="#" class="categories__link">Наборы</a>
-        </li>
-        <li class="categories__item">
-          <a href="#" class="categories__link">WOK</a>
-        </li>
-        <li class="categories__item">
-          <a href="#" class="categories__link">Закуски</a>
-        </li>
-      </ul>
-    </section>
-    <section class="products">
-      <div class="container">
-        <ul class="products__sushi sushi">
-          <li class="sushi__product product" id="sushi">
-            <div class="sushi__image">
-              <img src="./img/products/product_1.png" alt="Филадельфия с огурцом" class="sushi__img" />
-            </div>
-            <div class="sushi__info">
-              <h3 class="sushi__title">Филадельфия с огурцом</h3>
-              <p class="sushi__description">
-                Лосось, креветка, сливочный сыр, огурец. 320 гр.
-              </p>
-              <div class="sushi__price">299 ₽</div>
-            </div>
-          </li>
-          <li class="sushi__product product" id="cola">
-            <div class="sushi__image">
-              <img src="./img/products/product_2.png  " alt="Темпурный с курицей терияки" class="sushi__img" />
-              <img src="./img/icons/fire.svg" alt="" class="sushi__icon active" />
-            </div>
-            <div class="sushi__info">
-              <h3 class="sushi__title">Темпурный с курицей терияки</h3>
-              <p class="sushi__description">
-                Сливочный сыр, угорь, авокадо, креветка, кунжут, соус. 320 гр.
-              </p>
-              <div class="sushi__price">369 ₽</div>
-            </div>
-          </li>
-          <li class="sushi__product product">
-            <div class="sushi__image">
-              <img src="./img/products/product_3.png  " alt="Чизмаки с креветкой" class="sushi__img" />
-            </div>
-            <div class="sushi__info">
-              <h3 class="sushi__title">Чизмаки с креветкой</h3>
-              <p class="sushi__description">
-                Лосось, креветка, сливочный сыр, огурец.250 гр
-              </p>
-              <div class="sushi__price">290 ₽</div>
-            </div>
-          </li>
-        </ul>
-        <ul class="products__wok wok">
-          <li class="wok__product product">
-            <div class="wok__image">
-              <img src="./img/products/product_4.png" alt="" class="wok__img" />
-            </div>
-            <div class="wok__info">
-              <h3 class="wok__title">Рисовая лапша с курицей соус Терияки</h3>
-              <p class="wok__description">
-                Соба, курица, морковь, лук репчатый, капуста белокочанная,
-                перец, соус.
-              </p>
-              <div class="wok__price">399 ₽</div>
-            </div>
-          </li>
-          <li class="wok__product product">
-            <div class="wok__image">
-              <img src="./img/products/product_5.png" alt="" class="wok__img" />
-              <img src="./img/icons/spicy.svg" alt="" class="wok__icon active" />
-            </div>
-            <div class="wok__info">
-              <h3 class="wok__title">Удон с говядиной соус Терияки</h3>
-              <p class="wok__description">
-                Рисовая лапша, креветки, капуста белокочанная, морковь, лук
-                репчатый.. гр.
-              </p>
-              <div class="wok__price">290 ₽</div>
-            </div>
-          </li>
-          <li class="wok__product product">
-            <div class="wok__image">
-              <img src="./img/products/product_4.png" alt="" class="wok__img" />
-              <img src="./img/icons/calories.svg" alt="" class="wok__icon active" />
-            </div>
-            <div class="wok__info">
-              <h3 class="wok__title">Рисовая лапша с курицей соус Терияки</h3>
-              <p class="wok__description">
-                Соба, курица, морковь, лук репчатый, капуста белокочанная,
-                перец, соус.
-              </p>
-              <div class="wok__price">399 ₽</div>
-            </div>
-          </li>
-          <li class="wok__product product">
-            <div class="wok__image">
-              <img src="./img/products/product_5.png" alt="" class="wok__img" />
-            </div>
-            <div class="wok__info">
-              <h3 class="wok__title">Удон с говядиной соус Терияки</h3>
-              <p class="wok__description">
-                Рисовая лапша, креветки, капуста белокочанная, морковь, лук
-                репчатый.. гр.
-              </p>
-              <div class="wok__price">290 ₽</div>
-            </div>
-          </li>
-        </ul>
-        <div class="products__offer">
-          <p class="products__offer-title">Не нашли что искали? Звоните:</p>
-          <a href="telto:+73517298080" class="products__offer-phone">8 (351) 729-80-80</a>
-        </div>
-      </div>
-    </section>
-  </div>
-  <section class="categories2 hidden">
-    <button class="categories__menu-button menu-button">
-      <span class="menu-button__burger"></span>
-    </button>
-    <ul class="categories__list">
-      <li class="categories__item active">
-        <a href="#" class="categories__link">Роллы</a>
-      </li>
-      <li class="categories__item">
-        <a href="#" class="categories__link">Наборы</a>
-      </li>
-      <li class="categories__item">
-        <a href="#" class="categories__link">WOK</a>
-      </li>
-      <li class="categories__item">
-        <a href="#" class="categories__link">Закуски</a>
-      </li>
-    </ul>
-  </section>
-  <a class="cart empty" href="./cart/cart.html">
-    <div class="cart__text">Корзина</div>
-    <div class="cart__value"></div>
-  </a>
-  <a class="cart filled hidden" href="./cart/cart.html">
-    <div class="cart__text">Корзина</div>
-    <div class="cart__value">925 ₽</div>
-  </a>
-
-  <div class="choose-city">
-    <div class="choose-city__body">
-      <a class="choose-city__logo logo" href="#">
-        <img src="./img/logo.png" alt="Логотип суши пятница" />
-      </a>
-      <nav class="choose-city__nav">
-        <p class="choose-city__title">Ваш город:</p>
-        <ul class="choose-city__list">
-          <li class="choose-city__item">
-            <a href="#" class="choose-city__link">Челябинск</a>
-          </li>
-          <li class="choose-city__item">
-            <a href="#" class="choose-city__link">Копейск</a>
-          </li>
-          <li class="choose-city__item">
-            <a href="#" class="choose-city__link">Миасс</a>
-          </li>
-          <li class="choose-city__item">
-            <a href="#" class="choose-city__link">Кыштым</a>
-          </li>
-          <li class="choose-city__item">
-            <a href="#" class="choose-city__link">Озерск</a>
-          </li>
-          <ul class="choose-city__list-moscow">
-            <li class="choose-city__item">
-              <a href="#" class="choose-city__link">Москва</a>
-            </li>
-            <li class="choose-city__item">
-              <a href="#" class="choose-city__link">Дубна</a>
-            </li>
-          </ul>
-        </ul>
-      </nav>
-    </div>
-  </div>
-  <div class="product-card swipe menu" id="sushiCard">
-    <div class="product-card__body">
-      <div class="product-card__stick">
-        <img src="./img/icons/stick.svg" alt="" />
-      </div>
-      <div class="product-card__header">
-        <div class="product-card__image">
-          <img src="./img/product-cards/product_1.png" alt="" />
-        </div>
-        <h3 class="product-card__name">Филадельфия</h3>
-        <div class="product-card__description">
-          Лосось и сливочный сыр, 180г.
-        </div>
-      </div>
-      <div class="product-card__options">
-        <label class="product-card__option selected">
-          <div class="product-card__option-radio">
-            <input type="radio" class="product-card__option-input" name="option" id="classic" checked="checked" />
-            <span class="product-card__option-fake"></span>
-            <span class="product-card__option-label">Классическая</span>
-          </div>
-          <div class="product-card__info info">
-            <div class="info__body">
-              <div class="info__title">На 100 г.:</div>
-              <ul class="info__list">
-                <li class="info__info">
-                  <p>Энерг. ценность</p>
-                  <p>248,6 ккал</p>
-                </li>
-                <li class="info__info">
-                  <p>Белки</p>
-                  <p>10,5 г.</p>
-                </li>
-                <li class="info__info">
-                  <p>Жиры</p>
-                  <p>10,1 г.</p>
-                </li>
-                <li class="info__info">
-                  <p>Углеводы</p>
-                  <p>27,2 г.</p>
-                </li>
-              </ul>
-            </div>
-            <img src="./img/icons/info.svg" alt="" class="option__icon" />
-          </div>
-        </label>
-        <label class="product-card__option">
-          <div class="product-card__option-radio">
-            <input type="radio" class="product-card__option-input" name="option" />
-            <span class="product-card__option-fake"></span>
-            <span class="product-card__option-label">Огурец</span>
-          </div>
-          <div class="product-card__info info">
-            <div class="info__body">
-              <div class="info__title">На 100 г.:</div>
-              <ul class="info__list">
-                <li class="info__info">
-                  <p>Энерг. ценность</p>
-                  <p>248,6 ккал</p>
-                </li>
-                <li class="info__info">
-                  <p>Белки</p>
-                  <p>10,5 г.</p>
-                </li>
-                <li class="info__info">
-                  <p>Жиры</p>
-                  <p>10,1 г.</p>
-                </li>
-                <li class="info__info">
-                  <p>Углеводы</p>
-                  <p>27,2 г.</p>
-                </li>
-              </ul>
-            </div>
-            <img src="./img/icons/info.svg" alt="" class="option__icon" />
-          </div>
-        </label>
-        <label class="product-card__option">
-          <div class="product-card__option-radio">
-            <input type="radio" class="product-card__option-input" name="option" />
-            <span class="product-card__option-fake"></span>
-            <span class="product-card__option-label">Авокадо</span>
-          </div>
-          <div class="product-card__info info">
-            <div class="info__body">
-              <div class="info__title">На 100 г.:</div>
-              <ul class="info__list">
-                <li class="info__info">
-                  <p>Энерг. ценность</p>
-                  <p>248,6 ккал</p>
-                </li>
-                <li class="info__info">
-                  <p>Белки</p>
-                  <p>10,5 г.</p>
-                </li>
-                <li class="info__info">
-                  <p>Жиры</p>
-                  <p>10,1 г.</p>
-                </li>
-                <li class="info__info">
-                  <p>Углеводы</p>
-                  <p>27,2 г.</p>
-                </li>
-              </ul>
-            </div>
-            <img src="./img/icons/info.svg" alt="" class="option__icon" />
-          </div>
-        </label>
-      </div>
-      <button class="product-card__button">
-        <span>В корзину за 299 ₽</span>
-      </button>
-    </div>
-  </div>
-  <div class="product-card swipe menu" id="colaCard">
-    <div class="product-card__body">
-      <div class="product-card__stick">
-        <img src="./img/icons/stick.svg" alt="" />
-      </div>
-      <div class="product-card__header">
-        <div class="product-card__image">
-          <img src="./img/product-cards/product_2.png" alt="" />
-        </div>
-        <div class="product-card__info2">
-          <h3 class="product-card__name">Добрый лимон-лайм</h3>
-          <div class="product-card__info info">
-            <div class="info__body">
-              <div class="info__title">На 100 г.:</div>
-              <ul class="info__list">
-                <li class="info__info">
-                  <p>Энерг. ценность</p>
-                  <p>248,6 ккал</p>
-                </li>
-                <li class="info__info">
-                  <p>Белки</p>
-                  <p>10,5 г.</p>
-                </li>
-                <li class="info__info">
-                  <p>Жиры</p>
-                  <p>10,1 г.</p>
-                </li>
-                <li class="info__info">
-                  <p>Углеводы</p>
-                  <p>27,2 г.</p>
-                </li>
-              </ul>
-            </div>
-            <img src="./img/icons/info.svg" alt="" class="option__icon" />
-          </div>
-        </div>
-        <div class="product-card__description">
-          Сильногазированный напиток, 500мл
-        </div>
-      </div>
-      <button class="product-card__button">
-        <span>В корзину за 74 ₽</span>
-      </button>
-    </div>
-  </div>
-  <div class="address-menu swipe menu" id="addressDeliveryMenu">
-    <div class="address-menu__stick">
-      <img src="./img/icons/stick.svg" alt="" />
-    </div>
-    <div class="address-menu__body">
-      <div class="address-menu__info">
-        <h3 class="address-menu__name">Укажите адрес</h3>
-        <div class="address-menu__description">
-          Так мы определим наличие и рассчитаем время доставки.
-        </div>
-      </div>
-      <div class="address-menu__options">
-        <label class="address-menu__option selected" id="#addressDelivery">
-          <div class="address-menu__option-radio">
-            <input type="radio" class="address-menu__option-input" name="addressOption" checked="checked" />
-            <span class="address-menu__option-icon"></span>
-            <span class="address-menu__option-label">Адрес доставки</span>
-          </div>
-          <div class="address-menu__address-input">
-            <input type="text" class="address-menu__street-inp" placeholder="Улица" />
-            <input type="text" class="address-menu__house-inp" placeholder="Дом" />
-          </div>
-          <button class="address-menu__address-selection">
-            <span class="address-menu__address">Пр. Победы, 254</span>
-            <span class="address-menu__address-additional">кв. 159, 4 подъезд, 5 этаж</span>
-          </button>
-        </label>
-        <label class="address-menu__option option column" id="#addressDelivery">
-          <div class="address-menu__option-radio">
-            <input type="radio" class="address-menu__option-input" name="addressOption" />
-            <span class="address-menu__option-icon"></span>
-            <span class="address-menu__option-label">Самовывоз</span>
-          </div>
-          <div class="address-menu__pickup-selection">
-            <span class="address-menu__pickup-text">Выберите ресторан</span>
-          </div>
-        </label>
-      </div>
-      <button class="address-menu__button">
-        <span>Выбрать</span>
-      </button>
-      <button class="address-menu__login">
-        <img class="address-menu__login-img" src="./img/icons/profile.svg" alt="">
-        <span class="address-menu__login-text">Войти в профиль</span>
-      </button>
-    </div>
-  </div>
-  <nav class="side-bar menu">
-    <button class="side-bar__menu-button">
-      <span></span>
-    </button>
-    <div class="side-bar__body">
-      <div class="side-bar__header">
-        <a class="side-bar__logo logo" href="./">
-          <img src="./img/logo.png" alt="Логотип суши пятница">
-        </a>
-        <a href="./profile.html" class="side-bar__login login logged-in">
-          <img src="./img/icons/profile.svg" alt="">
-          <div class="login__body">
-            <div class="login__login">Денис</div>
-            <div class="login__bonuses">280 <img src="./img/icons/bonus-value-white.svg" fill="white" alt=""></div>
-          </div>
-        </a>
-        <a href="./myorders.html" class="side-bar__order">
-          <img src="./img/icons/history.svg" alt="">
-          <p class="side-bar__order-text">Заказы</p>
-        </a>
-        <a href="./myaddresses.html" class="side-bar__my-addresses">
-          <img src="./img/icons/house.svg" alt="">
-          <p class="side-bar__my-addresses-text">Мои адреса</p>
-        </a>
-        <a href="#" class="side-bar__chat chat">
-          <img src="./img/icons/chat.svg" alt="">
-          <p class="chat__text">Чат</p>
-        </a>
-      </div>
-      <div class="side-bar__footer">
-        <div class="side-bar__city">
-          Челябинск
-        </div>
-        <div class="side-bar__address-info">
-          <p class="side-bar__address">Пр. Победы, 254</p>
-          <p class="side-bar__address-label">Доставка</p>
-        </div>
-        <div class="side-bar__contacts">
-          <a href="./contacts.html" class="side-bar__contacts-link">Контакты</a>
-        </div>
-      </div>
-    </div>
-  </nav>
-  <div class="my-addresses menu">
-    <div class="container">
-      <div class="my-addresses__header">
-        <button class="my-addresses__back-button">
-          <img src="./img/icons/arrow2.svg" alt="">
-        </button>
-        <h3 class="my-addresses__title">Выберите адрес</h3>
-        <div></div>
-      </div>
-      <div class="my-addresses__body">
-        <div class="my-addresses__options">
-          <label class="my-addresses__option selected" id="#addressDelivery">
-            <div class="my-addresses__option-radio">
-              <input type="radio" class="my-addresses__option-input" name="myAddressesOption" checked="checked" />
-              <span class="my-addresses__option-icon"></span>
-              <span class="my-addresses__option-address">Пр. Победы, 254</span>
-            </div>
-            <div class="my-addresses__address-input">
-              <input type="text" class="my-addresses__street-inp" placeholder="Улица" id="addressInput"
-                value="Пр. Победы" />
-            </div>
-            <div class="my-addresses__address-input">
-              <input type="text" class="my-addresses__building-inp" placeholder="Дом" id="addressInput"
-                value="дом 254" />
-              <input type="text" class="my-addresses__flat-inp" placeholder="Квартира" id="addressInput"
-                value="кв. 159" />
-            </div>
-            <div class="my-addresses__address-input">
-              <input type="text" class="my-addresses__entrance-inp" id="addressInput" placeholder="Подъезд"
-                value="4 подъезд" />
-              <input type="text" class="my-addresses__floor-inp" placeholder="Этаж" id="addressInput" value="5 этаж" />
-            </div>
-            <button class="my-addresses__choose">Выбрать</button>
-            <button class="my-addresses__delete">
-              <img src="./img/icons/trash.svg" alt="">
-            </button>
-          </label>
-          <label class="my-addresses__option" id="#addressDelivery">
-            <div class="my-addresses__option-radio">
-              <input type="radio" class="my-addresses__option-input" name="myAddressesOption" />
-              <span class="my-addresses__option-icon"></span>
-              <span class="my-addresses__option-address">Пр. Победы, 254</span>
-            </div>
-            <div class="my-addresses__address-input">
-              <input type="text" class="my-addresses__street-inp" placeholder="Улица" id="addressInput"
-                value="Пр. Победы" />
-            </div>
-            <div class="my-addresses__address-input">
-              <input type="text" class="my-addresses__building-inp" placeholder="Дом" id="addressInput"
-                value="дом 254" />
-              <input type="text" class="my-addresses__flat-inp" placeholder="Квартира" id="addressInput"
-                value="кв. 159" />
-            </div>
-            <div class="my-addresses__address-input">
-              <input type="text" class="my-addresses__entrance-inp" id="addressInput" placeholder="Подъезд"
-                value="4 подъезд" />
-              <input type="text" class="my-addresses__floor-inp" placeholder="Этаж" id="addressInput" value="5 этаж" />
-            </div>
-            <button class="my-addresses__choose">Выбрать</button>
-            <button class="my-addresses__delete">
-              <img src="./img/icons/trash.svg" alt="">
-            </button>
-          </label>
-          <label class="my-addresses__option" id="#addressDelivery">
-            <div class="my-addresses__option-radio">
-              <input type="radio" class="my-addresses__option-input" name="myAddressesOption" />
-              <span class="my-addresses__option-icon"></span>
-              <span class="my-addresses__option-address">Пр. Победы, 254</span>
-
-            </div>
-            <div class="my-addresses__address-input">
-              <input type="text" class="my-addresses__street-inp" placeholder="Улица" id="addressInput"
-                value="Пр. Победы" />
-            </div>
-            <div class="my-addresses__address-input">
-              <input type="text" class="my-addresses__building-inp" placeholder="Дом" id="addressInput"
-                value="дом 254" />
-              <input type="text" class="my-addresses__flat-inp" placeholder="Квартира" id="addressInput"
-                value="кв. 159" />
-            </div>
-            <div class="my-addresses__address-input">
-              <input type="text" class="my-addresses__entrance-inp" id="addressInput" placeholder="Подъезд"
-                value="4 подъезд" />
-              <input type="text" class="my-addresses__floor-inp" placeholder="Этаж" id="addressInput" value="5 этаж" />
-            </div>
-            <button class="my-addresses__choose">Выбрать</button>
-            <button class="my-addresses__delete">
-              <img src="./img/icons/trash.svg" alt="">
-            </button>
-          </label>
-          <label class="my-addresses__option" id="#addressDelivery">
-            <div class="my-addresses__option-radio">
-              <input type="radio" class="my-addresses__option-input" name="myAddressesOption" />
-              <span class="my-addresses__option-icon"></span>
-              <span class="my-addresses__option-address">Новый адрес</span>
-            </div>
-            <div class="my-addresses__address-input">
-              <input type="text" class="my-addresses__street-inp" id="addressInput" placeholder="Улица" />
-            </div>
-            <div class="my-addresses__address-input">
-              <input type="text" class="my-addresses__building-inp" id="addressInput" placeholder="Дом" />
-              <input type="text" class="my-addresses__flat-inp" id="addressInput" placeholder="Квартира" />
-            </div>
-            <div class="my-addresses__address-input">
-              <input type="text" class="my-addresses__entrance-inp" id="addressInput" placeholder="Подъезд" />
-              <input type="text" class="my-addresses__floor-inp" id="addressInput" placeholder="Этаж" />
-            </div>
-            <button class="my-addresses__choose">Выбрать</button>
-          </label>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="modal-menu menu">
-    <div class="modal-menu__body">
-      <div class="modal-menu__img">
-        <img src="./img/icons/deleteAddress.svg" alt="">
-      </div>
-      <div class="modal-menu__text">
-        Вы уверены, что хотите удалить адрес <b>Пр. Победы, 254</b>?
-      </div>
-      <div class="modal-menu__buttons">
-        <button class="modal-menu__delete-button">Удалить</button>
-        <button class="modal-menu__cancel-button">Отменить</button>
-      </div>
-    </div>
-  </div>
-  <div class="pickup-selection menu">
-    <div class="container">
-      <div class="pickup-selection__body">
-        <div class="pickup-selection__header">
-          <button class="pickup-selection__back-button">
+          <a href="./index.html" class="header__back-button">
             <img src="./img/icons/arrow2.svg" alt="">
-          </button>
-          <h3 class="pickup-selection__title">Выбрать адрес</h3>
+          </a>
+          <h3 class="header__title">Заказ 81</h3>
           <div>
           </div>
         </div>
-        <div class="pickup-selection__options">
-          <label class="pickup-selection__option selected" id="#pickupAddress">
-            <div class="pickup-selection__option-radio">
-              <input type="radio" class="pickup-selection__option-input" checked="checked" name="pickupAddress" />
-              <span class="pickup-selection__option-icon"></span>
-              <span class="pickup-selection__option-label">На Гагарина, 14</span>
-
-            </div>
-            <button class="pickup-selection__choose">Выбрать</button>
-          </label>
-          <label class="pickup-selection__option" id="#pickupAddress">
-            <div class="pickup-selection__option-radio">
-              <input type="radio" class="pickup-selection__option-input" name="pickupAddress" />
-              <span class="pickup-selection__option-icon"></span>
-              <span class="pickup-selection__option-label">На ЧМЗ</span>
-
-            </div>
-            <button class="pickup-selection__choose">Выбрать</button>
-
-          </label>
-        </div>
       </div>
-    </div>
-  </div>
-  <!-- <nav class="side-bar menu">
-    <button class="side-bar__menu-button">
-      <span></span>
-    </button>
-    <div class="side-bar__body">
-      <div class="side-bar__header">
-        <a class="side-bar__logo logo" href="#">
-          <img src="./img/logo.png" alt="Логотип суши пятница" />
-        </a>
-        <a href="#" class="side-bar__login login">
-          <img src="./img/icons/profile.svg" alt="" />
-          <div class="login__body">
-            <div class="login__login">Войти</div>
-            <div class="login__desc">
-              Начислим бонусы за закази сохраним адрес доставки.
-            </div>
-          </div>
-        </a>
-        <a href="#" class="side-bar__chat chat">
-          <img src="./img/icons/chat.svg" alt="" />
-          <p class="chat__text">Чат</p>
-        </a>
-      </div>
-      <div class="side-bar__footer">
-        <div class="side-bar__city">Челябинск</div>
-        <div class="side-bar__address-info">
-          <p class="side-bar__address">Пр. Победы, 254</p>
-          <p class="side-bar__address-label">Доставка</p>
-        </div>
-        <div class="side-bar__contacts">
-          <a href="#" class="side-bar__contacts-link">Контакты</a>
-        </div>
-      </div>
-    </div>
-  </nav> -->
-  <div class="orders">
-    <div class="orders__wrapper"></div>
-    <div class="orders__body">
-      <div class="order" id="activeOrder">
-        <div class="order__stick">
-          <img src="./img/icons/stick.svg" alt="" />
-        </div>
+    </header>
+    <div class="order">
+      <div class="container">
         <div class="order__body">
-          <div class="order__info">
-            <div class="order__info-status">
-              <img src="./img/icons/orderStatus1.svg" alt="" class="order__info-icon">
-              <div class="order__info-text">
-                <div class="order__number">Заказ 1</div>
-                <div class="order__status-text">В очереди</div>
-              </div>
-            </div>
-            <div class="order__timer">
-              59:59
-            </div>
-          </div>
           <div class="order__status">
-            <div class="order__status-block active">
+            <div class="order__status-block">
               <div class="order__status-icon ">
                 <img src="./img/icons/orderStatus1.svg" alt="">
               </div>
               <div class="order__status-text">В очереди</div>
             </div>
-            <div class="order__status-block">
+            <div class="order__status-block active">
               <div class="order__status-icon">
                 <img src="./img/icons/orderStatus2.svg" alt="">
               </div>
@@ -733,116 +54,9 @@
               <div class="order__status-text">Доставлен</div>
             </div>
           </div>
-          <div class="order__buttons hidden">
-            <a class="order__button" href="#">
-              <span>Задать вопрос</span>
-            </a>
-            <a class="order__button" href="#">
-              <span>Подробнее о заказе</span>
-            </a>
+          <div class="order__timer">
+            47:15
           </div>
-        </div>
-      </div>
-      <div class="order" id="activeOrder">
-        <div class="order__stick">
-          <img src="./img/icons/stick.svg" alt="" />
-        </div>
-        <div class="order__body">
-          <div class="order__info">
-            <div class="order__info-status">
-              <img src="./img/icons/orderStatus2.svg" alt="" class="order__info-icon">
-              <div class="order__info-text">
-                <div class="order__number">Заказ 2</div>
-                <div class="order__status-text">Готовится</div>
-              </div>
-            </div>
-            <div class="order__timer">
-              45:23
-            </div>
-          </div>
-          <div class="order__status">
-            <div class="order__status-block">
-              <div class="order__status-icon">
-                <img src="./img/icons/orderStatus1.svg" alt="">
-              </div>
-              <div class="order__status-text">В очереди</div>
-            </div>
-            <div class="order__status-block active">
-              <div class="order__status-icon">
-                <img src="./img/icons/orderStatus2.svg" alt="">
-              </div>
-              <div class="order__status-text">Готовится</div>
-            </div>
-            <div class="order__status-block">
-              <div class="order__status-icon">
-                <img src="./img/icons/orderStatus3.svg" alt="">
-              </div>
-              <div class="order__status-text">Едет к вам</div>
-            </div>
-            <div class="order__status-block">
-              <div class="order__status-icon">
-                <img src="./img/icons/orderStatus4.svg" alt="">
-              </div>
-              <div class="order__status-text">Доставлен</div>
-            </div>
-          </div>
-          <!-- Блок если курьер едет к вам добавить класс hidden к order__map, чтобы скрыть-->
-          <div class="order__buttons">
-            <!-- Кнопка если курьер едет к вам добавить класс hidden к order__button, чтобы скрыть-->
-
-            <a class="order__button" href="#">
-              <span>Задать вопрос</span>
-            </a>
-            <a class="order__button" href="#">
-              <span>Подробнее о заказе</span>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="order" id="activeOrder">
-        <div class="order__stick">
-          <img src="./img/icons/stick.svg" alt="" />
-        </div>
-        <div class="order__body">
-          <div class="order__info">
-            <div class="order__info-status">
-              <img src="./img/icons/orderStatus3.svg" alt="" class="order__info-icon">
-              <div class="order__info-text">
-                <div class="order__number">Заказ 3</div>
-                <div class="order__status-text">Едет к вам</div>
-              </div>
-            </div>
-            <div class="order__timer">
-              59:59
-            </div>
-          </div>
-          <div class="order__status">
-            <div class="order__status-block">
-              <div class="order__status-icon">
-                <img src="./img/icons/orderStatus1.svg" alt="">
-              </div>
-              <div class="order__status-text">В очереди</div>
-            </div>
-            <div class="order__status-block">
-              <div class="order__status-icon">
-                <img src="./img/icons/orderStatus2.svg" alt="">
-              </div>
-              <div class="order__status-text">Готовится</div>
-            </div>
-            <div class="order__status-block active">
-              <div class="order__status-icon">
-                <img src="./img/icons/orderStatus3.svg" alt="">
-              </div>
-              <div class="order__status-text">Едет к вам</div>
-            </div>
-            <div class="order__status-block">
-              <div class="order__status-icon">
-                <img src="./img/icons/orderStatus4.svg" alt="">
-              </div>
-              <div class="order__status-text">Доставлен</div>
-            </div>
-          </div>
-          <!-- Блок если курьер едет к вам добавить класс hidden к order__map, чтобы скрыть-->
           <div class="order__map">
             <div style="position:relative;overflow:hidden;"><a
                 href="https://yandex.ru/maps/213/moscow/?utm_medium=mapframe&utm_source=maps"
@@ -852,76 +66,96 @@
                 src="https://yandex.ru/map-widget/v1/?ll=37.694805%2C55.767983&z=13.95" width="100%" height="200"
                 allowfullscreen="true" style="position:relative;"></iframe></div>
           </div>
-          <div class="order__buttons">
-            <!-- Кнопка если курьер едет к вам добавить класс hidden к order__button, чтобы скрыть-->
-            <a class="order__button" href="#">
-              <span>Позвонить курьеру</span>
-            </a>
-            <a class="order__button" href="#">
-              <span>Задать вопрос</span>
-            </a>
-            <a class="order__button" href="#">
-              <span>Подробнее о заказе</span>
-            </a>
+          <button class="order__button">Задать вопрос</button>
+          <a href="tel:7981293891" class="order__button hidden">Позвонить курьеру</a>
+
+          <div class="order__products">
+            <div class="order__product product">
+              <div class="product__img">
+                <img src="./img/products/product_1.png" alt="">
+              </div>
+              <div class="product__info">
+                <div class="product__name">
+                  Филадельфия с огурцом
+                </div>
+                <div class="product__price">
+                  460 ₽
+                </div>
+              </div>
+            </div>
+            <div class="order__product product">
+              <div class="product__img">
+                <img src="./img/products/product_2.png" alt="">
+              </div>
+              <div class="product__info">
+                <div class="product__name">
+                  Темпурный с курицей терияки
+                </div>
+                <div class="product__price">
+                  2 × 445 ₽
+                </div>
+              </div>
+            </div>
+            <div class="order__product product">
+              <div class="product__img">
+                <img src="./img/products/product_1.png" alt="">
+              </div>
+              <div class="product__info">
+                <div class="product__name">
+                  Филадельфия с огурцом
+                </div>
+                <div class="product__price">
+                  2 × 390 ₽
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="order__pay">
+            <div class="order__pay-title">Способ оплаты</div>
+            <div class="order__pay-text">Картой или наличными на месте</div>
+          </div>
+          <div class="order__address">
+            <div class="order__address-title">
+              Адрес доставки
+            </div>
+            <p class="order__address-text">
+              Челябинск, Чонгарский бульвар, 26акв. 159, домофон 159, 4 подъезд, 5 этаж
+            </p>
+            <p class="order__address-comment">
+              Стучите в дверь, не звоните в звонок
+            </p>
+          </div>
+          <div class="order__total">
+            <div class="order__bonuses">
+              <div class="order__bonuses-text">
+                Будет начислено бонусов
+              </div>
+              <div class="order__bonuses-value">
+                + 28 <img src="./img/icons/bonus-value-black.svg" alt="">
+              </div>
+            </div>
+            <div class="order__discount">
+              <div class="order__discount-text">
+                Сумма скидок
+              </div>
+              <div class="order__discount-value">
+                88 ₽
+              </div>
+            </div>
+            <div class="order__price">
+              <div class="order__price-text">
+                Общая сумма заказа
+              </div>
+              <div class="order__price-value">
+                762 ₽
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <!-- <div class="order" id="activeOrder">
-        <div class="order__stick">
-          <img src="./img/icons/stick.svg" alt="" />
-        </div>
-        <div class="order__body">
-          <div class="order__info">
-            <div class="order__info-status">
-              <img src="./img/icons/orderStatus4.svg" alt="" class="order__info-icon">
-              <div class="order__info-text">
-                <div class="order__number">Заказ 4</div>
-                <div class="order__status-text">Доставлен</div>
-              </div>
-            </div>
-            <div class="order__timer">
-
-            </div>
-          </div>
-          <div class="order__status">
-            <div class="order__status-block">
-              <div class="order__status-icon">
-                <img src="./img/icons/orderStatus1.svg" alt="">
-              </div>
-              <div class="order__status-text">В очереди</div>
-            </div>
-            <div class="order__status-block">
-              <div class="order__status-icon">
-                <img src="./img/icons/orderStatus2.svg" alt="">
-              </div>
-              <div class="order__status-text">Готовится</div>
-            </div>
-            <div class="order__status-block ">
-              <div class="order__status-icon">
-                <img src="./img/icons/orderStatus3.svg" alt="">
-              </div>
-              <div class="order__status-text">Едет к вам</div>
-            </div>
-            <div class="order__status-block active">
-              <div class="order__status-icon">
-                <img src="./img/icons/orderStatus4.svg" alt="">
-              </div>
-              <div class="order__status-text">Доставлен</div>
-            </div>
-          </div>
-          <div class="order__buttons hidden">
-            <a class="order__button" href="#">
-              <span>Задать вопрос</span>
-            </a>
-            <a class="order__button" href="#">
-              <span>Подробнее о заказе</span>
-            </a>
-          </div>
-        </div>
-      </div> -->
     </div>
+
   </div>
-  <script src="./js/index.js"></script>
 </body>
 
 </html>

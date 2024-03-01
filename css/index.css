@@ -84,6 +84,78 @@
   bottom: 16px;
 }
 
+/* cart */
+.cart {
+  position: fixed;
+  bottom: 0;
+  background: var(--greybg);
+  border-radius: 16px 16px 0 0;
+  display: none;
+  width: 100%;
+}
+
+.cart.active {
+  display: block;
+}
+.cart__body {
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 120px;
+}
+
+.cart__header {
+  display: flex;
+  justify-content: space-between;
+}
+.cart__address {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 133%;
+  letter-spacing: -0.01em;
+  color: var(--black);
+}
+.cart__info {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 133%;
+  letter-spacing: -0.01em;
+  text-align: right;
+  color: rgba(0, 0, 0, 0.5);
+}
+.cart__button {
+  border-radius: 101px;
+  padding: 12px 20px;
+  width: 100%;
+  height: 48px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  background: var(--duck);
+}
+.cart__button-text {
+  font-family: var(--second-family);
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 114%;
+  letter-spacing: -0.02em;
+  text-align: right;
+  color: var(--black);
+}
+.cart__button-value {
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 114%;
+  letter-spacing: -0.02em;
+  text-align: right;
+  color: var(--black);
+  opacity: 0.4;
+}
 /* sidebar */
 
 .side-bar {
@@ -451,6 +523,7 @@
 .categories2.hidden {
   display: none;
 }
+
 .categories__menu-button {
   width: 36px;
   transition: all 0.3s;
@@ -506,7 +579,7 @@
   flex-direction: column;
   align-items: center;
   gap: 4px;
-  padding: 20px 0 80px;
+  padding: 20px 0 140px;
 }
 .products__offer-title {
   font-family: "Cera Pro", sans-serif;
@@ -619,51 +692,6 @@
   font-size: 17px;
   line-height: 118%;
   letter-spacing: -0.01em;
-}
-
-/* cart button */
-.cart {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  position: fixed;
-  z-index: 9;
-  bottom: 0;
-  height: 56px;
-  width: 100vw;
-  border-radius: 16px 16px 0 0;
-}
-.categories2.hidden {
-  display: none;
-}
-.cart__text {
-  font-family: "Cera Round Pro";
-  font-weight: 500;
-  font-size: 21px;
-  line-height: 114%;
-  letter-spacing: -0.02em;
-  text-align: right;
-  color: black;
-}
-.cart__value {
-  font-family: "Cera Round Pro";
-
-  font-weight: 400;
-  font-size: 21px;
-  line-height: 114%;
-  letter-spacing: -0.02em;
-  text-align: right;
-  color: rgba(0, 0, 0, 0.4);
-}
-.cart__link.hidden {
-  display: none;
-}
-.cart.empty {
-  background-color: #f0f0f0;
-}
-.cart.filled {
-  background-color: #ffdb6c;
 }
 
 /* product-card */
@@ -869,15 +897,17 @@
   bottom: 0;
   z-index: 12;
   overflow: hidden;
-  transition: all 0.5s;
   border-radius: 16px 16px 0 0;
-  bottom: -100%;
-  visibility: hidden;
-}
-.address-menu.active {
-  bottom: 0;
   visibility: visible;
-  transition: all 0.5s;
+  max-height: 1000px;
+  transition: max-height 0.5s;
+  background: var(--greybg);
+}
+
+.address-menu.hidden {
+  visibility: hidden;
+  max-height: 0;
+  transition: max-height 0.5s;
 }
 .address-menu__body {
   display: flex;
@@ -888,13 +918,14 @@
 }
 .address-menu__stick {
   width: 100%;
-  display: flex;
+
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  display: none;
 }
 
-.address-menu__name {
+.address-menu__title {
   font-family: "Cera Round Pro";
   font-weight: 500;
   font-size: 21px;
@@ -910,6 +941,72 @@
   letter-spacing: -0.01em;
   color: #999999;
 }
+
+.address-menu__buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.address-menu.opened .address-menu__buttons {
+  display: none;
+}
+.address-menu.opened .address-menu__stick {
+  display: flex;
+}
+.address-menu__open {
+  background: #ffdb6c;
+  border-radius: 101px;
+  width: 100%;
+  font-family: "Cera Round Pro";
+  font-size: 17px;
+  line-height: 118%;
+  letter-spacing: -0.01em;
+}
+
+.address-menu__login {
+  border: 1px solid var(--greysticks);
+  border-radius: 101px;
+  padding: 10px 20px 10px 16px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  width: 107px;
+  flex-shrink: 0;
+}
+.address-menu__login-text {
+  font-family: "Cera Round Pro";
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 118%;
+  letter-spacing: -0.01em;
+  text-align: right;
+  color: black;
+}
+.address-menu__city {
+  display: none;
+  align-items: center;
+  gap: 25px;
+  border: 1px solid var(--greysticks);
+  border-radius: 40px;
+  padding: 10px 16px 10px 20px;
+  width: 160px;
+  height: 40px;
+  margin-top: 20px;
+}
+.address-menu.opened .address-menu__city {
+  display: flex;
+}
+.address-menu__city-text {
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 118%;
+  letter-spacing: -0.01em;
+  color: var(--black);
+}
+.address-menu__city-img {
+  transform: rotate(90deg);
+}
 .address-menu__button {
   background: #ffdb6c;
   border-radius: 101px;
@@ -919,11 +1016,21 @@
   font-size: 17px;
   line-height: 118%;
   letter-spacing: -0.01em;
+  display: none;
+}
+.address-menu.opened .address-menu__button {
+  display: block;
 }
 
 .address-menu__options {
+  max-height: 0;
+  visibility: hidden;
+}
+.address-menu.opened .address-menu__options {
   border: 1px solid #f0f0f0;
   border-radius: 16px;
+  max-height: 600px;
+  visibility: visible;
 }
 .address-menu__option-label {
   font-family: "Cera Pro";
@@ -991,6 +1098,9 @@
 .address-menu__address-input {
   display: none;
 }
+.address-menu__option.selected {
+  background-color: white;
+}
 .address-menu__option.selected .address-menu__address-input {
   display: flex;
   gap: 20px;
@@ -1013,7 +1123,7 @@
   border-radius: 6px;
   padding: 14px 16px;
   width: 100%;
-  /* height: 48px; */
+  height: 48px;
   display: none;
 }
 
@@ -1075,188 +1185,88 @@
 }
 .address-menu__address-additional {
   font-family: "Cera Pro";
-
   font-weight: 400;
   font-size: 13px;
   line-height: 123%;
   letter-spacing: -0.01em;
   color: #999999;
 }
-.address-menu__login {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
-.address-menu__login-text {
-  font-family: "Cera Round Pro";
-  font-weight: 400;
-  font-size: 17px;
-  line-height: 118%;
-  letter-spacing: -0.01em;
-  text-align: right;
-  color: black;
-}
 
-/* order */
+/* orders */
 
-.order {
-  padding-top: 8px;
-  padding-bottom: 56px;
-  background-color: #ffdb6c;
+.orders {
   position: fixed;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  bottom: -1000;
-  /* z-index: 2; */
   overflow: hidden;
-  transition: all 0.5s;
-  border-radius: 16px 16px 0 0;
-  touch-action: none;
-}
-.order__body {
-  display: flex;
-  flex-direction: column;
-  padding: 12px 20px 0px 20px;
-  width: 100vw;
-}
-
-.order__stick {
+  bottom: 132px;
   width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  gap: 12px;
+  flex-wrap: nowrap;
 }
-
+.orders::-webkit-scrollbar {
+  display: none;
+}
+.orders__body {
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-left: 20px;
+  width: 100%;
+}
+.order {
+  background: var(--duck);
+  display: flex;
+  width: 82vw;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  transition: all 0.5s;
+  border-radius: 16px;
+  height: 64px;
+  flex-shrink: 0;
+  margin-right: 20px;
+}
 .order__info {
   display: flex;
-  justify-content: space-between;
+  gap: 12px;
 }
-
-.order__info-status {
+.order__img {
   display: flex;
   align-items: center;
-  padding-bottom: 20px;
-}
-.order__info-icon {
+  justify-content: center;
+  background-color: white;
+  border-radius: 50%;
   width: 36px;
   height: 36px;
-  margin-right: 12px;
-  transition: all 0.5s;
+  flex-shrink: 0;
+}
+.order__number {
+  font-family: var(--font-family);
+  font-weight: 700;
+
+  font-size: 15px;
+  line-height: 133%;
+  letter-spacing: -0.01em;
+  color: var(--black);
 }
 .order__info-status {
-  flex-grow: 1;
-}
-.order__info-icon.hidden {
-  margin-right: 0px;
-  width: 0;
-  height: 0;
-  transition: all 0.5s;
-}
-.order__number,
-.order__status-text {
-  font-family: "Cera Pro";
+  font-family: var(--font-family);
   font-weight: 400;
   font-size: 15px;
   line-height: 133%;
   letter-spacing: -0.01em;
-  color: black;
+  color: var(--black);
 }
-
 .order__timer {
-  font-family: "Cera Round Pro";
+  font-family: var(--second-family);
   font-weight: 500;
   font-size: 36px;
   line-height: 111%;
   letter-spacing: -0.03em;
   text-align: right;
+  color: var(--black);
 }
-
-.order__status {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 0;
-  border-top: solid 1px rgba(0, 0, 0, 0.1);
-}
-.order__status-block {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  opacity: 0.5;
-}
-.order__status-block img {
-  transform: scale(0.82);
-}
-
-.order__status-block.active img {
-  transform: scale(1);
-}
-.order__status-block.active {
-  opacity: 1;
-}
-.order__map {
-  margin-bottom: -10px;
-}
-
-.orders {
-  position: relative;
-}
-.order__status-text {
-  font-family: "Cera Pro";
-  font-weight: 400;
-  font-size: 13px;
-  line-height: 123%;
-  letter-spacing: -0.01em;
-  text-align: center;
-}
-
-.order__button {
-  border-top: solid 1px rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 48px;
-}
-
-.order__button span {
-  font-family: "Cera Round Pro";
-  font-weight: 400;
-  font-size: 17px;
-  line-height: 118%;
-  letter-spacing: -0.01em;
-  color: #000000;
-}
-
-.order__map.hidden {
-  display: none;
-}
-
-.order__button.hidden {
-  display: none;
-}
-.orders {
-  display: flex;
-
-  flex-direction: column;
-}
-.orders__wrapper {
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  pointer-events: none;
-}
-
-.orders__wrapper.active {
-  z-index: 2;
-  pointer-events: initial;
-}
-
 .my-addresses {
   border-radius: 16px 16px 0 0;
   background-color: white;
@@ -1354,7 +1364,7 @@
   background-color: #000000;
 }
 
-.option.selected {
+.my-addresses__option.selected {
   background-color: #f0f0f0;
   border: 1px solid #f0f0f0;
 }
